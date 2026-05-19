@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\01_foundation\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\02_offer\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\03_acquisition\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\04_operations\\\\templates\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\05_client_experience\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\06_intelligence\")",
+      "Bash(Write-Host \"Pastas criadas com sucesso.\")",
+      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\05_website\\\\index.html\")",
+      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\06_presentation\\\\apresentacao.html\")"
+    ]
+  }
+}

@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indesigns · Nova Fase · Apresentação 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET + BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0e2430;
+  color: #ececea;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* ── VARIÁVEIS ────────────────────────────────────────────── */
+:root {
+  --p: #173a4a;   /* petróleo */
+  --t: #3c6e71;   /* teal */
+  --s: #8ab0ab;   /* sage */
+  --g: #d1d3c4;   /* greige */
+  --w: #ececea;   /* off-white */
+  --pd: #0e2430;  /* petróleo escuro */
+  --pm: #1f4a5c;  /* petróleo médio */
+
+  --fh: 'Cormorant Garamond', Georgia, serif;
+  --fl: 'DM Sans', sans-serif;
+  --fb: 'Montserrat', sans-serif;
+}
+
+/* ── DECK CONTAINER ───────────────────────────────────────── */
+.deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── SLIDES ───────────────────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(18px);
+  overflow: hidden;
+}
+.slide.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.slide.out {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* Fundos */
+.slide--dark   { background: var(--p); }
+.slide--light  { background: var(--w); color: var(--p); }
+.slide--greige { background: var(--g); color: var(--p); }
+.slide--split  { background: var(--w); color: var(--p); }
+
+/* Padrão geométrico (slides escuros) */
+.slide--dark::before, .slide--capa::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,  rgba(60,110,113,.05) 0, rgba(60,110,113,.05) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(90deg, rgba(60,110,113,.05) 0, rgba(60,110,113,.05) 1px, transparent 1px, transparent 80px);
+  pointer-events: none;
+}
+
+/* ── SLIDE INNER ──────────────────────────────────────────── */
+.slide__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 80px;
+}
+
+.slide--split .slide__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* ── TIPOGRAFIA ───────────────────────────────────────────── */
+.label {
+  font-family: var(--fl);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--t);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.h1 {
+  font-family: var(--fh);
+  font-size: clamp(52px, 5.5vw, 80px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -.015em;
+}
+.h1 em { font-style: italic; color: var(--s); }
+
+.h2 {
+  font-family: var(--fh);
+  font-size: clamp(36px, 3.8vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+.h2.light { color: var(--p); }
+
+.body {
+  font-family: var(--fb);
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 300;
+  line-height: 1.75;
+  opacity: .75;
+  margin-top: 20px;
+}
+.body.sage { color: var(--s); opacity: 1; }
+
+.line {
+  width: 80px;
+  height: 1px;
+  background: var(--t);
+  margin: 28px 0;
+}
+.line.wide { width: 200px; }
+.line.full { width: 100%; }
+
+/* ── SLIDE 00 — CAPA ──────────────────────────────────────── */
+#s0 {
+  background: var(--pd);
+  flex-direction: column;
+  text-align: center;
+}
+#s0 .logo {
+  font-family: var(--fl);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 400;
+  letter-spacing: .28em;
+  color: var(--w);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#s0 .line { margin: 0 auto 20px; }
+#s0 .tagline {
+  font-family: var(--fh);
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--s);
+  letter-spacing: .03em;
+}
+#s0 .meta {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  font-family: var(--fl);
+  font-size: 10px;
+  color: var(--t);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ── SLIDE 01 — MISSÃO ────────────────────────────────────── */
+#s1 .h1 { color: var(--w); max-width: 780px; }
+#s1 .body.sage { max-width: 520px; font-size: 17px; }
+
+/* ── SLIDE 02 — NARRATIVA ─────────────────────────────────── */
+#s2 .split-left {
+  background: var(--p);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+#s2 .split-left-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, var(--pm) 0%, var(--pd) 100%);
+}
+#s2 .split-left-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(60,110,113,.06) 0, rgba(60,110,113,.06) 1px, transparent 1px, transparent 40px);
+}
+#s2 .split-left-quote {
+  position: relative;
+  z-index: 2;
+  padding: 80px;
+  font-family: var(--fh);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.2;
+  max-width: 480px;
+}
+#s2 .split-left-quote em { color: var(--s); font-style: italic; }
+#s2 .split-right {
+  background: var(--w);
+  color: var(--p);
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+#s2 .split-right-inner { max-width: 480px; }
+
+/* ── SLIDE 03 — DIAGNÓSTICO ───────────────────────────────── */
+#s3 { color: var(--p); }
+#s3 .metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+#s3 .metric { border-top: 1px solid var(--t); padding-top: 20px; }
+#s3 .metric-num {
+  font-family: var(--fl);
+  font-size: clamp(40px, 4vw, 64px);
+  font-weight: 300;
+  color: var(--t);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+#s3 .metric-label {
+  font-family: var(--fl);
+  font-size: 11px;
+  color: var(--p);
+  opacity: .6;
+  letter-spacing: .06em;
+  line-height: 1.5;
+}
+#s3 .note {
+  margin-top: 40px;
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--t);
+  letter-spacing: .02em;
+}
+
+/* ── SLIDE 04 — GAPS ──────────────────────────────────────── */
+#s4 .gaps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+#s4 .gap {
+  border-top: 1px solid rgba(138,176,171,.3);
+  padding-top: 24px;
+}
+#s4 .gap-num {
+  font-family: var(--fl);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--t);
+  opacity: .2;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+#s4 .gap-title {
+  font-family: var(--fl);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--w);
+  margin-bottom: 12px;
+  letter-spacing: .04em;
+}
+#s4 .gap-text {
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--s);
+  line-height: 1.65;
+}
+
+/* ── SLIDE 05 — POSICIONAMENTO ────────────────────────────── */
+#s5 .h1 { color: var(--w); max-width: 860px; font-style: italic; }
+#s5 .reforce {
+  margin-top: 36px;
+  font-family: var(--fb);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--s);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* ── SLIDE 06 — CLIENTE IDEAL ─────────────────────────────── */
+#s6 { color: var(--p); }
+#s6 .name {
+  font-family: var(--fh);
+  font-size: clamp(52px, 6vw, 80px);
+  font-weight: 400;
+  color: var(--p);
+  margin-bottom: 8px;
+}
+#s6 .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+#s6 .card { padding: 32px; }
+#s6 .card--yes { border-top: 2px solid var(--t); background: var(--w); }
+#s6 .card--no  { border-top: 2px solid var(--g); background: rgba(209,211,196,.35); }
+#s6 .card-title {
+  font-family: var(--fl);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--t);
+  margin-bottom: 20px;
+}
+#s6 .card-text {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--p);
+  line-height: 1.75;
+  opacity: .8;
+}
+
+/* ── SLIDE 07 — IDENTIDADE ────────────────────────────────── */
+#s7 { color: var(--p); }
+#s7 .swatches {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+#s7 .swatch {
+  flex: 1;
+  border-radius: 0;
+}
+#s7 .swatch-color {
+  height: 72px;
+}
+#s7 .swatch-info { padding-top: 14px; }
+#s7 .swatch-hex {
+  font-family: var(--fl);
+  font-size: 11px;
+  color: var(--p);
+  opacity: .5;
+  letter-spacing: .06em;
+}
+#s7 .swatch-name {
+  font-family: var(--fl);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--p);
+  margin-top: 4px;
+}
+#s7 .swatch-meaning {
+  font-family: var(--fb);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--p);
+  opacity: .55;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* ── SLIDE 08 — PILARES ───────────────────────────────────── */
+#s8 { color: var(--p); }
+#s8 .pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 44px;
+}
+#s8 .pillar {
+  border-top: 1px solid var(--t);
+  padding-top: 20px;
+}
+#s8 .pillar-pct {
+  font-family: var(--fl);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--t);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+#s8 .pillar-title {
+  font-family: var(--fl);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--p);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+#s8 .pillar-text {
+  font-family: var(--fb);
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--p);
+  opacity: .6;
+  line-height: 1.6;
+}
+
+/* ── SLIDE 09 — FUNIL ─────────────────────────────────────── */
+#s9 .funnel {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#s9 .funnel-step {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 28px;
+  background: rgba(209,211,196,.25);
+}
+#s9 .funnel-step:nth-child(1) { background: rgba(23,58,74,.08); }
+#s9 .funnel-step:nth-child(2) { background: rgba(23,58,74,.05); }
+#s9 .funnel-step:nth-child(3) { background: rgba(60,110,113,.08); }
+#s9 .funnel-num {
+  font-family: var(--fl);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--t);
+  opacity: .35;
+}
+#s9 .funnel-label {
+  font-family: var(--fl);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--p);
+  margin-bottom: 4px;
+}
+#s9 .funnel-desc {
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--p);
+  opacity: .6;
+  line-height: 1.5;
+}
+#s9 .funnel-metric {
+  font-family: var(--fl);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--t);
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ── SLIDE 10 — ROADMAP ───────────────────────────────────── */
+#s10 .phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+}
+#s10 .phase { padding: 36px 32px; position: relative; }
+#s10 .phase--1 { background: rgba(23,58,74,.07); border-top: 2px solid var(--g); }
+#s10 .phase--2 { background: rgba(60,110,113,.07); border-top: 2px solid var(--s); }
+#s10 .phase--3 { background: rgba(23,58,74,.12); border-top: 2px solid var(--t); }
+#s10 .phase-tag {
+  font-family: var(--fl);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--t);
+  margin-bottom: 8px;
+}
+#s10 .phase-title {
+  font-family: var(--fh);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--p);
+  margin-bottom: 20px;
+}
+#s10 .phase-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#s10 .phase-items li {
+  font-family: var(--fb);
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--p);
+  opacity: .7;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+#s10 .phase-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 1px;
+  background: var(--t);
+}
+#s10 .phase-price {
+  margin-top: 20px;
+  font-family: var(--fl);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--t);
+}
+
+/* ── SLIDE 11 — PRÓXIMOS PASSOS ───────────────────────────── */
+#s11 { color: var(--p); }
+#s11 .actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 44px;
+}
+#s11 .action-group { }
+#s11 .action-when {
+  font-family: var(--fl);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--t);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(60,110,113,.25);
+}
+#s11 .action-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+#s11 .action-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--t);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+#s11 .action-text {
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--p);
+  line-height: 1.55;
+}
+#s11 .priority {
+  margin-top: 40px;
+  padding: 24px 28px;
+  background: rgba(60,110,113,.1);
+  border-left: 2px solid var(--t);
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--p);
+  line-height: 1.65;
+}
+
+/* ── SLIDE 12 — ENCERRAMENTO ──────────────────────────────── */
+#s12 { text-align: center; flex-direction: column; }
+#s12 .closing {
+  font-family: var(--fh);
+  font-size: clamp(40px, 4.5vw, 62px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.18;
+  max-width: 760px;
+  text-align: center;
+}
+#s12 .sign {
+  margin-top: 48px;
+  font-family: var(--fl);
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--t);
+  text-transform: uppercase;
+}
+
+/* ── NAVEGAÇÃO ────────────────────────────────────────────── */
+.nav-controls {
+  position: fixed;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 100;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid rgba(138,176,171,.3);
+  background: transparent;
+  color: var(--s);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+}
+.nav-btn:hover { background: var(--t); border-color: var(--t); color: var(--w); }
+
+.slide-counter {
+  font-family: var(--fl);
+  font-size: 11px;
+  color: rgba(138,176,171,.5);
+  letter-spacing: .1em;
+  min-width: 56px;
+  text-align: center;
+}
+
+/* Dots de progresso */
+.nav-dots {
+  position: fixed;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(138,176,171,.3);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.dot.active {
+  background: var(--t);
+  height: 16px;
+  border-radius: 2px;
+}
+
+/* Indicador de seção */
+.section-tag {
+  position: fixed;
+  top: 36px;
+  left: 60px;
+  font-family: var(--fl);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(138,176,171,.4);
+  z-index: 100;
+  transition: color .3s;
+}
+
+/* Logo fixo */
+.fixed-logo {
+  position: fixed;
+  top: 36px;
+  right: 60px;
+  font-family: var(--fl);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  color: rgba(236,236,234,.25);
+  text-transform: uppercase;
+  z-index: 100;
+}
+
+/* Hint teclado */
+.key-hint {
+  position: fixed;
+  bottom: 36px;
+  right: 60px;
+  font-family: var(--fl);
+  font-size: 10px;
+  color: rgba(138,176,171,.25);
+  letter-spacing: .06em;
+  z-index: 100;
+}
+
+</style>
+</head>
+<body>
+
+<div class="section-tag" id="sectionTag">APRESENTAÇÃO</div>
+<div class="fixed-logo">INDESIGNS</div>
+<div class="key-hint">← → ou ESPAÇO para navegar</div>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 00 — CAPA -->
+  <div class="slide slide--dark active" id="s0" data-section="Apresentação">
+    <div class="logo">INDESIGNS</div>
+    <div class="line wide"></div>
+    <div class="tagline">Cada espaço conta uma história. A sua.</div>
+    <div class="meta">Apresentação da Nova Fase · 2026</div>
+  </div>
+
+  <!-- SLIDE 01 — MISSÃO -->
+  <div class="slide slide--dark" id="s1" data-section="I. Visão">
+    <div class="slide__inner">
+      <span class="label">MISSÃO</span>
+      <h1 class="h1">Arquitetura não é decoração.<br>É a linguagem mais honesta<br>que existe para dizer quem você é.</h1>
+      <div class="line"></div>
+      <p class="body sage">A Indesigns existe para traduzir essa linguagem com precisão, cuidado e uma estética que só poderia existir em Brasília.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 02 — NARRATIVA EMOCIONAL -->
+  <div class="slide slide--split" id="s2" data-section="I. Visão">
+    <div class="slide__inner">
+      <div class="split-left">
+        <div class="split-left-bg"></div>
+        <div class="split-left-pattern"></div>
+        <div class="split-left-quote">
+          O espaço onde você vive<br>molda quem você<br><em>se torna.</em>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="split-right-inner">
+          <span class="label">A NARRATIVA CENTRAL</span>
+          <h2 class="h2 light">Não é sobre<br>metros quadrados.</h2>
+          <div class="line"></div>
+          <p class="body" style="color:var(--p)">É sobre como você se sente quando fecha a porta. Como as pessoas te percebem quando entram pela primeira vez. Como uma família se reorganiza ao redor de um espaço bem pensado.</p>
+          <p class="body" style="color:var(--p); margin-top: 16px;">Isso é o que a Indesigns entrega. E pouquíssimos arquitetos em Brasília entendem isso com essa profundidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 03 — DIAGNÓSTICO -->
+  <div class="slide slide--greige" id="s3" data-section="II. Diagnóstico">
+    <div class="slide__inner">
+      <span class="label">DIAGNÓSTICO · HOJE</span>
+      <h2 class="h2" style="max-width: 680px;">A Indesigns tem um trabalho extraordinário. E uma presença digital que ainda não faz jus a ele.</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-num">411</div>
+          <div class="metric-label">seguidores no @indesigns<br>potencial: 10× em 12 meses</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">3K</div>
+          <div class="metric-label">seguidores no perfil pessoal<br>audiência inexplorada</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">0</div>
+          <div class="metric-label">website ativo<br>o primeiro projeto muda isso</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">R$4K</div>
+          <div class="metric-label">ticket médio atual<br>abaixo do valor real entregue</div>
+        </div>
+      </div>
+      <p class="note">Este é o ponto de partida — não um problema. Uma oportunidade.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 04 — GAPS -->
+  <div class="slide slide--dark" id="s4" data-section="II. Diagnóstico">
+    <div class="slide__inner">
+      <span class="label">GAPS IDENTIFICADOS</span>
+      <h2 class="h2" style="color:var(--w)">Três gaps. Uma janela.</h2>
+      <div class="gaps">
+        <div class="gap">
+          <div class="gap-num">01</div>
+          <div class="gap-title">Visibilidade</div>
+          <div class="gap-text">O trabalho existe. A audiência certa ainda não sabe. A Indesigns é invisível para quem deveria contratar.</div>
+        </div>
+        <div class="gap">
+          <div class="gap-num">02</div>
+          <div class="gap-title">Percepção de Valor</div>
+          <div class="gap-text">O preço praticado não reflete o valor entregue. O problema não é o projeto — é a forma como é apresentado.</div>
+        </div>
+        <div class="gap">
+          <div class="gap-num">03</div>
+          <div class="gap-title">Sistema de Aquisição</div>
+          <div class="gap-text">Novos clientes chegam por indicação. Sem previsibilidade, sem escala, sem controle do crescimento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 05 — POSICIONAMENTO -->
+  <div class="slide slide--dark" id="s5" data-section="III. Posicionamento">
+    <div class="slide__inner">
+      <span class="label">NOVO POSICIONAMENTO</span>
+      <h1 class="h1" style="color:var(--w); font-style:italic; max-width:860px">"A Indesigns é a arquitetura do modernismo brasiliense no presente — com a precisão de Niemeyer, a sensibilidade de quem entende a vida contemporânea."</h1>
+      <div class="line"></div>
+      <p class="reforce">Não é genérico. Não é importado. É radicalmente brasileira, radicalmente de Brasília — e radicalmente contemporânea.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 06 — CLIENTE IDEAL -->
+  <div class="slide slide--greige" id="s6" data-section="III. Posicionamento">
+    <div class="slide__inner">
+      <span class="label">CLIENTE IDEAL</span>
+      <div class="name">A Mariana.</div>
+      <div class="cards">
+        <div class="card card--yes">
+          <div class="card-title">Quem ela é</div>
+          <div class="card-text">42 anos. Procuradora federal. O apartamento funciona, mas não parece ser dela.<br><br>Quer o processo, não a execução. Confia em quem pensa no nível dela. Disposta a pagar pelo resultado certo.</div>
+        </div>
+        <div class="card card--no">
+          <div class="card-title" style="color:rgba(23,58,74,.4)">Quem ela não é</div>
+          <div class="card-text" style="opacity:.55">Não chega com o Pinterest completo e quer execução. Não toma decisões por comitê de 8 pessoas. Não busca o menor preço.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 07 — IDENTIDADE VISUAL -->
+  <div class="slide slide--light" id="s7" data-section="IV. Branding">
+    <div class="slide__inner">
+      <span class="label">IDENTIDADE VISUAL</span>
+      <h2 class="h2 light">Uma paleta extraída de Brasília.</h2>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#173a4a"></div>
+          <div class="swatch-info">
+            <div class="swatch-hex">#173a4a</div>
+            <div class="swatch-name">Petróleo</div>
+            <div class="swatch-meaning">O céu do planalto ao entardecer</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#3c6e71"></div>
+          <div class="swatch-info">
+            <div class="swatch-hex">#3c6e71</div>
+            <div class="swatch-name">Teal</div>
+            <div class="swatch-meaning">O Lago Paranoá encontrando o cerrado</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8ab0ab"></div>
+          <div class="swatch-info">
+            <div class="swatch-hex">#8ab0ab</div>
+            <div class="swatch-name">Sage</div>
+            <div class="swatch-meaning">A água e a vegetação em equilíbrio</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#d1d3c4; border: 1px solid rgba(23,58,74,.1)"></div>
+          <div class="swatch-info">
+            <div class="swatch-hex">#d1d3c4</div>
+            <div class="swatch-name">Greige</div>
+            <div class="swatch-meaning">O concreto aparelhado de Niemeyer</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#ececea; border: 1px solid rgba(23,58,74,.08)"></div>
+          <div class="swatch-info">
+            <div class="swatch-hex">#ececea</div>
+            <div class="swatch-name">Off-white</div>
+            <div class="swatch-meaning">O linho, o papel, o espaço que respira</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 08 — PILARES DE CONTEÚDO -->
+  <div class="slide slide--light" id="s8" data-section="V. Conteúdo">
+    <div class="slide__inner">
+      <span class="label">SISTEMA DE CONTEÚDO</span>
+      <h2 class="h2 light">Todo conteúdo tem uma função.<br>Nenhum post é acidental.</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-pct">40%</div>
+          <div class="pillar-title">Transformação Brasiliense</div>
+          <div class="pillar-text">Projetos com contexto local. A cidade como cenário da transformação.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-pct">25%</div>
+          <div class="pillar-title">Processo com Rigor</div>
+          <div class="pillar-text">O bastidor inteligente. Como Indira pensa com precisão.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-pct">15%</div>
+          <div class="pillar-title">Autoridade Modernista</div>
+          <div class="pillar-text">Perspectiva e opinião. Niemeyer relido pelo presente.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-pct">10%</div>
+          <div class="pillar-title">Desejo Mineral</div>
+          <div class="pillar-text">O teal, o concreto, a precisão. O desejo pela estética da marca.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-pct">10%</div>
+          <div class="pillar-title">Indira de Brasília</div>
+          <div class="pillar-text">A arquiteta como integrante intelectual de Brasília.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 09 — FUNIL DE AQUISIÇÃO -->
+  <div class="slide slide--greige" id="s9" data-section="VI. Aquisição">
+    <div class="slide__inner">
+      <span class="label">SISTEMA DE AQUISIÇÃO</span>
+      <h2 class="h2">De visitante desconhecido<br>a cliente qualificado.</h2>
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-num">01</div>
+          <div>
+            <div class="funnel-label">Instagram → Landing Page</div>
+            <div class="funnel-desc">Conteúdo de valor atrai a audiência certa. 3–4 posts/semana.</div>
+          </div>
+          <div class="funnel-metric">411 → 5K seg.</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-num">02</div>
+          <div>
+            <div class="funnel-label">Formulário de Qualificação</div>
+            <div class="funnel-desc">5 perguntas que filtram antes do primeiro contato com a Indira.</div>
+          </div>
+          <div class="funnel-metric">3–8% conv.</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-num">03</div>
+          <div>
+            <div class="funnel-label">Reunião → Proposta → Projeto</div>
+            <div class="funnel-desc">Apenas leads qualificados chegam aqui. 70% avançam para reunião.</div>
+          </div>
+          <div class="funnel-metric">R$ 8–18K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10 — ROADMAP -->
+  <div class="slide slide--light" id="s10" data-section="VII. Roadmap">
+    <div class="slide__inner">
+      <span class="label">ROADMAP · 12 MESES</span>
+      <h2 class="h2 light">Três fases. Uma marca irrecusável.</h2>
+      <div class="phases">
+        <div class="phase phase--1">
+          <div class="phase-tag">Mês 1–2</div>
+          <div class="phase-title">Fundação</div>
+          <ul class="phase-items">
+            <li>Site no ar (indesigns.arq.br)</li>
+            <li>15 primeiros posts no novo formato</li>
+            <li>Depoimentos coletados</li>
+            <li>Migração para @indesigns</li>
+          </ul>
+          <div class="phase-price">R$ 5.5–6.5K</div>
+        </div>
+        <div class="phase phase--2">
+          <div class="phase-tag">Mês 3–6</div>
+          <div class="phase-title">Tração</div>
+          <ul class="phase-items">
+            <li>1.000+ seguidores</li>
+            <li>Leads orgânicos pelo site</li>
+            <li>Primeiro carrossel viral</li>
+            <li>Testimonial em vídeo</li>
+          </ul>
+          <div class="phase-price">R$ 8–10K</div>
+        </div>
+        <div class="phase phase--3">
+          <div class="phase-tag">Mês 7–12</div>
+          <div class="phase-title">Posicionamento</div>
+          <ul class="phase-items">
+            <li>5.000+ seguidores</li>
+            <li>Agenda com 2+ meses antecedência</li>
+            <li>Journal no site (1 artigo/mês)</li>
+            <li>Primeiro pedido de parceria</li>
+          </ul>
+          <div class="phase-price">R$ 12–18K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11 — PRÓXIMOS PASSOS -->
+  <div class="slide slide--greige" id="s11" data-section="VIII. Próximos Passos">
+    <div class="slide__inner">
+      <span class="label">PRÓXIMOS PASSOS</span>
+      <h2 class="h2">Sete ações.<br>Três acontecem esta semana.</h2>
+      <div class="actions">
+        <div class="action-group">
+          <div class="action-when">Esta semana</div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Ligar para a síndica da 116 Sul — pedir o depoimento (roteiro pronto)</div>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Publicar Story no perfil pessoal direcionando para @indesigns</div>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Configurar e-mail: contato@indesigns.arq.br</div>
+          </div>
+        </div>
+        <div class="action-group">
+          <div class="action-when">Próximas 2 semanas</div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Agendar ensaio fotográfico (portrait + detalhes dos projetos)</div>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Publicar os 3 primeiros posts no novo formato visual</div>
+          </div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Registrar domínio e ativar o site</div>
+          </div>
+        </div>
+        <div class="action-group">
+          <div class="action-when">Próximo mês</div>
+          <div class="action-item">
+            <div class="action-dot"></div>
+            <div class="action-text">Publicar o primeiro carrossel da Cobertura 116 Sul</div>
+          </div>
+        </div>
+      </div>
+      <div class="priority">O depoimento da síndica é a peça mais estratégica do momento. Ele desbloqueia: site, posts, prova social e a negociação de ticket.</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 12 — ENCERRAMENTO -->
+  <div class="slide slide--dark" id="s12" data-section="Encerramento">
+    <div class="closing">O trabalho já existe.<br>O que estamos construindo agora<br>é o mundo que vai reconhecê-lo.</div>
+    <div class="sign">INDESIGNS · BRASÍLIA, DF</div>
+  </div>
+
+</div><!-- /deck -->
+
+<!-- CONTROLES -->
+<nav class="nav-controls">
+  <button class="nav-btn" id="btnPrev" aria-label="Anterior">←</button>
+  <div class="slide-counter" id="counter">1 / 13</div>
+  <button class="nav-btn" id="btnNext" aria-label="Próximo">→</button>
+</nav>
+
+<div class="nav-dots" id="navDots"></div>
+
+<script>
+'use strict';
+
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+const dotsContainer = document.getElementById('navDots');
+const sectionTag = document.getElementById('sectionTag');
+const total = slides.length;
+let current = 0;
+let transitioning = false;
+
+// Criar dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(dot);
+});
+
+function goTo(idx) {
+  if (transitioning || idx === current) return;
+  transitioning = true;
+
+  const prev = slides[current];
+  const next = slides[idx];
+
+  prev.classList.add('out');
+
+  setTimeout(() => {
+    prev.classList.remove('active', 'out');
+    next.classList.add('active');
+    current = idx;
+    updateUI();
+    setTimeout(() => { transitioning = false; }, 580);
+  }, 280);
+}
+
+function updateUI() {
+  counter.textContent = `${current + 1} / ${total}`;
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.toggle('active', i === current);
+  });
+  const section = slides[current].dataset.section || '';
+  sectionTag.textContent = section;
+}
+
+function next() { if (current < total - 1) goTo(current + 1); }
+function prev() { if (current > 0) goTo(current - 1); }
+
+document.getElementById('btnNext').addEventListener('click', next);
+document.getElementById('btnPrev').addEventListener('click', prev);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ')  { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft')                     { e.preventDefault(); prev(); }
+});
+
+// Swipe touch
+let touchX = 0;
+document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+document.addEventListener('touchend', (e) => {
+  const diff = touchX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+}, { passive: true });
+
+updateUI();
+</script>
+</body>
+</html>
