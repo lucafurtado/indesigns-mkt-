@@ -107,44 +107,55 @@
     </div>
   </section>
 
+  <div class="brand-break brand-break--first" aria-hidden="true"></div>
+
   <!-- SHOWCASE DE PROJETOS -->
   <section class="showcase" id="projetos" data-theme="light" aria-label="Projetos selecionados">
-    <div class="showcase__wrap">
+    <div class="container">
+      <header class="showcase__header">
+        <span class="label">PROJETOS</span>
+        <h2 class="showcase__heading">Três formas de viver melhor.</h2>
+        <p class="showcase__intro">Residência, saúde e convivência coletiva. Cada projeto parte de uma rotina diferente, mas todos nascem da mesma escuta.</p>
+      </header>
 
-      <div class="showcase__panel">
-        <div class="showcase__panel-top">
-          <span class="label showcase__counter" id="sc-counter">01 / 03</span>
-          <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
-        </div>
-        <h2 class="showcase__title" id="sc-title">Residência<br>Noroeste</h2>
-        <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
-        <p class="showcase__narrative" id="sc-narrative">Uma família de quatro mudou para uma cobertura mais compacta. O projeto resolveu convivência, conforto e identidade dentro de um espaço que precisava render mais.</p>
-        <a href="#noroeste" class="showcase__link" id="sc-link">
-          <span>Ver projeto</span>
-          <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
-            <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="showcase__grid">
+        <a class="showcase-card showcase-card--large" href="#noroeste">
+          <span class="showcase-card__category">Residencial</span>
+          <figure class="showcase-card__media">
+            <img src="assets/projects/noroeste/cover.jpg" alt="Residência Noroeste — living da cobertura" loading="eager">
+          </figure>
+          <div class="showcase-card__body">
+            <h3>Residência Noroeste</h3>
+            <p>Uma família saindo de uma casa ampla para uma cobertura mais compacta, com conforto e convivência preservados.</p>
+          </div>
         </a>
-        <nav class="showcase__nav" aria-label="Navegar entre projetos">
-          <button class="showcase__dot is-active" data-project="0" aria-label="Residência Noroeste" aria-current="true"></button>
-          <button class="showcase__dot" data-project="1" aria-label="Clínica Orbis"></button>
-          <button class="showcase__dot" data-project="2" aria-label="Cobertura 116 Sul"></button>
-        </nav>
-      </div>
 
-      <div class="showcase__visual" aria-hidden="true">
-        <div class="showcase__img-wrap">
-          <img
-            class="showcase__img"
-            id="sc-img"
-            src="assets/projects/noroeste/hero.jpg"
-            alt="Residência Noroeste — sala de estar com sofá sage, cadeiras de madeira e escadaria"
-            loading="eager">
-        </div>
-      </div>
+        <a class="showcase-card" href="#orbis">
+          <span class="showcase-card__category">Corporativo</span>
+          <figure class="showcase-card__media">
+            <img src="assets/projects/orbis/cover.jpg" alt="Clínica Orbis — consultório psicológico em Brasília" loading="lazy">
+          </figure>
+          <div class="showcase-card__body">
+            <h3>Clínica Orbis</h3>
+            <p>Um consultório compacto resolvido para acolher, atender e funcionar sem perder sensibilidade.</p>
+          </div>
+        </a>
 
+        <a class="showcase-card" href="#cobertura-116">
+          <span class="showcase-card__category">Apartamentos</span>
+          <figure class="showcase-card__media">
+            <img src="assets/hero-bg.jpg" alt="Cobertura 116 Sul — área coletiva de convivência" loading="lazy">
+          </figure>
+          <div class="showcase-card__body">
+            <h3>Cobertura 116 Sul</h3>
+            <p>Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros.</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
+
+  <div class="brand-break brand-break--second" aria-hidden="true"></div>
 
   <!-- PROJETO EM DESTAQUE: CLÍNICA ORBIS -->
   <!--
