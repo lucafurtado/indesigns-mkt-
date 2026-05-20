@@ -264,10 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
       category:  'RESIDENCIAL',
       title:     'Residência<br>Noroeste',
       place:     'Noroeste · Brasília, DF',
-      narrative: 'Uma família de quatro mudou para uma cobertura mais compacta. O projeto resolveu convivência, conforto e identidade dentro de um espaço que precisava render mais.',
+      narrative: 'Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.',
       href:      '#noroeste',
-      img:       'assets/projects/noroeste/hero.jpg',
-      imgAlt:    'Residência Noroeste — sala de estar com sofá sage, cadeiras de madeira e escadaria',
+      img:       'assets/projects/noroeste/cover.jpg',
+      imgAlt:    'Residência Noroeste — living da cobertura',
     },
     {
       theme:     'dark',
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category:  'CORPORATIVO · SAÚDE',
       title:     'Clínica<br>Orbis',
       place:     'Brasília, DF · 2025',
-      narrative: 'Vinte e sete metros quadrados para atendimento, armazenamento, copa e reuniões. Tudo funcionando sem parecer apertado.',
+      narrative: 'Um consultório psicológico compacto, resolvido para acolher, atender e funcionar sem perder sensibilidade.',
       href:      '#orbis',
       img:       'assets/projects/orbis/hero.jpg',
       imgAlt:    'Clínica Orbis — sala de atendimento com sofá, poltrona e mobiliário amadeirado',
@@ -283,10 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       theme:     'warm',
       counter:   '03 / 03',
-      category:  'ÁREA COLETIVA',
+      category:  'APARTAMENTOS',
       title:     'Cobertura<br>116 Sul',
       place:     'Asa Sul · Brasília',
-      narrative: 'Gourmet, academia e circulação em uma cobertura coletiva na Asa Sul. Usos distintos com uma lógica de ocupação clara.',
+      narrative: 'Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros.',
       href:      '#cobertura-116',
       img:       'assets/hero-bg.jpg',
       imgAlt:    'Cobertura 116 Sul — área coletiva com espaço gourmet e convivência',
@@ -302,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scLink      = document.getElementById('sc-link');
   const scImg       = document.getElementById('sc-img');
   const scDots      = document.querySelectorAll('.showcase__dot');
+  const scArrows    = document.querySelectorAll('[data-carousel-dir]');
 
   let currentProject = 0;
   let isAnimating    = false;
@@ -345,6 +346,13 @@ document.addEventListener('DOMContentLoaded', () => {
   scDots.forEach((dot) => {
     dot.addEventListener('click', () => {
       switchProject(parseInt(dot.dataset.project, 10));
+    });
+  });
+
+  scArrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      const dir = parseInt(arrow.dataset.carouselDir, 10);
+      switchProject((currentProject + dir + showcaseProjects.length) % showcaseProjects.length);
     });
   });
 
