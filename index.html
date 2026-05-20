@@ -166,14 +166,6 @@
 
   <!-- SHOWCASE DE PROJETOS -->
   <section class="showcase" id="projetos" data-theme="light" aria-labelledby="projetos-heading">
-    <header class="showcase__intro">
-      <div class="container">
-        <span class="label">PROJETOS</span>
-        <h2 id="projetos-heading" class="showcase__intro-heading">Espaços pensados<br>para serem vividos.</h2>
-        <p class="showcase__intro-sub">Projetos autorais desenvolvidos com atenção à rotina, circulação, luz e permanência.</p>
-      </div>
-    </header>
-
     <div class="showcase__carousel" tabindex="0">
       <button class="showcase__arrow showcase__arrow--prev" type="button" data-carousel-dir="-1" aria-label="Projeto anterior">
         <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true">
@@ -192,25 +184,31 @@
           decoding="async">
       </div>
 
-      <div class="showcase__panel" aria-live="polite">
-        <div class="showcase__panel-top">
-          <span class="label showcase__counter" id="sc-counter">01 / 03</span>
-          <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
+      <div class="showcase__panel">
+        <div class="showcase__section-intro">
+          <span class="label">PROJETOS</span>
+          <h2 id="projetos-heading" class="showcase__section-heading">Espaços pensados<br>para serem vividos.</h2>
         </div>
-        <h2 class="showcase__title" id="projetos-title"><span id="sc-title">Residência<br>Noroeste</span></h2>
-        <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
-        <p class="showcase__narrative" id="sc-narrative">Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.</p>
-        <a href="residencia-noroeste/" class="showcase__link" id="sc-link">
-          <span>Ver projeto</span>
-          <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
-            <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <nav class="showcase__nav" aria-label="Navegar entre projetos">
-          <button class="showcase__dot is-active" type="button" data-project="0" aria-label="Residência Noroeste" aria-current="true"></button>
-          <button class="showcase__dot" type="button" data-project="1" aria-label="Cobertura 116 Sul"></button>
-          <button class="showcase__dot" type="button" data-project="2" aria-label="Clínica Orbis"></button>
-        </nav>
+        <div class="showcase__project-content" aria-live="polite">
+          <div class="showcase__panel-top">
+            <span class="label showcase__counter" id="sc-counter">01 / 03</span>
+            <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
+          </div>
+          <h3 class="showcase__title" id="projetos-title"><span id="sc-title">Residência<br>Noroeste</span></h3>
+          <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
+          <p class="showcase__narrative" id="sc-narrative">Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.</p>
+          <a href="residencia-noroeste/" class="showcase__link" id="sc-link">
+            <span>Ver projeto</span>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
+              <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <nav class="showcase__nav" aria-label="Navegar entre projetos">
+            <button class="showcase__dot is-active" type="button" data-project="0" aria-label="Residência Noroeste" aria-current="true"></button>
+            <button class="showcase__dot" type="button" data-project="1" aria-label="Cobertura 116 Sul"></button>
+            <button class="showcase__dot" type="button" data-project="2" aria-label="Clínica Orbis"></button>
+          </nav>
+        </div>
       </div>
 
       <button class="showcase__arrow showcase__arrow--next" type="button" data-carousel-dir="1" aria-label="Próximo projeto">
@@ -288,6 +286,7 @@
 
         <div class="sobre__content reveal">
           <h2 class="sobre__name">Indira Bonfim</h2>
+          <p class="sobre__title">Arquiteta e Urbanista</p>
           <div class="sobre__divider" aria-hidden="true"></div>
           <div class="sobre__text">
             <p>A Indesigns parte de uma ideia simples: um espaço só faz sentido quando acompanha a vida de quem usa. Antes da planta, vêm a escuta, a rotina e aquilo que precisa funcionar com naturalidade todos os dias.</p>
@@ -341,7 +340,7 @@
       <div class="cta-section__inner">
         <header class="cta-section__header">
           <span class="label cta-section__label reveal">CONTATO</span>
-          <h2 class="cta-section__headline reveal">Uma conversa.</h2>
+          <h2 class="cta-section__headline reveal">Me conta o que você está imaginando.</h2>
           <p class="cta-section__sub reveal">
             Conta o que você está imaginando.<br>
             Ou o que ainda não sabe nomear.
