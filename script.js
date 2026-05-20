@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title:     'Residência<br>Noroeste',
       place:     'Noroeste · Brasília, DF',
       narrative: 'Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.',
-      href:      'projeto-noroeste.html',
+      href:      'residencia-noroeste/',
       img:       'assets/projects/noroeste/cover.jpg',
       imgAlt:    'Residência Noroeste — living da cobertura',
     },
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title:     'Cobertura<br>116 Sul',
       place:     'Asa Sul · Brasília',
       narrative: 'Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros.',
-      href:      'projeto-116-sul.html',
+      href:      'cobertura-116-sul/',
       img:       'assets/hero-bg.jpg',
       imgAlt:    'Cobertura 116 Sul — área coletiva com espaço gourmet e convivência',
     },
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title:     'Clínica<br>Orbis',
       place:     'Brasília, DF · 2025',
       narrative: 'Um consultório psicológico compacto, resolvido para acolher, atender e funcionar sem perder sensibilidade.',
-      href:      'projeto-orbis.html',
+      href:      'clinica-orbis/',
       img:       'assets/projects/orbis/hero.jpg',
       imgAlt:    'Clínica Orbis — sala de atendimento com sofá, poltrona e mobiliário amadeirado',
     },
@@ -318,7 +318,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dot.setAttribute('aria-current', i === index ? 'true' : 'false');
     });
 
+    const textEls = [scCounter, scCategory, scTitle, scPlace, scNarrative, scLink].filter(Boolean);
     if (scImg) scImg.classList.add('is-transitioning');
+    textEls.forEach(el => el.classList.add('is-transitioning'));
     if (showcaseEl) showcaseEl.setAttribute('data-theme', proj.theme);
 
     setTimeout(() => {
@@ -333,12 +335,14 @@ document.addEventListener('DOMContentLoaded', () => {
         scImg.alt = proj.imgAlt;
         setTimeout(() => {
           scImg.classList.remove('is-transitioning');
+          textEls.forEach(el => el.classList.remove('is-transitioning'));
           isAnimating = false;
-        }, 60);
+        }, 120);
       } else {
+        textEls.forEach(el => el.classList.remove('is-transitioning'));
         isAnimating = false;
       }
-    }, 360);
+    }, 520);
 
     currentProject = index;
   };
@@ -362,6 +366,56 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowRight') switchProject((currentProject + 1) % showcaseProjects.length);
       if (e.key === 'ArrowLeft')  switchProject((currentProject - 1 + showcaseProjects.length) % showcaseProjects.length);
     });
+  }
+
+  /* ── GSAP: REFINOS SUTIS ───────────────────────────────── */
+
+  if (window.gsap && window.ScrollTrigger) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      gsap.registerPlugin(window.ScrollTrigger);
+
+      gsap.utils.toArray('.brand-break').forEach((el) => {
+        gsap.fromTo(el, { opacity: 0.78 }, {
+          opacity: 1,
+          duration: 1.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 86%',
+            once: true,
+          },
+        });
+      });
+
+      gsap.utils.toArray('.section-header, .sobre__content, .project-intro, .project-detail-grid, .project-continue').forEach((el) => {
+        gsap.fromTo(el, { y: 28, opacity: 0 }, {
+          y: 0,
+          opacity: 1,
+          duration: 1.05,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 84%',
+            once: true,
+          },
+        });
+      });
+
+      gsap.utils.toArray('.project-hero__img, .showcase__img, .sobre__img').forEach((img) => {
+        gsap.to(img, {
+          yPercent: -3,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: img.closest('section') || img,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.8,
+          },
+        });
+      });
+    }
   }
 
 });

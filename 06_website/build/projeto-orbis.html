@@ -3,17 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clínica Orbis | Indesigns</title>
-  <meta name="description" content="Projeto Clínica Orbis por Indira Bonfim. Consultório psicológico compacto com acolhimento, funcionalidade e inteligência espacial.">
+  <title>Clínica Orbis | Arquitetura para consultório psicológico | Indesigns</title>
+  <meta name="description" content="Clínica Orbis, projeto corporativo da Indesigns em Brasília. Consultório psicológico compacto com acolhimento, funcionalidade, escuta, delicadeza e inteligência espacial.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173a4a">
+  <link rel="canonical" href="https://indesigns.arq.br/clinica-orbis/">
+  <meta property="og:title" content="Clínica Orbis | Indesigns">
+  <meta property="og:description" content="Consultório psicológico compacto em Brasília, pensado para acolhimento, funcionalidade e sensibilidade sem perder inteligência espacial.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://indesigns.arq.br/clinica-orbis/">
+  <meta property="og:image" content="https://indesigns.arq.br/assets/projects/orbis/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="/assets/projects/orbis/hero.jpg" fetchpriority="high">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://indesigns.arq.br/" },
+          { "@type": "ListItem", "position": 2, "name": "Projetos", "item": "https://indesigns.arq.br/#projetos" },
+          { "@type": "ListItem", "position": 3, "name": "Clínica Orbis", "item": "https://indesigns.arq.br/clinica-orbis/" }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://indesigns.arq.br/clinica-orbis/#project",
+        "name": "Clínica Orbis",
+        "url": "https://indesigns.arq.br/clinica-orbis/",
+        "image": "https://indesigns.arq.br/assets/projects/orbis/hero.jpg",
+        "creator": { "@type": "Person", "name": "Indira Bonfim" },
+        "publisher": { "@type": "Organization", "name": "Indesigns Arquitetura e Design" },
+        "about": ["arquitetura corporativa Brasília", "consultório psicológico", "arquitetura para saúde", "interiores acolhedores"],
+        "spatialCoverage": "Brasília, DF",
+        "description": "Projeto para consultório psicológico compacto em Brasília. A Clínica Orbis combina acolhimento, funcionalidade, escuta e inteligência espacial em 27 metros quadrados."
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="project-page">
   <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
-      <a href="index.html#hero" class="nav__logo" aria-label="Indesigns início">
+      <a href="/" class="nav__logo" aria-label="Indesigns início">
         <svg class="nav__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
           <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
@@ -24,10 +62,10 @@
         <span class="nav__wordmark">INDESIGNS</span>
       </a>
       <div class="nav__links" id="navLinks" role="menubar">
-        <a href="index.html#projetos" class="nav__link" role="menuitem">Projetos</a>
-        <a href="index.html#processo" class="nav__link" role="menuitem">Processo</a>
-        <a href="index.html#sobre" class="nav__link" role="menuitem">Sobre</a>
-        <a href="index.html#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
+        <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
+        <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
+        <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -35,17 +73,18 @@
   </nav>
 
   <main>
-    <section class="project-hero project-hero--dark">
-      <img src="assets/projects/orbis/hero.jpg" alt="Sala de atendimento da Clínica Orbis" class="project-hero__img">
+    <article class="project-article" itemscope itemtype="https://schema.org/CreativeWork">
+    <section class="project-hero project-hero--dark" aria-labelledby="project-title">
+      <img src="/assets/projects/orbis/hero.jpg" alt="Sala de atendimento da Clínica Orbis com sofá, poltrona e marcenaria" class="project-hero__img" fetchpriority="high" decoding="async" itemprop="image">
       <div class="project-hero__content">
-        <a href="index.html#projetos" class="project-back">Voltar aos projetos</a>
+        <a href="/#projetos" class="project-back">Voltar aos projetos</a>
         <span class="label project-kicker">CORPORATIVO · SAÚDE</span>
-        <h1>Clínica Orbis</h1>
+        <h1 id="project-title" itemprop="name">Clínica Orbis</h1>
         <p>Consultório psicológico em 27 m², pensado para acolher e funcionar bem.</p>
       </div>
     </section>
 
-    <section class="project-body">
+    <section class="project-body" aria-label="Narrativa e detalhes do projeto">
       <div class="container">
         <div class="project-intro">
           <div class="project-meta">
@@ -53,15 +92,19 @@
             <span><strong>Local</strong> Brasília, DF</span>
             <span><strong>Área</strong> 27 m²</span>
           </div>
-          <div class="project-copy">
+          <div class="project-copy" itemprop="description">
             <p>A Clínica Orbis precisava caber em pouco espaço sem perder delicadeza. Atendimento, copa, prontuários, escritório e encontros ocasionais precisavam coexistir sem criar ruído visual.</p>
             <p>A resposta veio de escolhas precisas: abrir a planta, organizar usos pelo mobiliário e esconder o apoio dentro de uma marcenaria discreta. O resultado é funcional, calmo e acolhedor.</p>
           </div>
         </div>
 
         <div class="project-gallery">
-          <img src="assets/projects/orbis/detail-01.jpg" alt="Detalhe da sala com sofá e planta">
-          <img src="assets/projects/orbis/detail-02.jpg" alt="Entrada com espelho orgânico e teto teal">
+          <figure>
+            <img src="/assets/projects/orbis/detail-01.jpg" alt="Detalhe da sala de atendimento com sofá, planta e luz suave" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="/assets/projects/orbis/detail-02.jpg" alt="Entrada da Clínica Orbis com espelho orgânico e teto teal" loading="lazy" decoding="async">
+          </figure>
         </div>
 
         <div class="project-detail-grid">
@@ -88,16 +131,19 @@
           <h2>Outras formas de viver o espaço</h2>
           <p>Cada projeto revela uma rotina diferente. Volte para a seleção e percorra outros caminhos da Indesigns.</p>
         </div>
-        <a href="index.html#projetos" class="btn btn--secondary">Ver outros projetos</a>
+        <a href="/#projetos" class="btn btn--secondary">Ver outros projetos →</a>
       </div>
 
       <div class="container">
         <span class="label">CONTATO</span>
         <h2>Quer criar um espaço de trabalho mais humano?</h2>
-        <a href="index.html#contato" class="btn btn--primary">Agende uma conversa</a>
+        <a href="/#contato" class="btn btn--primary">Agende uma conversa</a>
       </div>
     </section>
+    </article>
   </main>
-  <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

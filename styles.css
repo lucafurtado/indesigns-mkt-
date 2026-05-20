@@ -66,6 +66,7 @@ button {
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out:   cubic-bezier(0, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-premium: cubic-bezier(0.19, 1, 0.22, 1);
   --t-fast:     0.2s;
   --t-med:      0.35s;
   --t-slow:     0.75s;
@@ -136,10 +137,14 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
-  transition: background var(--t-med) var(--ease),
-              color var(--t-med) var(--ease),
-              border-color var(--t-med) var(--ease),
-              transform var(--t-fast) var(--ease);
+  transition: background 0.55s var(--ease-premium),
+              color 0.55s var(--ease-premium),
+              border-color 0.55s var(--ease-premium),
+              transform 0.55s var(--ease-premium);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn:active {
@@ -420,14 +425,41 @@ button {
 }
 
 .hero__scroll-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 300;
-  color: rgba(236, 236, 234, 0.48);
-  letter-spacing: 0.02em;
-  transition: color var(--t-fast);
+  font-weight: 400;
+  color: rgba(236, 236, 234, 0.78);
+  letter-spacing: 0.03em;
+  transition: color 0.5s var(--ease-premium), transform 0.5s var(--ease-premium);
 }
-.hero__scroll-link:hover { color: var(--offwhite); }
+
+.hero__scroll-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.34);
+  transform-origin: left;
+  opacity: 0.42;
+  transition: transform 0.65s var(--ease-premium), opacity 0.65s var(--ease-premium);
+}
+
+.hero__scroll-link:hover {
+  color: var(--offwhite);
+  transform: translateX(5px);
+}
+
+.hero__scroll-link:hover::after {
+  transform: scaleX(1);
+  opacity: 0.75;
+}
 
 /* Indicador de scroll */
 .hero__indicator {
@@ -585,7 +617,7 @@ button {
    ============================================================ */
 
 .processo {
-  padding: var(--section-gap) 0;
+  padding: clamp(142px, 14vw, 196px) 0;
   background-color: var(--offwhite);
 }
 
@@ -649,7 +681,7 @@ button {
    ============================================================ */
 
 .sobre {
-  padding: var(--section-gap) 0;
+  padding: clamp(148px, 14vw, 208px) 0;
   background-color: var(--greige);
 }
 
@@ -669,6 +701,14 @@ button {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
+}
+
+.sobre__img {
+  transition: transform 1.4s var(--ease-premium);
+}
+
+.sobre__img-wrap:hover .sobre__img {
+  transform: scale(1.025);
 }
 
 /* Placeholder para foto */
@@ -2240,7 +2280,7 @@ button {
 
 .brand-break {
   position: relative;
-  height: clamp(54px, 7vw, 92px);
+  height: clamp(60px, 6vw, 88px);
   overflow: hidden;
   background-color: transparent;
 }
@@ -2248,9 +2288,10 @@ button {
 .brand-break::before {
   content: '';
   position: absolute;
-  inset: -20px 0;
-  background-repeat: repeat;
-  background-size: 420px auto;
+  inset: 0;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
   opacity: 1;
 }
 
@@ -2271,7 +2312,7 @@ button {
 
 .brand-break--second::before {
   background-image: url('assets/patterns/indesigns-27.png');
-  background-size: 360px auto;
+  background-size: auto 100%;
   opacity: 1;
 }
 
@@ -2451,7 +2492,7 @@ button {
    ============================================================ */
 
 .brand-break {
-  height: clamp(96px, 9vw, 148px);
+  height: clamp(60px, 6vw, 88px);
   background-color: transparent;
 }
 
@@ -2518,11 +2559,17 @@ button {
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  transform: scale(1.001);
+  transition: opacity 0.82s var(--ease-premium), transform 1.2s var(--ease-premium);
+  will-change: opacity, transform;
 }
 
 .showcase__img.is-transitioning {
   opacity: 0;
+  transform: scale(1.018);
+}
+
+.showcase__visual:hover .showcase__img {
   transform: scale(1.025);
 }
 
@@ -2534,7 +2581,26 @@ button {
   flex-direction: column;
   justify-content: center;
   background-color: var(--sc-bg);
-  transition: background-color 0.8s var(--ease);
+  transition: background-color 0.9s var(--ease-premium);
+}
+
+.showcase__counter,
+.showcase__category,
+.showcase__title,
+.showcase__place,
+.showcase__narrative,
+.showcase__link {
+  transition: opacity 0.58s var(--ease-premium), transform 0.58s var(--ease-premium);
+}
+
+.showcase__counter.is-transitioning,
+.showcase__category.is-transitioning,
+.showcase__title.is-transitioning,
+.showcase__place.is-transitioning,
+.showcase__narrative.is-transitioning,
+.showcase__link.is-transitioning {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .showcase__panel-top {
@@ -2571,12 +2637,13 @@ button {
   color: var(--offwhite);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background var(--t-med) var(--ease), border-color var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+  transition: background 0.55s var(--ease-premium), border-color 0.55s var(--ease-premium), transform 0.55s var(--ease-premium);
 }
 
 .showcase__arrow:hover {
   background: rgba(14, 36, 48, 0.42);
   border-color: rgba(236, 236, 234, 0.72);
+  transform: translateY(-50%) scale(1.04);
 }
 
 .showcase__arrow--prev {
@@ -2616,7 +2683,7 @@ button {
 
 @media (max-width: 600px) {
   .brand-break {
-    height: 96px;
+    height: 68px;
   }
 
   .showcase__img {
@@ -2787,12 +2854,22 @@ button {
   grid-template-columns: 1.4fr 1fr 1fr;
 }
 
+.project-gallery figure {
+  overflow: hidden;
+  min-height: 360px;
+}
+
 .project-gallery img {
   width: 100%;
   height: 100%;
   min-height: 360px;
   object-fit: cover;
   display: block;
+  transition: transform 1.4s var(--ease-premium);
+}
+
+.project-gallery figure:hover img {
+  transform: scale(1.028);
 }
 
 .project-detail-grid {
