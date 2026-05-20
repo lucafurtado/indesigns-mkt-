@@ -4,14 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Indesigns · Arquitetura e Design | Indira Bonfim · Brasília</title>
-  <meta name="description" content="Arquitetura de interiores em Brasília. Indira Bonfim — projetos residenciais e comerciais construídos a partir de como o espaço vai ser vivido.">
-  <meta property="og:title" content="Indesigns · Arquitetura e Design · Brasília">
-  <meta property="og:description" content="Projetos construídos a partir de como cada espaço vai ser vivido — não de como ele deve parecer.">
+  <meta name="description" content="Indesigns — escritório de arquitetura e interiores em Brasília. Indira Bonfim projeta espaços residenciais e comerciais com precisão, luz e identidade.">
+  <meta name="keywords" content="arquitetura Brasília, arquitetura de interiores Brasília, projeto residencial Brasília, reforma Brasília, arquitetura Asa Sul, arquitetura Noroeste, designer de interiores Brasília">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Indesigns · Arquitetura e Interiores · Brasília, DF">
+  <meta property="og:description" content="Escritório de arquitetura em Brasília. Projetos residenciais e comerciais pensados para serem vividos, não apenas fotografados.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="canonical" href="https://indesigns.arq.br">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Indesigns Arquitetura e Design",
+    "description": "Escritório de arquitetura de interiores em Brasília. Projetos residenciais e comerciais.",
+    "url": "https://indesigns.arq.br",
+    "telephone": "+5561998586151",
+    "email": "contato@indesigns.arq.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "founder": { "@type": "Person", "name": "Indira Bonfim" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto residencial" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto de interiores" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria de arquitetura" } }
+      ]
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -76,69 +107,42 @@
     </div>
   </section>
 
-  <!-- PORTFÓLIO -->
-  <section class="portfolio" id="projetos" aria-label="Portfólio">
-    <div class="container">
-      <header class="section-header">
-        <span class="label">PROJETOS</span>
-        <h2 class="section-title">Projetos para viver melhor.</h2>
-      </header>
+  <!-- SHOWCASE DE PROJETOS -->
+  <section class="showcase" id="projetos" data-theme="light" aria-label="Projetos selecionados">
+    <div class="showcase__wrap">
 
-      <div class="portfolio__grid">
-
-        <article class="portfolio__card portfolio__card--main reveal" onclick="location.href='#noroeste'" style="cursor:pointer">
-          <div class="portfolio__img-wrap">
-            <div class="portfolio__img portfolio__img--noroeste" aria-label="Residência Noroeste — living da cobertura, Brasília">
-              <div class="portfolio__img-overlay">
-                <span class="portfolio__view-label">Ver projeto</span>
-              </div>
-            </div>
-          </div>
-          <footer class="portfolio__info">
-            <span class="portfolio__category">Residencial</span>
-            <h3 class="portfolio__name">Residência Noroeste</h3>
-            <span class="label portfolio__type">COBERTURA · NOROESTE, DF</span>
-            <p class="portfolio__desc">Uma família saindo de uma casa ampla para uma cobertura mais compacta, sem abrir mão de convivência, conforto e sensação de lar.</p>
-          </footer>
-        </article>
-
-        <article class="portfolio__card reveal" onclick="location.href='#orbis'" style="cursor:pointer">
-          <div class="portfolio__img-wrap">
-            <div class="portfolio__img portfolio__img--orbis" aria-label="Clínica Orbis — sala de atendimento, Brasília">
-              <div class="portfolio__img-overlay">
-                <span class="portfolio__view-label">Ver projeto</span>
-              </div>
-            </div>
-          </div>
-          <footer class="portfolio__info">
-            <span class="portfolio__category">Corporativo</span>
-            <h3 class="portfolio__name">Clínica Orbis</h3>
-            <span class="label portfolio__type">SAÚDE · BRASÍLIA, DF · 2025</span>
-            <p class="portfolio__desc">Um consultório psicológico compacto, resolvido para acolher, atender, guardar, reunir e respirar sem perder delicadeza.</p>
-          </footer>
-        </article>
-
-        <article class="portfolio__card reveal" onclick="location.href='#cobertura-116'" style="cursor:pointer">
-          <div class="portfolio__img-wrap">
-            <div class="portfolio__img portfolio__img--02" aria-label="Cobertura 116 Sul — espaço coletivo, Brasília">
-              <div class="portfolio__img-overlay">
-                <span class="portfolio__view-label">Ver projeto</span>
-              </div>
-            </div>
-          </div>
-          <footer class="portfolio__info">
-            <span class="portfolio__category">Apartamentos</span>
-            <h3 class="portfolio__name">Cobertura 116 Sul</h3>
-            <span class="label portfolio__type">ÁREA COLETIVA · ASA SUL</span>
-            <p class="portfolio__desc">Uma cobertura coletiva pensada para encontros, treino e circulação clara, com privacidade onde ela precisa existir.</p>
-          </footer>
-        </article>
-
+      <div class="showcase__panel">
+        <div class="showcase__panel-top">
+          <span class="label showcase__counter" id="sc-counter">01 / 03</span>
+          <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
+        </div>
+        <h2 class="showcase__title" id="sc-title">Residência<br>Noroeste</h2>
+        <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
+        <p class="showcase__narrative" id="sc-narrative">Uma família de quatro mudou para uma cobertura mais compacta. O projeto resolveu convivência, conforto e identidade dentro de um espaço que precisava render mais.</p>
+        <a href="#noroeste" class="showcase__link" id="sc-link">
+          <span>Ver projeto</span>
+          <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
+            <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <nav class="showcase__nav" aria-label="Navegar entre projetos">
+          <button class="showcase__dot is-active" data-project="0" aria-label="Residência Noroeste" aria-current="true"></button>
+          <button class="showcase__dot" data-project="1" aria-label="Clínica Orbis"></button>
+          <button class="showcase__dot" data-project="2" aria-label="Cobertura 116 Sul"></button>
+        </nav>
       </div>
 
-      <p class="portfolio__note reveal">
-        Antes da planta, vem a vida que vai acontecer ali: a rotina, os encontros, os incômodos pequenos e tudo o que precisa funcionar sem chamar atenção.
-      </p>
+      <div class="showcase__visual" aria-hidden="true">
+        <div class="showcase__img-wrap">
+          <img
+            class="showcase__img"
+            id="sc-img"
+            src="assets/projects/noroeste/hero.jpg"
+            alt="Residência Noroeste — sala de estar com sofá sage, cadeiras de madeira e escadaria"
+            loading="eager">
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -219,9 +223,6 @@
         </div>
       </footer>
 
-      <div class="orbis__sign reveal">
-        <em>Dentro de cada detalhe.</em>
-      </div>
     </div>
 
   </section>
@@ -271,16 +272,21 @@
           <div class="noroeste__palette-img-wrap">
             <img
               src="assets/projects/noroeste/palette.jpg"
-              alt="Prancha de materiais — madeira, bouclé, sage, rattan, cobre"
+              alt="Prancha de materiais — madeira clara, bouclé off-white, sage, rattan natural"
               loading="lazy">
           </div>
-          <span class="label noroeste__palette-label">PALETA DO PROJETO</span>
+          <div class="noroeste__mat-editorial">
+            <span class="label noroeste__mat-heading">MATERIALIDADE</span>
+            <ul class="noroeste__mat-list" aria-label="Materiais do projeto">
+              <li>Madeira clara</li>
+              <li>Bouclé off-white</li>
+              <li>Verde sage</li>
+              <li>Rattan natural</li>
+              <li>Luz filtrada</li>
+            </ul>
+          </div>
         </div>
 
-      </div>
-
-      <div class="noroeste__slogan-accent reveal">
-        <em>Dentro de cada detalhe.</em>
       </div>
 
       <!-- Galeria: quartos das crianças -->
@@ -320,9 +326,6 @@
         </div>
       </footer>
 
-      <div class="noroeste__sign reveal">
-        <em>Dentro de cada detalhe.</em>
-      </div>
     </div>
 
   </section>
@@ -474,8 +477,8 @@
           <span class="label cta-section__label reveal">CONTATO</span>
           <h2 class="cta-section__headline reveal">Uma conversa.</h2>
           <p class="cta-section__sub reveal">
-            Conta o que você está imaginando —<br>
-            ou o que ainda não sabe nomear.
+            Conta o que você está imaginando.<br>
+            Ou o que ainda não sabe nomear.
             <span class="cta-section__sub-note">Retorno em até 24 horas.</span>
           </p>
         </header>

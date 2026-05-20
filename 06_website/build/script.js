@@ -240,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── LINHA DE PROCESSO ANIMADA ───────────────────────────── */
-  // Anima a linha conectora do processo ao entrar na viewport
 
   const processoSteps = document.querySelector('.processo__steps');
   if (processoSteps) {
@@ -254,6 +253,107 @@ document.addEventListener('DOMContentLoaded', () => {
       { threshold: 0.3 }
     );
     lineObserver.observe(processoSteps);
+  }
+
+  /* ── SHOWCASE DE PROJETOS ────────────────────────────────── */
+
+  const showcaseProjects = [
+    {
+      theme:     'light',
+      counter:   '01 / 03',
+      category:  'RESIDENCIAL',
+      title:     'Residência<br>Noroeste',
+      place:     'Noroeste · Brasília, DF',
+      narrative: 'Uma família de quatro mudou para uma cobertura mais compacta. O projeto resolveu convivência, conforto e identidade dentro de um espaço que precisava render mais.',
+      href:      '#noroeste',
+      img:       'assets/projects/noroeste/hero.jpg',
+      imgAlt:    'Residência Noroeste — sala de estar com sofá sage, cadeiras de madeira e escadaria',
+    },
+    {
+      theme:     'dark',
+      counter:   '02 / 03',
+      category:  'CORPORATIVO · SAÚDE',
+      title:     'Clínica<br>Orbis',
+      place:     'Brasília, DF · 2025',
+      narrative: 'Vinte e sete metros quadrados para atendimento, armazenamento, copa e reuniões. Tudo funcionando sem parecer apertado.',
+      href:      '#orbis',
+      img:       'assets/projects/orbis/hero.jpg',
+      imgAlt:    'Clínica Orbis — sala de atendimento com sofá, poltrona e mobiliário amadeirado',
+    },
+    {
+      theme:     'warm',
+      counter:   '03 / 03',
+      category:  'ÁREA COLETIVA',
+      title:     'Cobertura<br>116 Sul',
+      place:     'Asa Sul · Brasília',
+      narrative: 'Gourmet, academia e circulação em uma cobertura coletiva na Asa Sul. Usos distintos com uma lógica de ocupação clara.',
+      href:      '#cobertura-116',
+      img:       'assets/hero-bg.jpg',
+      imgAlt:    'Cobertura 116 Sul — área coletiva com espaço gourmet e convivência',
+    },
+  ];
+
+  const showcaseEl  = document.querySelector('.showcase');
+  const scCounter   = document.getElementById('sc-counter');
+  const scCategory  = document.getElementById('sc-category');
+  const scTitle     = document.getElementById('sc-title');
+  const scPlace     = document.getElementById('sc-place');
+  const scNarrative = document.getElementById('sc-narrative');
+  const scLink      = document.getElementById('sc-link');
+  const scImg       = document.getElementById('sc-img');
+  const scDots      = document.querySelectorAll('.showcase__dot');
+
+  let currentProject = 0;
+  let isAnimating    = false;
+
+  const switchProject = (index) => {
+    if (isAnimating || index === currentProject) return;
+    isAnimating = true;
+
+    const proj = showcaseProjects[index];
+
+    scDots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === index);
+      dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+    });
+
+    if (scImg) scImg.classList.add('is-transitioning');
+    if (showcaseEl) showcaseEl.setAttribute('data-theme', proj.theme);
+
+    setTimeout(() => {
+      if (scCounter)   scCounter.textContent   = proj.counter;
+      if (scCategory)  scCategory.textContent  = proj.category;
+      if (scTitle)     scTitle.innerHTML        = proj.title;
+      if (scPlace)     scPlace.textContent      = proj.place;
+      if (scNarrative) scNarrative.textContent  = proj.narrative;
+      if (scLink)      scLink.setAttribute('href', proj.href);
+      if (scImg) {
+        scImg.src = proj.img;
+        scImg.alt = proj.imgAlt;
+        setTimeout(() => {
+          scImg.classList.remove('is-transitioning');
+          isAnimating = false;
+        }, 60);
+      } else {
+        isAnimating = false;
+      }
+    }, 360);
+
+    currentProject = index;
+  };
+
+  scDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      switchProject(parseInt(dot.dataset.project, 10));
+    });
+  });
+
+  // Keyboard navigation within showcase
+  if (showcaseEl) {
+    showcaseEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') switchProject((currentProject + 1) % showcaseProjects.length);
+      if (e.key === 'ArrowLeft')  switchProject((currentProject - 1 + showcaseProjects.length) % showcaseProjects.length);
+    });
   }
 
 });

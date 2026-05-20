@@ -358,14 +358,14 @@ button {
   background: linear-gradient(
       to bottom,
       rgba(8, 20, 26, 0.04) 0%,
-      rgba(8, 20, 26, 0.16) 44%,
-      rgba(8, 20, 26, 0.50) 100%
+      rgba(8, 20, 26, 0.22) 44%,
+      rgba(8, 20, 26, 0.68) 100%
     ),
     linear-gradient(
       to right,
-      rgba(8, 20, 26, 0.58) 0%,
-      rgba(8, 20, 26, 0.28) 42%,
-      rgba(8, 20, 26, 0.04) 78%
+      rgba(8, 20, 26, 0.68) 0%,
+      rgba(8, 20, 26, 0.34) 42%,
+      rgba(8, 20, 26, 0.06) 78%
     );
 }
 
@@ -586,7 +586,7 @@ button {
 
 .processo {
   padding: var(--section-gap) 0;
-  background-color: var(--greige);
+  background-color: var(--offwhite);
 }
 
 .processo .section-header {
@@ -609,24 +609,30 @@ button {
 
 .processo__num {
   font-family: var(--font-label);
-  font-size: 52px;
-  font-weight: 300;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   color: var(--teal);
-  opacity: 0.18;
+  opacity: 0.5;
   line-height: 1;
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
 
+.processo__step {
+  border-top: 1px solid rgba(23, 58, 74, 0.1);
+  padding-top: 28px;
+}
+
 .processo__title {
   font-family: var(--font-headline);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
   color: var(--petroleo);
   letter-spacing: -0.01em;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .processo__text {
@@ -634,8 +640,8 @@ button {
   font-size: 13.5px;
   font-weight: 300;
   color: var(--petroleo);
-  opacity: 0.65;
-  line-height: 1.8;
+  opacity: 0.6;
+  line-height: 1.85;
 }
 
 /* ============================================================
@@ -644,6 +650,7 @@ button {
 
 .sobre {
   padding: var(--section-gap) 0;
+  background-color: var(--greige);
 }
 
 .sobre__grid {
@@ -1893,7 +1900,7 @@ button {
 
 .cobertura {
   padding: var(--section-gap) 0;
-  background-color: var(--greige);
+  background-color: var(--petroleo);
   overflow: hidden;
 }
 
@@ -1916,7 +1923,7 @@ button {
   font-family: var(--font-headline);
   font-size: clamp(44px, 5.5vw, 72px);
   font-weight: 400;
-  color: var(--petroleo);
+  color: var(--offwhite);
   letter-spacing: -0.025em;
   line-height: 1.02;
 }
@@ -1925,7 +1932,7 @@ button {
   font-family: var(--font-label);
   font-size: 10px;
   letter-spacing: 0.12em;
-  color: var(--teal);
+  color: var(--sage);
   text-transform: uppercase;
   opacity: 0.7;
 }
@@ -1951,19 +1958,23 @@ button {
   font-family: var(--font-body);
   font-size: 17px;
   font-weight: 300;
-  color: rgba(23, 58, 74, 0.72);
+  color: rgba(236, 236, 234, 0.68);
   line-height: 1.9;
   margin-bottom: 26px;
 }
 
 .cobertura__body p:first-child {
   font-size: 21px;
-  color: var(--petroleo);
+  color: var(--offwhite);
   line-height: 1.55;
 }
 
 .cobertura__body p:last-child {
   margin-bottom: 0;
+}
+
+.cobertura__label {
+  color: var(--sage);
 }
 
 /* ── Noroeste responsivo ──────────────────────────────────── */
@@ -2005,4 +2016,259 @@ button {
   .noroeste__text p:first-child {
     font-size: 18px;
   }
+}
+
+/* ============================================================
+   SHOWCASE DE PROJETOS — Editorial cinematic
+   ============================================================ */
+
+.showcase {
+  --sc-bg:         var(--offwhite);
+  --sc-title:      var(--petroleo);
+  --sc-text:       rgba(23, 58, 74, 0.60);
+  --sc-accent:     var(--teal);
+  --sc-link:       var(--petroleo);
+  --sc-border:     rgba(23, 58, 74, 0.10);
+  --sc-dot-bg:     rgba(23, 58, 74, 0.18);
+  --sc-dot-active: var(--teal);
+
+  background-color: var(--sc-bg);
+  transition: background-color 0.8s var(--ease);
+  overflow: hidden;
+}
+
+.showcase[data-theme="dark"] {
+  --sc-bg:         var(--petroleo-dark);
+  --sc-title:      var(--offwhite);
+  --sc-text:       rgba(236, 236, 234, 0.65);
+  --sc-accent:     var(--sage);
+  --sc-link:       var(--sage);
+  --sc-border:     rgba(138, 176, 171, 0.18);
+  --sc-dot-bg:     rgba(138, 176, 171, 0.22);
+  --sc-dot-active: var(--sage);
+}
+
+.showcase[data-theme="warm"] {
+  --sc-bg:         var(--greige);
+  --sc-title:      var(--petroleo);
+  --sc-text:       rgba(23, 58, 74, 0.60);
+  --sc-accent:     var(--teal);
+  --sc-link:       var(--petroleo);
+  --sc-border:     rgba(23, 58, 74, 0.10);
+  --sc-dot-bg:     rgba(23, 58, 74, 0.18);
+  --sc-dot-active: var(--teal);
+}
+
+.showcase__wrap {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  min-height: clamp(580px, 82vh, 920px);
+}
+
+.showcase__panel {
+  padding: clamp(64px, 8vw, 128px) clamp(40px, 6vw, 88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.showcase__panel-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.showcase__counter {
+  color: var(--sc-accent);
+  opacity: 0.45;
+}
+
+.showcase__category {
+  color: var(--sc-accent);
+  transition: color 0.5s var(--ease);
+}
+
+.showcase__title {
+  font-family: var(--font-headline);
+  font-size: clamp(46px, 5.5vw, 76px);
+  font-weight: 400;
+  color: var(--sc-title);
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin-bottom: 18px;
+  transition: color 0.5s var(--ease), opacity 0.35s var(--ease);
+}
+
+.showcase__place {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-accent);
+  opacity: 0.62;
+  margin-bottom: 28px;
+  transition: color 0.5s var(--ease);
+}
+
+.showcase__narrative {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--sc-text);
+  max-width: 360px;
+  margin-bottom: 44px;
+  transition: color 0.5s var(--ease), opacity 0.35s var(--ease);
+}
+
+.showcase__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-link);
+  opacity: 0.65;
+  transition: opacity var(--t-med) var(--ease),
+              gap var(--t-med) var(--ease),
+              color 0.5s var(--ease);
+  margin-bottom: 64px;
+}
+.showcase__link:hover {
+  opacity: 1;
+  gap: 18px;
+}
+
+.showcase__nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.showcase__dot {
+  width: 28px;
+  height: 2px;
+  background: var(--sc-dot-bg);
+  border: none;
+  padding: 6px 0;
+  background-clip: content-box;
+  cursor: pointer;
+  transition: background var(--t-med) var(--ease),
+              width var(--t-med) var(--ease-spring);
+}
+.showcase__dot.is-active {
+  width: 44px;
+  background: var(--sc-dot-active);
+}
+.showcase__dot:hover:not(.is-active) {
+  background: var(--sc-dot-active);
+  opacity: 0.55;
+}
+
+.showcase__visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase__img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.showcase__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+
+.showcase__img.is-transitioning {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+/* ── Showcase responsivo ─────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .showcase__wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase__visual {
+    order: -1;
+    height: clamp(300px, 56vw, 520px);
+    position: relative;
+  }
+
+  .showcase__img-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .showcase__panel {
+    padding: 56px 36px 64px;
+    justify-content: flex-start;
+  }
+
+  .showcase__narrative {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .showcase__visual {
+    height: 260px;
+  }
+
+  .showcase__panel {
+    padding: 48px 24px 56px;
+  }
+
+  .showcase__title {
+    font-size: clamp(38px, 10.5vw, 52px);
+  }
+}
+
+/* ============================================================
+   MATERIALIDADE — Micro seção editorial (Noroeste)
+   ============================================================ */
+
+.noroeste__palette {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.noroeste__mat-editorial {
+  padding-top: 20px;
+}
+
+.noroeste__mat-heading {
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.noroeste__mat-list {
+  list-style: none;
+}
+
+.noroeste__mat-list li {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--petroleo);
+  opacity: 0.65;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(23, 58, 74, 0.08);
+}
+
+.noroeste__mat-list li:last-child {
+  border-bottom: none;
 }
