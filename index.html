@@ -49,19 +49,8 @@
 
   <!-- HERO -->
   <section class="hero" id="hero" aria-label="Apresentação">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__geo" aria-hidden="true"></div>
-    </div>
+    <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__overlay" aria-hidden="true"></div>
-
-    <div class="hero__ghost" aria-hidden="true">
-      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
-        <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#ececea"/>
-        <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#ececea"/>
-        <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#ececea"/>
-      </svg>
-    </div>
 
     <div class="hero__content">
       <span class="label hero__label fade-up">DENTRO DE CADA DETALHE</span>
@@ -92,12 +81,28 @@
     <div class="container">
       <header class="section-header">
         <span class="label">PROJETOS</span>
-        <h2 class="section-title">Espaços vividos.</h2>
+        <h2 class="section-title">Projetos para viver melhor.</h2>
       </header>
 
       <div class="portfolio__grid">
 
-        <article class="portfolio__card portfolio__card--main reveal" onclick="location.href='#orbis'" style="cursor:pointer">
+        <article class="portfolio__card portfolio__card--main reveal" onclick="location.href='#noroeste'" style="cursor:pointer">
+          <div class="portfolio__img-wrap">
+            <div class="portfolio__img portfolio__img--noroeste" aria-label="Residência Noroeste — living da cobertura, Brasília">
+              <div class="portfolio__img-overlay">
+                <span class="portfolio__view-label">Ver projeto</span>
+              </div>
+            </div>
+          </div>
+          <footer class="portfolio__info">
+            <span class="portfolio__category">Residencial</span>
+            <h3 class="portfolio__name">Residência Noroeste</h3>
+            <span class="label portfolio__type">COBERTURA · NOROESTE, DF</span>
+            <p class="portfolio__desc">Uma família saindo de uma casa ampla para uma cobertura mais compacta, sem abrir mão de convivência, conforto e sensação de lar.</p>
+          </footer>
+        </article>
+
+        <article class="portfolio__card reveal" onclick="location.href='#orbis'" style="cursor:pointer">
           <div class="portfolio__img-wrap">
             <div class="portfolio__img portfolio__img--orbis" aria-label="Clínica Orbis — sala de atendimento, Brasília">
               <div class="portfolio__img-overlay">
@@ -106,46 +111,33 @@
             </div>
           </div>
           <footer class="portfolio__info">
+            <span class="portfolio__category">Corporativo</span>
             <h3 class="portfolio__name">Clínica Orbis</h3>
             <span class="label portfolio__type">SAÚDE · BRASÍLIA, DF · 2025</span>
-            <p class="portfolio__desc">Um espaço clínico que precisava, antes de tudo, parecer humano.</p>
+            <p class="portfolio__desc">Um consultório psicológico compacto, resolvido para acolher, atender, guardar, reunir e respirar sem perder delicadeza.</p>
           </footer>
         </article>
 
-        <article class="portfolio__card reveal">
+        <article class="portfolio__card reveal" onclick="location.href='#cobertura-116'" style="cursor:pointer">
           <div class="portfolio__img-wrap">
-            <div class="portfolio__img portfolio__img--02" aria-label="Cobertura 116 Sul">
+            <div class="portfolio__img portfolio__img--02" aria-label="Cobertura 116 Sul — espaço coletivo, Brasília">
               <div class="portfolio__img-overlay">
                 <span class="portfolio__view-label">Ver projeto</span>
               </div>
             </div>
           </div>
           <footer class="portfolio__info">
+            <span class="portfolio__category">Apartamentos</span>
             <h3 class="portfolio__name">Cobertura 116 Sul</h3>
             <span class="label portfolio__type">ÁREA COLETIVA · ASA SUL</span>
-            <p class="portfolio__desc">Um espaço coletivo que passou a ser habitado de verdade.</p>
-          </footer>
-        </article>
-
-        <article class="portfolio__card reveal" onclick="location.href='#noroeste'" style="cursor:pointer">
-          <div class="portfolio__img-wrap">
-            <div class="portfolio__img portfolio__img--noroeste" aria-label="Residência Noroeste — Brasília">
-              <div class="portfolio__img-overlay">
-                <span class="portfolio__view-label">Ver projeto</span>
-              </div>
-            </div>
-          </div>
-          <footer class="portfolio__info">
-            <h3 class="portfolio__name">Residência Noroeste</h3>
-            <span class="label portfolio__type">RESIDENCIAL · NOROESTE, DF</span>
-            <p class="portfolio__desc">Um apartamento que já estava certo — e precisava só se encontrar.</p>
+            <p class="portfolio__desc">Uma cobertura coletiva pensada para encontros, treino e circulação clara, com privacidade onde ela precisa existir.</p>
           </footer>
         </article>
 
       </div>
 
       <p class="portfolio__note reveal">
-        Todo projeto aqui tem nome, endereço e uma conversa antes do primeiro traço.
+        Antes da planta, vem a vida que vai acontecer ali: a rotina, os encontros, os incômodos pequenos e tudo o que precisa funcionar sem chamar atenção.
       </p>
     </div>
   </section>
@@ -183,10 +175,10 @@
       <div class="orbis__body">
 
         <div class="orbis__text reveal">
-          <p>Um cliente pediu um projeto bem simples.</p>
-          <p>27 metros quadrados. Precisava de consultório, escritório, copa, divã, espaço para arquivar prontuários — e reunião para até 25 pessoas.</p>
-          <p>25 pessoas. Sim.</p>
-          <p>Demolimos a parede divisória, setorizamos com mobiliário, escondemos a copa dentro de um armário vazado. Um toque de azul no teto para trazer paz. Cada metro resolvido sem parecer resolvido.</p>
+          <p>Um consultório psicológico de 27 metros quadrados precisava acolher sem parecer improvisado.</p>
+          <p>O espaço tinha que receber atendimentos, guardar prontuários, abrigar uma copa discreta, funcionar como escritório e ainda permitir encontros com mais pessoas quando necessário.</p>
+          <p>A solução veio menos de acrescentar e mais de escolher bem: retirar uma divisória, organizar usos pelo mobiliário e esconder o que era serviço dentro de uma marcenaria leve.</p>
+          <p>O resultado é compacto, mas não apertado. Funcional, mas sensível. Um lugar onde o cuidado começa antes da conversa.</p>
         </div>
 
         <div class="orbis__gallery reveal">
@@ -268,11 +260,11 @@
       <div class="noroeste__body">
 
         <div class="noroeste__text reveal">
-          <p>Um casal, três filhos e uma planta baixa com potencial — desde que a gente pensasse em como aquela família realmente vive.</p>
-          <p>Sala que acolhe todo mundo ao mesmo tempo. Gourmet que sirva pra rotina, não só pra ocasião especial. Quartos que pareçam de criança sem sufocar o espaço.</p>
-          <p>A gente começou pela vida deles — como chegam em casa, o que acontece num sábado de manhã quando ninguém tem pressa. Daí sim a gente pegou o papel.</p>
-          <p>Cada quarto tem a personalidade de quem dorme ali: as flores da menina, os balões de ar quente do menino, o espaço do bebê pensado pra crescer junto com ele. O que conecta os três está na prancha de materiais — madeira, bouclé, sage, rattan — discreto, mas presente em tudo.</p>
-          <p>Um apartamento que parece deles. Esse sempre é o objetivo.</p>
+          <p>Um casal com dois filhos mudou de uma casa ampla para uma cobertura no Noroeste.</p>
+          <p>O desafio não era só caber. Era manter a vida da família acontecendo com conforto: a sala como ponto de encontro, a área gourmet próxima da rotina, os quartos com identidade e armazenamento bem pensado.</p>
+          <p>A planta precisava ficar mais inteligente sem perder a sensação de casa. Cada decisão procurou liberar circulação, aproximar usos e transformar metros mais compactos em espaços que funcionam no dia a dia.</p>
+          <p>Nos quartos, o cuidado aparece de perto: o universo floral da menina, os balões do menino, a marcenaria que organiza sem pesar. No living, a luz, a textura e a paleta costuram tudo com calma.</p>
+          <p>Uma cobertura feita para uma família continuar se reconhecendo em casa, mesmo vivendo de outro jeito.</p>
         </div>
 
         <div class="noroeste__palette reveal">
@@ -291,28 +283,21 @@
         <em>Dentro de cada detalhe.</em>
       </div>
 
-      <!-- Galeria: os três quartos lado a lado -->
+      <!-- Galeria: quartos das crianças -->
       <div class="noroeste__rooms reveal">
         <div class="noroeste__room">
           <img
             src="assets/projects/noroeste/room-girl.jpg"
             alt="Quarto I — menina, flores e rosa"
             loading="lazy">
-          <span class="label noroeste__room-label">QUARTO I</span>
+          <span class="label noroeste__room-label">QUARTO DA MENINA</span>
         </div>
         <div class="noroeste__room">
           <img
             src="assets/projects/noroeste/room-boy.jpg"
             alt="Quarto II — menino, balões de ar quente"
             loading="lazy">
-          <span class="label noroeste__room-label">QUARTO II</span>
-        </div>
-        <div class="noroeste__room">
-          <img
-            src="assets/projects/noroeste/room-baby.jpg"
-            alt="Quarto III — bebê, madeira e cobre"
-            loading="lazy">
-          <span class="label noroeste__room-label">QUARTO III</span>
+          <span class="label noroeste__room-label">QUARTO DO MENINO</span>
         </div>
       </div>
 
@@ -331,7 +316,7 @@
         </div>
         <div class="noroeste__tag">
           <span class="label">FOCO</span>
-          <span class="noroeste__tag-value">Quartos infantis</span>
+          <span class="noroeste__tag-value">Rotina familiar</span>
         </div>
       </footer>
 
@@ -340,6 +325,35 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- PROJETO: COBERTURA 116 SUL -->
+  <section class="cobertura" id="cobertura-116" aria-label="Projeto Cobertura 116 Sul">
+    <div class="container">
+      <div class="cobertura__intro reveal">
+        <span class="label cobertura__label">APARTAMENTOS · ÁREA COLETIVA</span>
+        <div class="cobertura__title-row">
+          <h2 class="cobertura__name">Cobertura 116 Sul</h2>
+          <span class="cobertura__meta">Asa Sul, Brasília</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cobertura__hero-wrap reveal">
+      <img
+        class="cobertura__hero-img"
+        src="assets/hero-bg.jpg"
+        alt="Cobertura 116 Sul — área coletiva com atmosfera de convivência"
+        loading="lazy">
+    </div>
+
+    <div class="container">
+      <div class="cobertura__body reveal">
+        <p>Na cobertura coletiva da 116 Sul, o projeto precisava organizar usos diferentes sem transformar o espaço em uma sequência de ambientes desconectados.</p>
+        <p>Gourmet e academia deveriam funcionar juntos, mas com limites claros. A circulação precisava ser fácil, a área social convidativa e a privacidade preservada nos momentos certos.</p>
+        <p>A ideia foi criar um lugar para a vida social contemporânea do prédio: encontros mais naturais, usos mais flexíveis e uma cobertura que deixa de ser passagem para virar permanência.</p>
+      </div>
+    </div>
   </section>
 
   <!-- PROCESSO -->
@@ -390,7 +404,7 @@
               Para produção: copiar para images/indira.jpg e atualizar o src.
             -->
             <img
-              src="assets/people/indira-01.jpg"
+              src="assets/people/indira-profile.jpg"
               alt="Indira Bonfim — arquiteta, Indesigns, Brasília"
               loading="lazy"
               class="sobre__img"
@@ -406,11 +420,10 @@
           <h2 class="sobre__name">Indira Bonfim</h2>
           <div class="sobre__divider" aria-hidden="true"></div>
           <div class="sobre__text">
-            <p>Arquiteta em Brasília há quatro anos.</p>
-            <p>Cresci numa cidade que foi desenhada antes de ser habitada — onde a escala, a luz e a circulação foram pensadas antes do primeiro morador. Isso muda a forma de ler um espaço.</p>
-            <p>A gente não começa pelo projeto. Começa pela conversa — como você usa a cozinha de manhã, onde as crianças ficam quando você está trabalhando, como é o seu fim de semana em casa. Esse nível de detalhe não aparece em briefing genérico. Só aparece em conversa.</p>
-            <p>Trabalho com poucos projetos ao mesmo tempo. Por escolha. Cada espaço merece atenção inteira, do primeiro traço à entrega.</p>
-            <p>Se você tem uma ideia pronta e precisa de alguém pra executar — provavelmente não sou a pessoa certa. Se quer descobrir o que realmente faz sentido pro seu espaço — temos muito a conversar.</p>
+            <p>Indira Bonfim é arquiteta em Brasília e conduz a Indesigns com um olhar muito atento ao que acontece antes da planta: a forma como as pessoas chegam em casa, recebem amigos, trabalham, descansam e atravessam a rotina.</p>
+            <p>Para ela, um bom projeto não nasce de uma imagem pronta. Nasce de escuta, de perguntas bem feitas e da capacidade de transformar necessidades reais em espaços bonitos porque funcionam.</p>
+            <p>Seu trabalho combina sensibilidade e precisão: circulação clara, luz bem aproveitada, marcenaria inteligente, materiais escolhidos com calma e ambientes que parecem naturais para quem vive ali.</p>
+            <p>O resultado são projetos contemporâneos, elegantes e próximos. Espaços pensados para serem usados todos os dias, não apenas admirados em uma foto.</p>
           </div>
         </div>
       </div>
