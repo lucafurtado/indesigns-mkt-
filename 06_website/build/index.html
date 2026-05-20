@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indesigns · Arquitetura e Design | Indira Bonfim · Brasília</title>
+  <meta name="description" content="Arquitetura de interiores em Brasília. Indira Bonfim — projetos residenciais e comerciais construídos a partir de como o espaço vai ser vivido.">
+  <meta property="og:title" content="Indesigns · Arquitetura e Design · Brasília">
+  <meta property="og:description" content="Projetos construídos a partir de como cada espaço vai ser vivido — não de como ele deve parecer.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo" aria-label="Indesigns — início">
+        <svg class="nav__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
+          <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
+          <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#8ab0ab"/>
+          <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#ececea"/>
+        </svg>
+        <span class="nav__sep" aria-hidden="true"></span>
+        <span class="nav__wordmark">INDESIGNS</span>
+      </a>
+
+      <div class="nav__links" id="navLinks" role="menubar">
+        <a href="#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="#processo" class="nav__link" role="menuitem">Processo</a>
+        <a href="#sobre" class="nav__link" role="menuitem">Sobre</a>
+        <a href="#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__backdrop" id="navBackdrop"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="Apresentação">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__geo" aria-hidden="true"></div>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__ghost" aria-hidden="true">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
+        <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#ececea"/>
+        <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#ececea"/>
+        <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#ececea"/>
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <span class="label hero__label fade-up">DENTRO DE CADA DETALHE</span>
+      <h1 class="hero__headline fade-up">
+        Projetar começa<br>
+        por entender<br>
+        <em>antes de desenhar.</em>
+      </h1>
+      <p class="hero__sub fade-up">
+        A gente projeta o espaço que a sua rotina precisa —<br>
+        não o que fica bonito na foto.
+      </p>
+      <div class="hero__actions fade-up">
+        <a href="https://wa.me/5561998586151?text=Olá+Indira,+vim+pelo+site+e+gostaria+de+conversar+sobre+um+projeto"
+           class="btn btn--primary" target="_blank" rel="noopener">Agende uma conversa</a>
+        <a href="#projetos" class="hero__scroll-link">Ver projetos ↓</a>
+      </div>
+    </div>
+
+    <div class="hero__indicator" aria-hidden="true">
+      <span class="hero__indicator-label">SCROLL</span>
+      <div class="hero__indicator-line"></div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section class="portfolio" id="projetos" aria-label="Portfólio">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">PROJETOS</span>
+        <h2 class="section-title">Espaços vividos.</h2>
+      </header>
+
+      <div class="portfolio__grid">
+
+        <article class="portfolio__card portfolio__card--main reveal" onclick="location.href='#orbis'" style="cursor:pointer">
+          <div class="portfolio__img-wrap">
+            <div class="portfolio__img portfolio__img--orbis" aria-label="Clínica Orbis — sala de atendimento, Brasília">
+              <div class="portfolio__img-overlay">
+                <span class="portfolio__view-label">Ver projeto</span>
+              </div>
+            </div>
+          </div>
+          <footer class="portfolio__info">
+            <h3 class="portfolio__name">Clínica Orbis</h3>
+            <span class="label portfolio__type">SAÚDE · BRASÍLIA, DF · 2025</span>
+            <p class="portfolio__desc">Um espaço clínico que precisava, antes de tudo, parecer humano.</p>
+          </footer>
+        </article>
+
+        <article class="portfolio__card reveal">
+          <div class="portfolio__img-wrap">
+            <div class="portfolio__img portfolio__img--02" aria-label="Cobertura 116 Sul">
+              <div class="portfolio__img-overlay">
+                <span class="portfolio__view-label">Ver projeto</span>
+              </div>
+            </div>
+          </div>
+          <footer class="portfolio__info">
+            <h3 class="portfolio__name">Cobertura 116 Sul</h3>
+            <span class="label portfolio__type">ÁREA COLETIVA · ASA SUL</span>
+            <p class="portfolio__desc">Um espaço coletivo que passou a ser habitado de verdade.</p>
+          </footer>
+        </article>
+
+        <article class="portfolio__card reveal" onclick="location.href='#noroeste'" style="cursor:pointer">
+          <div class="portfolio__img-wrap">
+            <div class="portfolio__img portfolio__img--noroeste" aria-label="Residência Noroeste — Brasília">
+              <div class="portfolio__img-overlay">
+                <span class="portfolio__view-label">Ver projeto</span>
+              </div>
+            </div>
+          </div>
+          <footer class="portfolio__info">
+            <h3 class="portfolio__name">Residência Noroeste</h3>
+            <span class="label portfolio__type">RESIDENCIAL · NOROESTE, DF</span>
+            <p class="portfolio__desc">Um apartamento que já estava certo — e precisava só se encontrar.</p>
+          </footer>
+        </article>
+
+      </div>
+
+      <p class="portfolio__note reveal">
+        Todo projeto aqui tem nome, endereço e uma conversa antes do primeiro traço.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJETO EM DESTAQUE: CLÍNICA ORBIS -->
+  <!--
+    INSTRUÇÕES DE IMAGEM — salvar em 06_website/build/images/:
+      orbis-hero.jpg  → Foto 5 (sala de atendimento — sofá, poltrona, luz filtrada, madeira)
+      orbis-02.jpg    → Foto 4 (detalhe — planta + sofá + parede teal)
+      orbis-03.jpg    → Foto 1 (entrada — teto teal, espelho orgânico, aparador)
+      orbis-cover.jpg → Foto 4 ou Foto 5 (thumbnail do card no portfólio)
+  -->
+  <section class="orbis" id="orbis" aria-label="Projeto Clínica Orbis">
+
+    <div class="container">
+      <div class="orbis__intro reveal">
+        <span class="label orbis__label">PROJETO EM DESTAQUE</span>
+        <div class="orbis__title-row">
+          <h2 class="orbis__name">Clínica Orbis</h2>
+          <span class="orbis__meta">Brasília, DF · 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero: Foto 5 — sala de atendimento completa -->
+    <div class="orbis__hero-wrap reveal">
+      <img
+        class="orbis__hero-img"
+        src="assets/projects/orbis/hero.jpg"
+        alt="Clínica Orbis — sala de atendimento com sofá, poltrona e móvel amadeirado iluminado"
+        loading="lazy">
+    </div>
+
+    <div class="container">
+      <div class="orbis__body">
+
+        <div class="orbis__text reveal">
+          <p>Um cliente pediu um projeto bem simples.</p>
+          <p>27 metros quadrados. Precisava de consultório, escritório, copa, divã, espaço para arquivar prontuários — e reunião para até 25 pessoas.</p>
+          <p>25 pessoas. Sim.</p>
+          <p>Demolimos a parede divisória, setorizamos com mobiliário, escondemos a copa dentro de um armário vazado. Um toque de azul no teto para trazer paz. Cada metro resolvido sem parecer resolvido.</p>
+        </div>
+
+        <div class="orbis__gallery reveal">
+          <!-- Foto 4: detalhe editorial — planta + sofá + parede teal -->
+          <div class="orbis__img-wrap">
+            <img
+              src="assets/projects/orbis/detail-01.jpg"
+              alt="Detalhe — aparador com planta e sofá cinza contra parede teal"
+              loading="lazy">
+          </div>
+          <!-- Foto 1: entrada — teto teal, aparador, espelho orgânico -->
+          <div class="orbis__img-wrap">
+            <img
+              src="assets/projects/orbis/detail-02.jpg"
+              alt="Entrada da clínica — teto teal, aparador com bandeja e espelho orgânico"
+              loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="orbis__footer reveal">
+        <div class="orbis__tag">
+          <span class="label">CATEGORIA</span>
+          <span class="orbis__tag-value">Saúde · Comercial</span>
+        </div>
+        <div class="orbis__tag">
+          <span class="label">TIPOLOGIA</span>
+          <span class="orbis__tag-value">Projeto de Interiores</span>
+        </div>
+        <div class="orbis__tag">
+          <span class="label">LOCAL</span>
+          <span class="orbis__tag-value">Brasília, DF</span>
+        </div>
+        <div class="orbis__tag">
+          <span class="label">ÁREA</span>
+          <span class="orbis__tag-value">27 m²</span>
+        </div>
+      </footer>
+
+      <div class="orbis__sign reveal">
+        <em>Dentro de cada detalhe.</em>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJETO EM DESTAQUE: RESIDÊNCIA NOROESTE -->
+  <!--
+    INSTRUÇÕES DE IMAGEM — salvar em 06_website/build/images/:
+      noroeste-cover.jpg   → Foto 1 (flat lay materiais — madeira, bouclé, sage, rattan, cobre, flores)
+      noroeste-hero.jpg    → Foto 4 (quarto menina — visão geral com armário e mural botânico)
+      noroeste-girl.jpg    → Foto 2 (quarto menina — vista do corredor)
+      noroeste-boy.jpg     → Foto 6 (quarto menino — balões de ar quente, cama montessoriana)
+      noroeste-baby.jpg    → Foto 8 (quarto bebê/criança — cômoda cobre, mesa de estudo, sage)
+  -->
+  <section class="noroeste" id="noroeste" aria-label="Projeto Residência Noroeste">
+
+    <div class="container">
+      <div class="noroeste__intro reveal">
+        <span class="label noroeste__label">PROJETO RESIDENCIAL · FAMÍLIA</span>
+        <div class="noroeste__title-row">
+          <h2 class="noroeste__name">Residência Noroeste</h2>
+          <span class="noroeste__meta">Noroeste, DF · 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero: sala de estar real — ambiente entregue -->
+    <div class="noroeste__hero-wrap reveal">
+      <img
+        class="noroeste__hero-img"
+        src="assets/projects/noroeste/hero.jpg"
+        alt="Residência Noroeste — sala de estar com sofá sage, cadeiras de madeira e escadaria"
+        loading="lazy">
+    </div>
+
+    <div class="container">
+      <div class="noroeste__body">
+
+        <div class="noroeste__text reveal">
+          <p>Um casal, três filhos e uma planta baixa com potencial — desde que a gente pensasse em como aquela família realmente vive.</p>
+          <p>Sala que acolhe todo mundo ao mesmo tempo. Gourmet que sirva pra rotina, não só pra ocasião especial. Quartos que pareçam de criança sem sufocar o espaço.</p>
+          <p>A gente começou pela vida deles — como chegam em casa, o que acontece num sábado de manhã quando ninguém tem pressa. Daí sim a gente pegou o papel.</p>
+          <p>Cada quarto tem a personalidade de quem dorme ali: as flores da menina, os balões de ar quente do menino, o espaço do bebê pensado pra crescer junto com ele. O que conecta os três está na prancha de materiais — madeira, bouclé, sage, rattan — discreto, mas presente em tudo.</p>
+          <p>Um apartamento que parece deles. Esse sempre é o objetivo.</p>
+        </div>
+
+        <div class="noroeste__palette reveal">
+          <div class="noroeste__palette-img-wrap">
+            <img
+              src="assets/projects/noroeste/palette.jpg"
+              alt="Prancha de materiais — madeira, bouclé, sage, rattan, cobre"
+              loading="lazy">
+          </div>
+          <span class="label noroeste__palette-label">PALETA DO PROJETO</span>
+        </div>
+
+      </div>
+
+      <div class="noroeste__slogan-accent reveal">
+        <em>Dentro de cada detalhe.</em>
+      </div>
+
+      <!-- Galeria: os três quartos lado a lado -->
+      <div class="noroeste__rooms reveal">
+        <div class="noroeste__room">
+          <img
+            src="assets/projects/noroeste/room-girl.jpg"
+            alt="Quarto I — menina, flores e rosa"
+            loading="lazy">
+          <span class="label noroeste__room-label">QUARTO I</span>
+        </div>
+        <div class="noroeste__room">
+          <img
+            src="assets/projects/noroeste/room-boy.jpg"
+            alt="Quarto II — menino, balões de ar quente"
+            loading="lazy">
+          <span class="label noroeste__room-label">QUARTO II</span>
+        </div>
+        <div class="noroeste__room">
+          <img
+            src="assets/projects/noroeste/room-baby.jpg"
+            alt="Quarto III — bebê, madeira e cobre"
+            loading="lazy">
+          <span class="label noroeste__room-label">QUARTO III</span>
+        </div>
+      </div>
+
+      <footer class="noroeste__footer reveal">
+        <div class="noroeste__tag">
+          <span class="label">CATEGORIA</span>
+          <span class="noroeste__tag-value">Residencial · Família</span>
+        </div>
+        <div class="noroeste__tag">
+          <span class="label">TIPOLOGIA</span>
+          <span class="noroeste__tag-value">Projeto de Interiores</span>
+        </div>
+        <div class="noroeste__tag">
+          <span class="label">LOCAL</span>
+          <span class="noroeste__tag-value">Noroeste, Brasília</span>
+        </div>
+        <div class="noroeste__tag">
+          <span class="label">FOCO</span>
+          <span class="noroeste__tag-value">Quartos infantis</span>
+        </div>
+      </footer>
+
+      <div class="noroeste__sign reveal">
+        <em>Dentro de cada detalhe.</em>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="processo" id="processo" aria-label="Processo de trabalho">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">PROCESSO</span>
+        <h2 class="section-title">O método.</h2>
+        <p class="section-sub">
+          Quatro etapas. Sem variação.<br>
+          Do briefing à entrega, você acompanha cada decisão.
+        </p>
+      </header>
+
+      <div class="processo__steps">
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">01</span>
+          <h3 class="processo__title">Briefing</h3>
+          <p class="processo__text">Antes de qualquer linha no papel, preciso entender como você usa o espaço — não como acha que deveria usá-lo. É aqui que o projeto começa de verdade.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">02</span>
+          <h3 class="processo__title">Estudo</h3>
+          <p class="processo__text">Planta, conceito, primeiros renders. Você vê o espaço tomar forma antes de qualquer decisão construtiva — e antes de qualquer custo ser gerado.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">03</span>
+          <h3 class="processo__title">Refinamento</h3>
+          <p class="processo__text">Materiais, especificações, ajustes. Trabalhamos até o projeto refletir exatamente o que você imaginou — às vezes, algo melhor do que imaginava ser possível.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">04</span>
+          <h3 class="processo__title">Entrega</h3>
+          <p class="processo__text">Projeto executivo completo, pronto para obra. Visitas de acompanhamento durante a execução. E um espaço que, no dia da entrega, finalmente parece ser seu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre" aria-label="Sobre Indira Bonfim">
+    <div class="container">
+      <div class="sobre__grid">
+        <div class="sobre__img-col reveal">
+          <div class="sobre__img-wrap">
+            <!--
+              Foto de Indira — usando imagem da pasta "Fotos para o site".
+              Para produção: copiar para images/indira.jpg e atualizar o src.
+            -->
+            <img
+              src="assets/people/indira-01.jpg"
+              alt="Indira Bonfim — arquiteta, Indesigns, Brasília"
+              loading="lazy"
+              class="sobre__img"
+              onerror="this.parentElement.innerHTML='<div class=\'sobre__img-placeholder\' role=\'img\' aria-label=\'Indira Bonfim\'></div>'">
+          </div>
+          <div class="sobre__tag">
+            <span>Indesigns · Brasília, DF</span>
+            <span>Projetos residenciais e comerciais</span>
+          </div>
+        </div>
+
+        <div class="sobre__content reveal">
+          <h2 class="sobre__name">Indira Bonfim</h2>
+          <div class="sobre__divider" aria-hidden="true"></div>
+          <div class="sobre__text">
+            <p>Arquiteta em Brasília há quatro anos.</p>
+            <p>Cresci numa cidade que foi desenhada antes de ser habitada — onde a escala, a luz e a circulação foram pensadas antes do primeiro morador. Isso muda a forma de ler um espaço.</p>
+            <p>A gente não começa pelo projeto. Começa pela conversa — como você usa a cozinha de manhã, onde as crianças ficam quando você está trabalhando, como é o seu fim de semana em casa. Esse nível de detalhe não aparece em briefing genérico. Só aparece em conversa.</p>
+            <p>Trabalho com poucos projetos ao mesmo tempo. Por escolha. Cada espaço merece atenção inteira, do primeiro traço à entrega.</p>
+            <p>Se você tem uma ideia pronta e precisa de alguém pra executar — provavelmente não sou a pessoa certa. Se quer descobrir o que realmente faz sentido pro seu espaço — temos muito a conversar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS — oculto na V1, ativar quando tiver depoimentos reais -->
+  <!--
+  <section class="depoimentos" id="depoimentos" aria-label="Depoimentos de clientes">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">CLIENTES</span>
+        <h2 class="section-title">Na voz de quem contratou.</h2>
+      </header>
+
+      <div class="depoimentos__grid">
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome, Síndica</cite>
+            <span class="depoimento__project">Cobertura Coletiva · 116 Sul</span>
+          </footer>
+        </blockquote>
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome</cite>
+            <span class="depoimento__project">Projeto Residencial · Sudoeste</span>
+          </footer>
+        </blockquote>
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome</cite>
+            <span class="depoimento__project">Projeto Residencial · Lago Sul</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- CTA FINAL + FORMULÁRIO -->
+  <section class="cta-section" id="contato" aria-label="Entre em contato">
+    <div class="container">
+      <div class="cta-section__inner">
+        <header class="cta-section__header">
+          <span class="label cta-section__label reveal">CONTATO</span>
+          <h2 class="cta-section__headline reveal">Uma conversa.</h2>
+          <p class="cta-section__sub reveal">
+            Conta o que você está imaginando —<br>
+            ou o que ainda não sabe nomear.
+            <span class="cta-section__sub-note">Retorno em até 24 horas.</span>
+          </p>
+        </header>
+
+        <form class="cta-form reveal" id="ctaForm" novalidate>
+          <div class="cta-form__row">
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-nome">Nome</label>
+              <input
+                class="cta-form__input"
+                type="text"
+                id="f-nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+                autocomplete="name">
+            </div>
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-tel">WhatsApp</label>
+              <input
+                class="cta-form__input"
+                type="tel"
+                id="f-tel"
+                name="tel"
+                placeholder="(61) 99999-9999"
+                required
+                autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="cta-form__row">
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-tipo">Tipo de projeto</label>
+              <select class="cta-form__input cta-form__select" id="f-tipo" name="tipo" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="residencial-novo">Projeto residencial novo</option>
+                <option value="reforma">Reforma residencial</option>
+                <option value="coletivo">Espaço coletivo</option>
+                <option value="comercial">Espaço comercial</option>
+                <option value="planejando">Ainda estou planejando</option>
+              </select>
+            </div>
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-bairro">Local do imóvel</label>
+              <input
+                class="cta-form__input"
+                type="text"
+                id="f-bairro"
+                name="bairro"
+                placeholder="Bairro ou cidade"
+                required>
+            </div>
+          </div>
+
+          <div class="cta-form__group cta-form__group--full">
+            <label class="cta-form__label" for="f-imagina">O que você tem em mente para esse espaço?</label>
+            <textarea
+              class="cta-form__input cta-form__textarea"
+              id="f-imagina"
+              name="imagina"
+              placeholder="Em uma frase, o que você imagina."
+              rows="3"
+              required></textarea>
+          </div>
+
+          <div class="cta-form__footer">
+            <button type="submit" class="btn btn--light" id="submitBtn">
+              Quero conversar
+            </button>
+          </div>
+        </form>
+
+        <div class="cta-contacts reveal">
+          <a href="https://www.instagram.com/indesigns/" class="cta-contact" target="_blank" rel="noopener" aria-label="Instagram @indesigns">
+            <span class="cta-contact__label">Instagram</span>
+            <span class="cta-contact__value">@indesigns</span>
+          </a>
+          <span class="cta-contacts__sep" aria-hidden="true"></span>
+          <a href="https://wa.me/5561998586151" class="cta-contact" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="cta-contact__label">WhatsApp</span>
+            <span class="cta-contact__value">61 99858-6151</span>
+          </a>
+          <span class="cta-contacts__sep" aria-hidden="true"></span>
+          <a href="mailto:indesigns.arq@gmail.com" class="cta-contact" aria-label="E-mail">
+            <span class="cta-contact__label">E-mail</span>
+            <span class="cta-contact__value">indesigns.arq@gmail.com</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <svg class="footer__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#173a4a"/>
+              <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
+              <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#8ab0ab"/>
+              <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#173a4a"/>
+            </svg>
+            <div class="footer__logo-text">
+              <span class="footer__logo-name">INDESIGNS</span>
+              <span class="footer__logo-sub">ARQUITETURA E DESIGN</span>
+            </div>
+          </div>
+          <span class="footer__tagline">Brasília, DF</span>
+        </div>
+        <nav class="footer__links" aria-label="Links de contato">
+          <a href="https://www.instagram.com/indesigns/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5561998586151" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:indesigns.arq@gmail.com">E-mail</a>
+        </nav>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <div class="footer__bottom">
+        <span>© 2026 Indesigns. Todos os direitos reservados.</span>
+        <span>Indira Bonfim · Arquiteta · Brasília, DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

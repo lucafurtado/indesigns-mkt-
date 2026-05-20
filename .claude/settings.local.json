@@ -10,7 +10,16 @@
       "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\06_intelligence\")",
       "Bash(Write-Host \"Pastas criadas com sucesso.\")",
       "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\05_website\\\\index.html\")",
-      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\06_presentation\\\\apresentacao.html\")"
+      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\\\\06_presentation\\\\apresentacao.html\")",
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\User\\\\Desktop\\\\Projetos IA\\\\Indesigns\" -Recurse -Name)",
+      "Bash(Select-Object -First 80)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(start \"\" \"c:\\\\Users\\\\User\\\\Desktop\\\\LucaOS\\\\cria-ai\\\\Clientes\\\\Indesigns\\\\06_website\\\\build\\\\index.html\")",
+      "Bash(dir /s /b \"c:\\\\Users\\\\User\\\\Desktop\\\\LucaOS\\\\cria-ai\\\\Clientes\\\\Indesigns\")",
+      "Bash(findstr /i \"orbis\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\User\\\\Desktop\\\\LucaOS\\\\cria-ai\\\\Clientes\\\\Indesigns\\\\Fotos para o site\" | Select-Object Name, @{N='MB';E={[math]::Round\\($_.Length/1MB,1\\)}})"
     ]
   }
 }
