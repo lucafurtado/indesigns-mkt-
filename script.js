@@ -368,6 +368,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── VIDEO REEL — Páginas de projeto ────────────────────── */
+
+  const projectReel = document.querySelector('.project-reel');
+  if (projectReel) {
+    const videoSrc    = projectReel.dataset.video;
+    const previewVid  = projectReel.querySelector('video');
+    const modal       = document.getElementById('projectVideoModal');
+    const modalVid    = modal?.querySelector('.video-modal__player');
+    const modalClose  = modal?.querySelector('.video-modal__close');
+
+    if (videoSrc && previewVid) {
+      previewVid.src = videoSrc;
+      previewVid.addEventListener('error', () => { projectReel.style.display = 'none'; });
+      previewVid.load();
+      previewVid.play().catch(() => {});
+    }
+
+    const projectHeroEl = document.querySelector('.project-hero');
+    if (projectHeroEl) {
+      new IntersectionObserver(
+        ([entry]) => projectReel.classList.toggle('is-visible', !entry.isIntersecting),
+        { threshold: 0.15 }
+      ).observe(projectHeroEl);
+    }
+
+    const openModal = () => {
+      if (!modal) return;
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      if (modalVid && videoSrc) { modalVid.src = videoSrc; modalVid.play().catch(() => {}); }
+    };
+
+    const closeModal = () => {
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        modal.setAttribute('hidden', '');
+        if (modalVid) { modalVid.pause(); modalVid.src = ''; }
+      }, 520);
+    };
+
+    projectReel.addEventListener('click', openModal);
+    modalClose?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.hasAttribute('hidden')) closeModal();
+    });
+  }
+
   /* ── GSAP: REFINOS SUTIS ───────────────────────────────── */
 
   if (window.gsap && window.ScrollTrigger) {
