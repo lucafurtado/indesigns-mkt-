@@ -159,58 +159,71 @@
   <div class="atm-break" aria-hidden="true"></div>
 
   <!-- SHOWCASE DE PROJETOS -->
-  <section class="showcase" id="projetos" data-theme="light" aria-labelledby="projetos-heading">
-    <div class="showcase__carousel" tabindex="0">
-      <button class="showcase__arrow showcase__arrow--prev" type="button" data-carousel-dir="-1" aria-label="Projeto anterior">
-        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true">
-          <path d="M28 7H2M8 1 2 7l6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <div class="showcase__visual">
-        <img
-          class="showcase__img"
-          id="sc-img"
-          src="assets/projects/noroeste/cover.jpg"
-          alt="Cobertura Duplex Noroeste, living da cobertura"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async">
+  <section class="showcase" id="projetos" aria-labelledby="projetos-heading">
+    <div class="container sc-header">
+      <div class="sc-header__text">
+        <span class="label">PROJETOS</span>
+        <h2 id="projetos-heading" class="sc-heading">Espaços pensados<br>para serem vividos.</h2>
       </div>
-
-      <div class="showcase__panel">
-        <div class="showcase__section-intro">
-          <span class="label">PROJETOS</span>
-          <h2 id="projetos-heading" class="showcase__section-heading">Espaços pensados<br>para serem vividos.</h2>
-          <a href="/projetos/" class="showcase__all-link" id="sc-all-link">Ver todos os projetos</a>
+      <a href="/projetos/" class="sc-all-link">Ver todos os projetos →</a>
+    </div>
+    <div class="showcase-bento" aria-label="Grid de projetos">
+      <a href="/residencia-noroeste/" class="sc-cell" aria-label="Cobertura Duplex Noroeste">
+        <img src="/assets/projects/noroeste/cover.jpg" alt="Cobertura Duplex Noroeste" loading="eager" fetchpriority="high" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">RESIDENCIAL</span>
+          <p class="sc-cell__name">Cobertura Duplex Noroeste</p>
         </div>
-        <div class="showcase__project-content" aria-live="polite">
-          <div class="showcase__panel-top">
-            <span class="label showcase__counter" id="sc-counter">01 / 03</span>
-            <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
-          </div>
-          <h3 class="showcase__title" id="projetos-title"><span id="sc-title">Cobertura Duplex<br>Noroeste</span></h3>
-          <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
-          <p class="showcase__narrative" id="sc-narrative">Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e continuidade afetiva.</p>
-          <a href="residencia-noroeste/" class="showcase__link" id="sc-link">
-            <span>Ver projeto</span>
-            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
-              <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <nav class="showcase__nav" aria-label="Navegar entre projetos">
-            <button class="showcase__dot is-active" type="button" data-project="0" aria-label="Cobertura Duplex Noroeste" aria-current="true"></button>
-            <button class="showcase__dot" type="button" data-project="1" aria-label="Cobertura Porto Seguro"></button>
-            <button class="showcase__dot" type="button" data-project="2" aria-label="Clínica Orbis"></button>
-          </nav>
+      </a>
+      <a href="/cobertura-porto-seguro/" class="sc-cell" aria-label="Cobertura Porto Seguro">
+        <img src="/assets/hero-bg.jpg" alt="Cobertura Porto Seguro" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">ÁREA COLETIVA</span>
+          <p class="sc-cell__name">Cobertura Porto Seguro</p>
         </div>
-      </div>
-
-      <button class="showcase__arrow showcase__arrow--next" type="button" data-carousel-dir="1" aria-label="Próximo projeto">
-        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true">
-          <path d="M0 7h26M20 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      </a>
+      <a href="/clinica-orbis/" class="sc-cell" aria-label="Orbis Psicologia">
+        <img src="/assets/projects/orbis/hero.jpg" alt="Orbis Psicologia" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">SAÚDE · REFORMA</span>
+          <p class="sc-cell__name">Orbis Psicologia</p>
+        </div>
+      </a>
+      <a href="/apto-ci-cecilia-santos/" class="sc-cell" aria-label="Apto CI, Cecilia Santos">
+        <img src="/assets/projects/noroeste/room-baby.jpg" alt="Apto CI, Cecilia Santos" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">RESIDENCIAL</span>
+          <p class="sc-cell__name">Apto CI, Cecilia Santos</p>
+        </div>
+      </a>
+      <a href="/consultorio-ml-mari-rodrigues/" class="sc-cell" aria-label="Consultório ML, Mari Rodrigues">
+        <img src="/assets/projects/orbis/detail-01.jpg" alt="Consultório ML, Mari Rodrigues" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">SAÚDE</span>
+          <p class="sc-cell__name">Consultório ML, Mari Rodrigues</p>
+        </div>
+      </a>
+      <a href="/escritorio-advocacia-monique-rafael/" class="sc-cell" aria-label="Escritório de Advocacia, Monique e Rafael">
+        <img src="/assets/projects/orbis/detail-02.jpg" alt="Escritório de Advocacia" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">CORPORATIVO</span>
+          <p class="sc-cell__name">Escritório de Advocacia</p>
+        </div>
+      </a>
+      <a href="/chacara-recanto-do-jaburu/" class="sc-cell" aria-label="Chácara Recanto do Jaburu">
+        <img src="/assets/projects/noroeste/hero.jpg" alt="Chácara Recanto do Jaburu" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">RESIDENCIAL · REFORMA</span>
+          <p class="sc-cell__name">Chácara Recanto do Jaburu</p>
+        </div>
+      </a>
+      <a href="/mj-vx-maju-vitor/" class="sc-cell" aria-label="MJ VX, Maju e Vitor">
+        <img src="/assets/projects/noroeste/palette.jpg" alt="MJ VX, Maju e Vitor" loading="lazy" decoding="async">
+        <div class="sc-cell__overlay">
+          <span class="sc-cell__tag">RESIDENCIAL · CONSULTORIA</span>
+          <p class="sc-cell__name">MJ VX, Maju e Vitor</p>
+        </div>
+      </a>
     </div>
   </section>
 
