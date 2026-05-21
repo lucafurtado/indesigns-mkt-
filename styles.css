@@ -941,6 +941,15 @@ button {
   gap: 12px;
 }
 
+.cta-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .cta-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1018,6 +1027,15 @@ button {
   display: flex;
   justify-content: center;
   padding-top: 8px;
+}
+
+.cta-form__pills--compact {
+  min-height: 48px;
+}
+
+.cta-form__pills--compact .cta-form__pill span {
+  padding: 13px 12px;
+  text-align: center;
 }
 
 /* Mensagem de sucesso */
@@ -2682,7 +2700,7 @@ button {
   object-position: center;
   display: block;
   transform: scale(1.001);
-  transition: opacity 0.50s var(--ease-premium), transform 0.72s var(--ease-premium);
+  transition: opacity 0.50s var(--ease-premium), transform 2.4s var(--ease-premium);
   will-change: opacity, transform;
 }
 
@@ -2692,7 +2710,7 @@ button {
 }
 
 .showcase__visual:hover .showcase__img {
-  transform: scale(1.025);
+  transform: scale(1.12);
 }
 
 .showcase__panel {
@@ -3032,11 +3050,11 @@ button {
   min-height: 360px;
   object-fit: cover;
   display: block;
-  transition: transform 1.4s var(--ease-premium);
+  transition: transform 2.2s var(--ease-premium);
 }
 
 .project-gallery figure:hover img {
-  transform: scale(1.028);
+  transform: scale(1.10);
 }
 
 .project-materiality {
@@ -3101,6 +3119,15 @@ button {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
+  transition: transform 2.2s var(--ease-premium);
+}
+
+.project-materiality__figure {
+  overflow: hidden;
+}
+
+.project-materiality__figure:hover img {
+  transform: scale(1.10);
 }
 
 .project-materiality__figure figcaption {
@@ -3418,6 +3445,7 @@ button {
   box-shadow: 0 8px 30px rgba(23, 58, 74, 0.26);
 }
 
+.project-reel__ring img,
 .project-reel__ring video {
   width: 100%;
   height: 100%;
@@ -3503,7 +3531,11 @@ button {
 }
 
 .video-modal__stage {
-  width: min(90vw, 1100px);
+  width: min(92vw, 1180px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
   transform: scale(0.92) translateY(16px);
   opacity: 0;
   transition: transform 0.60s var(--ease-premium),
@@ -3523,6 +3555,106 @@ button {
   background: var(--petroleo-dark);
 }
 
+.video-modal__media {
+  position: relative;
+}
+
+.video-modal__mute {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(236, 236, 234, 0.28);
+  background: rgba(23, 58, 74, 0.46);
+  color: var(--offwhite);
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.video-modal__mute:hover {
+  background: rgba(23, 58, 74, 0.72);
+  border-color: rgba(236, 236, 234, 0.5);
+}
+
+.video-modal__panel {
+  color: var(--offwhite);
+}
+
+.video-modal__panel .label {
+  color: var(--sage);
+}
+
+.video-modal__title {
+  margin-top: 16px;
+  font-family: var(--font-headline);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.video-modal__panel p {
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(236, 236, 234, 0.68);
+}
+
+.video-modal__actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.video-modal__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 12px 14px;
+  border: 1px solid rgba(236, 236, 234, 0.16);
+  background: transparent;
+  color: rgba(236, 236, 234, 0.76);
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.video-modal__action:hover,
+.video-modal__action--primary {
+  border-color: rgba(138, 176, 171, 0.55);
+  color: var(--offwhite);
+  background: rgba(138, 176, 171, 0.08);
+}
+
+.video-modal__related {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(236, 236, 234, 0.12);
+}
+
+.video-modal__related-item {
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(236, 236, 234, 0.1);
+  background: transparent;
+  color: rgba(236, 236, 234, 0.68);
+  font-family: var(--font-label);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 @media (max-width: 600px) {
   .project-reel.is-floating {
     right: 20px;
@@ -3535,6 +3667,15 @@ button {
   .video-modal__close {
     top: 16px;
     right: 16px;
+  }
+
+  .video-modal__stage {
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+
+  .video-modal__panel {
+    max-width: 420px;
   }
 }
 
@@ -3628,6 +3769,7 @@ button {
   padding-bottom: clamp(24px, 3vw, 40px);
   border-bottom: 1px solid rgba(23, 58, 74, 0.08);
   margin-bottom: clamp(20px, 2.5vw, 32px);
+  position: relative;
 }
 
 .showcase__section-heading {
@@ -3638,6 +3780,28 @@ button {
   letter-spacing: -0.02em;
   color: var(--sc-title);
   margin-top: 10px;
+}
+
+.showcase__all-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 24px;
+  padding-bottom: 8px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sc-link);
+  border-bottom: 1px solid rgba(23, 58, 74, 0.24);
+  transition: color 0.45s var(--ease-premium),
+              border-color 0.45s var(--ease-premium),
+              transform 0.45s var(--ease-premium);
+}
+
+.showcase__all-link:hover {
+  color: var(--teal);
+  border-color: var(--teal);
+  transform: translateX(4px);
 }
 
 .showcase__project-content {
@@ -3765,6 +3929,19 @@ button {
 .projetos-page .nav {
   background: var(--petroleo);
   box-shadow: 0 1px 0 rgba(60, 110, 113, 0.18);
+}
+
+.servicos-page {
+  background-color: var(--offwhite);
+}
+
+.servicos-page .nav {
+  background: var(--petroleo);
+  box-shadow: 0 1px 0 rgba(60, 110, 113, 0.18);
+}
+
+.servicos-page-header {
+  background-color: var(--offwhite);
 }
 
 .projetos-header {

@@ -183,6 +183,7 @@
         <div class="showcase__section-intro">
           <span class="label">PROJETOS</span>
           <h2 id="projetos-heading" class="showcase__section-heading">Espaços pensados<br>para serem vividos.</h2>
+          <a href="/projetos/" class="showcase__all-link" id="sc-all-link">Ver todos os projetos</a>
         </div>
         <div class="showcase__project-content" aria-live="polite">
           <div class="showcase__panel-top">
@@ -211,9 +212,6 @@
           <path d="M0 7h26M20 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-    </div>
-    <div class="showcase__footer">
-      <a href="/projetos/" class="btn btn--outline" id="sc-all-link">Ver todos os projetos</a>
     </div>
   </section>
 
@@ -392,7 +390,9 @@
 
         <p class="cta-section__impulse">Ainda não precisa ser um projeto.<br>Uma conversa já é um começo.</p>
 
-        <form class="cta-form reveal" id="ctaForm" novalidate>
+        <form class="cta-form reveal" id="ctaForm" data-crm-ready="true" data-crm-endpoint="" novalidate>
+          <input type="hidden" id="f-origem" name="origem" value="site direto">
+          <input type="text" class="cta-form__honeypot" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="cta-form__row">
             <div class="cta-form__group">
               <label class="cta-form__label" for="f-nome">Nome</label>
@@ -420,6 +420,30 @@
 
           <div class="cta-form__row">
             <div class="cta-form__group">
+              <label class="cta-form__label" for="f-email">E-mail</label>
+              <input
+                class="cta-form__input"
+                type="email"
+                id="f-email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+                autocomplete="email">
+            </div>
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-bairro">Local do imóvel</label>
+              <input
+                class="cta-form__input"
+                type="text"
+                id="f-bairro"
+                name="bairro"
+                placeholder="Bairro ou cidade"
+                autocomplete="address-level2">
+            </div>
+          </div>
+
+          <div class="cta-form__row">
+            <div class="cta-form__group">
               <label class="cta-form__label" for="f-tipo">Tipo de projeto</label>
               <select class="cta-form__input cta-form__select" id="f-tipo" name="tipo" required>
                 <option value="" disabled selected>Selecione</option>
@@ -432,19 +456,26 @@
               </select>
             </div>
             <div class="cta-form__group">
-              <label class="cta-form__label" for="f-bairro">Local do imóvel</label>
-              <input
-                class="cta-form__input"
-                type="text"
-                id="f-bairro"
-                name="bairro"
-                placeholder="Bairro ou cidade"
-                required>
+              <span class="cta-form__label">Urgência de prazo</span>
+              <div class="cta-form__pills cta-form__pills--compact" role="group" aria-label="Urgência de prazo">
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="flexivel" checked>
+                  <span>Flexível</span>
+                </label>
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="meses">
+                  <span>Próximos meses</span>
+                </label>
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="urgente">
+                  <span>Urgente</span>
+                </label>
+              </div>
             </div>
           </div>
 
           <div class="cta-form__group cta-form__group--full">
-            <label class="cta-form__label" for="f-imagina">O que você tem em mente para esse espaço?</label>
+            <label class="cta-form__label" for="f-imagina">Mensagem</label>
             <textarea
               class="cta-form__input cta-form__textarea"
               id="f-imagina"
@@ -452,24 +483,6 @@
               placeholder="Em uma frase, o que você imagina."
               rows="3"
               required></textarea>
-          </div>
-
-          <div class="cta-form__group cta-form__group--full">
-            <span class="cta-form__label">Prazo do projeto</span>
-            <div class="cta-form__pills" role="group" aria-label="Prazo do projeto">
-              <label class="cta-form__pill">
-                <input type="radio" name="prazo" value="flexivel" checked>
-                <span>Prazo flexível</span>
-              </label>
-              <label class="cta-form__pill">
-                <input type="radio" name="prazo" value="meses">
-                <span>Nos próximos meses</span>
-              </label>
-              <label class="cta-form__pill">
-                <input type="radio" name="prazo" value="urgente">
-                <span>Tenho urgência de prazo</span>
-              </label>
-            </div>
           </div>
 
           <div class="cta-form__footer">

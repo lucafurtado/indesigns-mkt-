@@ -196,6 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── FORMULÁRIO ──────────────────────────────────────────── */
 
   if (ctaForm) {
+    const originInput = ctaForm.querySelector('[name="origem"]');
+    const allowedOrigins = new Set(['instagram', 'site', 'google', 'meta']);
+    const rawOrigin = new URLSearchParams(window.location.search).get('origem')?.trim().toLowerCase();
+    const leadOrigin = allowedOrigins.has(rawOrigin) ? rawOrigin : 'site direto';
+    if (originInput) originInput.value = leadOrigin;
+
     ctaForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -208,26 +214,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Captura os dados do formulário
       const data = new FormData(ctaForm);
+      if ((data.get('empresa_site') || '').trim()) return;
+
       const nome    = data.get('nome')?.trim() || '';
       const tel     = data.get('tel')?.trim() || '';
+      const email   = data.get('email')?.trim() || '';
       const tipo    = formatTipo(data.get('tipo') || '');
       const bairro  = data.get('bairro')?.trim() || '';
       const imagina = data.get('imagina')?.trim() || '';
       const prazo   = formatPrazo(data.get('prazo') || '');
+      const origem  = data.get('origem')?.trim() || 'site direto';
+      const leadPayload = {
+        nome,
+        whatsapp: tel,
+        email,
+        tipo_projeto: tipo,
+        urgencia_prazo: prazo,
+        origem,
+        local: bairro,
+        mensagem: imagina,
+        pagina: window.location.pathname,
+        capturado_em: new Date().toISOString(),
+      };
 
       // Estado de loading
       submitBtn.textContent = 'Enviando...';
       submitBtn.disabled = true;
+
+      // Preparado para Formspree, Make, Zapier ou Google Sheets.
+      // Quando houver endpoint, preencher data-crm-endpoint no form e enviar leadPayload via fetch.
+      ctaForm.dispatchEvent(new CustomEvent('indesigns:lead', { detail: leadPayload }));
 
       // Monta e abre mensagem no WhatsApp
       const msg = encodeURIComponent(
         `Olá Indira! Vim pelo site.\n\n` +
         `Nome: ${nome}\n` +
         `WhatsApp: ${tel}\n` +
+        `E-mail: ${email}\n` +
         `Tipo de projeto: ${tipo}\n` +
-        `Local: ${bairro}\n` +
-        `Prazo: ${prazo}\n\n` +
-        `O que imagino: ${imagina}`
+        `Prazo: ${prazo}\n` +
+        `Origem: ${origem}\n` +
+        (bairro ? `Local: ${bairro}\n` : '') +
+        `\nMensagem: ${imagina}`
       );
 
       // Pequeno delay intencional para o feedback de "enviando"
@@ -432,17 +460,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectReel = document.querySelector('.project-reel');
   if (projectReel) {
     const videoSrc    = projectReel.dataset.video;
-    const previewVid  = projectReel.querySelector('video');
+    const projectName = projectReel.dataset.title || document.getElementById('project-title')?.textContent?.trim() || 'Projeto Indesigns';
+    const videoPoster = projectReel.dataset.poster || '';
     const modal       = document.getElementById('projectVideoModal');
     const modalVid    = modal?.querySelector('.video-modal__player');
     const modalClose  = modal?.querySelector('.video-modal__close');
-
-    if (videoSrc && previewVid) {
-      previewVid.src = videoSrc;
-      previewVid.addEventListener('error', () => { projectReel.style.display = 'none'; });
-      previewVid.load();
-      previewVid.play().catch(() => {});
-    }
+    const modalTitle  = modal?.querySelector('.video-modal__title');
+    const modalMute   = modal?.querySelector('.video-modal__mute');
+    const modalShare  = modal?.querySelector('[data-video-share]');
+    const relatedWrap = modal?.querySelector('.video-modal__related');
+    const relatedVideos = parseRelatedVideos(projectReel.dataset.relatedVideos);
 
     // Inline → Floating: after user scrolls past testimonial, reel moves to corner
     const testimonialEl = document.querySelector('.project-testimonial');
@@ -467,11 +494,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!modal) return;
       modal.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
+      if (modalTitle) modalTitle.textContent = projectName;
+      renderRelatedVideos(relatedWrap, relatedVideos);
       requestAnimationFrame(() => modal.classList.add('is-open'));
       if (modalVid && videoSrc) {
+        if (videoPoster) modalVid.setAttribute('poster', videoPoster);
         modalVid.src = videoSrc;
+        modalVid.load();
         modalVid.muted = true;
         modalVid.setAttribute('muted', '');
+        if (modalMute) modalMute.textContent = 'Ativar som';
         modalVid.play().catch(() => {});
       }
     };
@@ -482,9 +514,46 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
       setTimeout(() => {
         modal.setAttribute('hidden', '');
-        if (modalVid) { modalVid.pause(); modalVid.src = ''; }
+        if (modalVid) {
+          modalVid.pause();
+          modalVid.removeAttribute('src');
+          modalVid.load();
+        }
       }, 520);
     };
+
+    modalMute?.addEventListener('click', () => {
+      if (!modalVid) return;
+      modalVid.muted = !modalVid.muted;
+      modalMute.textContent = modalVid.muted ? 'Ativar som' : 'Silenciar';
+    });
+
+    modalShare?.addEventListener('click', async () => {
+      const shareData = {
+        title: projectName,
+        text: `${projectName} | Indesigns`,
+        url: window.location.href,
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else if (navigator.clipboard) {
+          await navigator.clipboard.writeText(window.location.href);
+          modalShare.textContent = 'Link copiado';
+          setTimeout(() => { modalShare.textContent = 'Compartilhar'; }, 1800);
+        }
+      } catch (_) {}
+    });
+
+    relatedWrap?.addEventListener('click', (e) => {
+      const item = e.target.closest('[data-related-index]');
+      if (!item || !modalVid) return;
+      const nextVideo = relatedVideos[parseInt(item.dataset.relatedIndex, 10)];
+      if (!nextVideo?.src) return;
+      modalVid.src = nextVideo.src;
+      modalVid.load();
+      modalVid.play().catch(() => {});
+    });
 
     projectReel.addEventListener('click', openModal);
     modalClose?.addEventListener('click', closeModal);
@@ -495,6 +564,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── GSAP: REFINOS SUTIS ───────────────────────────────── */
+
+  function parseRelatedVideos(raw) {
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed.filter(item => item && item.src) : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function renderRelatedVideos(container, videos) {
+    if (!container) return;
+    if (!videos.length) {
+      container.setAttribute('hidden', '');
+      container.innerHTML = '';
+      return;
+    }
+    container.removeAttribute('hidden');
+    container.innerHTML = videos.map((video, index) => `
+      <button type="button" class="video-modal__related-item" data-related-index="${index}">
+        <span>${video.label || 'Vídeo relacionado'}</span>
+      </button>
+    `).join('');
+  }
 
   if (window.gsap && window.ScrollTrigger) {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

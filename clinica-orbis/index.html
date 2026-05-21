@@ -87,9 +87,9 @@
             <span><strong>Local</strong> Brasília, DF</span>
             <span><strong>Foco</strong> Escuta e acolhimento</span>
           </div>
-          <div class="project-reel" data-video="/assets/projects/orbis/video.mp4" aria-label="Vídeo do projeto — clicar para ver">
+          <div class="project-reel" data-video="/assets/projects/orbis/video.mp4" data-title="Clínica Orbis" data-poster="/assets/projects/orbis/hero.jpg" aria-label="Vídeo do projeto — clicar para ver">
             <div class="project-reel__ring">
-              <video playsinline muted loop></video>
+              <img src="/assets/projects/orbis/hero.jpg" alt="" loading="lazy" decoding="async" aria-hidden="true">
               <div class="project-reel__play">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
                   <path d="M1 1l10 6-10 6V1z" fill="currentColor" opacity="0.9"/>
@@ -167,7 +167,22 @@
       </svg>
     </button>
     <div class="video-modal__stage">
-      <video class="video-modal__player" playsinline muted controls></video>
+      <div class="video-modal__media">
+        <video class="video-modal__player" playsinline muted controls preload="none"></video>
+        <button class="video-modal__mute" type="button" aria-label="Ativar som">Ativar som</button>
+      </div>
+      <aside class="video-modal__panel" aria-label="Ações do projeto">
+        <span class="label">VÍDEO DO PROJETO</span>
+        <h2 class="video-modal__title">Clínica Orbis</h2>
+        <p>Uma leitura breve da atmosfera, dos materiais e do cuidado espacial.</p>
+        <div class="video-modal__actions">
+          <a href="/#contato" class="video-modal__action video-modal__action--primary">Vamos conversar</a>
+          <a href="https://wa.me/5561998586151" class="video-modal__action" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/indesigns/" class="video-modal__action" target="_blank" rel="noopener">Instagram</a>
+          <button class="video-modal__action" type="button" data-video-share>Compartilhar</button>
+        </div>
+        <div class="video-modal__related" hidden></div>
+      </aside>
     </div>
   </div>
 
