@@ -666,7 +666,8 @@ button {
 
 .processo__steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
   position: relative;
 }
 
@@ -1111,6 +1112,111 @@ button {
   height: 28px;
   background: rgba(138, 176, 171, 0.18);
   flex-shrink: 0;
+}
+
+/* ============================================================
+   SERVIÇOS HOME (resumo)
+   ============================================================ */
+
+.servicos-home {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background-color: var(--greige);
+}
+
+.servicos-home__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid rgba(23, 58, 74, 0.12);
+}
+
+.servico-home__item {
+  padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px) clamp(32px, 4vw, 48px) 0;
+  border-bottom: 1px solid rgba(23, 58, 74, 0.12);
+}
+
+.servico-home__item:nth-child(odd) {
+  padding-right: clamp(24px, 4vw, 56px);
+  border-right: 1px solid rgba(23, 58, 74, 0.12);
+}
+
+.servico-home__item:nth-child(even) {
+  padding-left: clamp(24px, 4vw, 56px);
+  padding-right: 0;
+}
+
+.servico-home__num {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.servico-home__title {
+  font-family: var(--font-headline);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--petroleo);
+  margin-bottom: 12px;
+}
+
+.servico-home__text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(23, 58, 74, 0.65);
+}
+
+.servicos-home__cta {
+  margin-top: clamp(40px, 5vw, 56px);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn--outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--petroleo);
+  border: 1px solid rgba(23, 58, 74, 0.35);
+  border-radius: 2px;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.btn--outline:hover {
+  border-color: var(--teal);
+  background-color: rgba(60, 110, 113, 0.06);
+  color: var(--teal);
+}
+
+@media (max-width: 767px) {
+  .servicos-home__grid {
+    grid-template-columns: 1fr;
+  }
+  .servico-home__item {
+    padding-right: 0;
+    border-right: none;
+  }
+  .servico-home__item:nth-child(odd) {
+    padding-right: 0;
+    border-right: none;
+  }
+  .servico-home__item:nth-child(even) {
+    padding-left: 0;
+  }
 }
 
 /* ============================================================
