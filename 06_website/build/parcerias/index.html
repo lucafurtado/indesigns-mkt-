@@ -17,44 +17,6 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <style>
-    /* ── Parcerias — estilos específicos da página ── */
-    .parcerias-header {
-      padding: clamp(140px, 18vw, 200px) 0 clamp(72px, 8vw, 100px);
-      background-color: var(--petroleo-dark);
-      position: relative;
-      overflow: hidden;
-    }
-    .parcerias-header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 55% at 65% 45%, rgba(60,110,113,0.13) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    .parcerias-header .container { position: relative; z-index: 1; }
-    .parcerias-header__kicker {
-      color: var(--sage);
-      margin-bottom: 24px;
-    }
-    .parcerias-header__title {
-      font-family: var(--font-headline);
-      font-size: clamp(40px, 5.5vw, 72px);
-      font-weight: 400;
-      line-height: 1.06;
-      letter-spacing: -0.024em;
-      color: var(--offwhite);
-      max-width: 640px;
-      margin-bottom: 32px;
-    }
-    .parcerias-header__sub {
-      font-family: var(--font-body);
-      font-size: clamp(15px, 1.6vw, 17px);
-      font-weight: 300;
-      line-height: 1.75;
-      color: rgba(236,236,234,0.58);
-      max-width: 460px;
-    }
-
     /* ── Corpo da página ── */
     .parcerias-body {
       padding: clamp(80px, 10vw, 130px) 0;
@@ -204,11 +166,13 @@
   </nav>
 
   <main>
-    <header class="parcerias-header" aria-labelledby="parcerias-title">
+    <header class="projetos-header" aria-labelledby="parcerias-title">
       <div class="container">
-        <span class="label parcerias-header__kicker">PARCERIAS</span>
-        <h1 id="parcerias-title" class="parcerias-header__title">Aberta a colaborações que ampliam o que um espaço pode ser.</h1>
-        <p class="parcerias-header__sub">Fornecedores, escritórios, marcas e profissionais que compartilham cuidado com o resultado. O formato depende do projeto.</p>
+        <span class="label projetos-header__kicker">PARCERIAS</span>
+        <div class="projetos-header__content">
+          <h1 id="parcerias-title" class="projetos-header__title">Aberta a colaborações que ampliam o que um espaço pode ser.</h1>
+          <p class="projetos-header__text">Fornecedores, escritórios, marcas e profissionais que compartilham cuidado com o resultado. O formato depende do projeto.</p>
+        </div>
       </div>
     </header>
 
@@ -217,7 +181,7 @@
         <div class="parcerias-intro reveal">
           <span class="label parcerias-intro__label">COMO FUNCIONA</span>
           <p class="parcerias-intro__text">Cada parceria começa antes do contrato: com uma conversa sobre o que cada um traz ao projeto. O Indesigns não fecha acordos de prateleira. O que existe é abertura real para colaborar com quem entende o próprio campo.</p>
-          <p class="parcerias-intro__text">Seja em uma indicação recíproca, em um projeto conjunto, em uma curadoria de materiais ou em uma colaboração editorial — o formato certo aparece depois de entender o que o projeto pede.</p>
+          <p class="parcerias-intro__text">Seja em uma indicação recíproca, em um projeto conjunto, em uma curadoria de materiais ou em uma colaboração editorial. O formato certo aparece depois de entender o que o projeto pede.</p>
           <p class="parcerias-intro__text">Brasília tem um ecossistema criativo que ainda se está descobrindo. A intenção aqui é contribuir para isso com rigor e sem fazer barulho.</p>
         </div>
 
@@ -269,7 +233,7 @@
     <section class="parcerias-cta" aria-label="Contato para parcerias">
       <div class="container">
         <h2 class="parcerias-cta__title">Tem algo em mente que pode envolver o Indesigns?</h2>
-        <p class="parcerias-cta__sub">Manda uma mensagem com o contexto — a proposta, o projeto, o que você busca com a parceria. A conversa decide o próximo passo.</p>
+        <p class="parcerias-cta__sub">Manda uma mensagem com o contexto: a proposta, o projeto, o que você busca com a parceria. A conversa decide o próximo passo.</p>
         <a href="mailto:indesigns.arq@gmail.com?subject=Parceria%20-%20Indesigns" class="btn btn--primary">Entrar em contato</a>
       </div>
     </section>

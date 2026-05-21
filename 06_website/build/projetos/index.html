@@ -53,8 +53,9 @@
         <div class="projetos-filter" role="list" aria-label="Filtrar por categoria">
           <button class="projetos-filter__btn is-active" type="button" data-filter="todos">Todos</button>
           <button class="projetos-filter__btn" type="button" data-filter="residencial">Residencial</button>
+          <button class="projetos-filter__btn" type="button" data-filter="apartamentos">Apartamentos</button>
           <button class="projetos-filter__btn" type="button" data-filter="saude">Saúde</button>
-          <button class="projetos-filter__btn" type="button" data-filter="corporativo">Corporativo</button>
+          <button class="projetos-filter__btn" type="button" data-filter="corporativo">Corporativo e Comercial</button>
           <button class="projetos-filter__btn" type="button" data-filter="reforma">Reforma</button>
           <button class="projetos-filter__btn" type="button" data-filter="consultoria">Consultoria</button>
           <button class="projetos-filter__btn" type="button" data-filter="area-coletiva">Área coletiva</button>
@@ -67,7 +68,7 @@
 
       <ul class="projetos-list" data-projects-list>
 
-        <li class="projetos-item reveal" data-project-category="residencial" id="cobertura-duplex-noroeste">
+        <li class="projetos-item reveal" data-project-category="residencial apartamentos" id="cobertura-duplex-noroeste">
           <a href="/residencia-noroeste/" class="projetos-item__link" aria-label="Ver projeto Cobertura Duplex Noroeste">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
@@ -149,7 +150,7 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="residencial" id="apto-ci-cecilia-santos">
+        <li class="projetos-item reveal" data-project-category="residencial apartamentos" id="apto-ci-cecilia-santos">
           <a href="/apto-ci-cecilia-santos/" class="projetos-item__link" aria-label="Ver projeto Apto CI, Cecilia Santos">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
@@ -280,5 +281,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="/script.js" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      var hash = location.hash.slice(1);
+      if (!hash) return;
+      var btn = document.querySelector('[data-filter="' + hash + '"]');
+      if (btn) btn.click();
+    });
+  </script>
 </body>
 </html>
