@@ -465,12 +465,12 @@ button {
 
 .hero__headline {
   font-family: var(--font-headline);
-  font-size: clamp(54px, 7.5vw, 96px);
+  font-size: clamp(38px, 5vw, 68px);
   font-weight: 400;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--offwhite);
-  max-width: 760px;
+  max-width: 540px;
   margin-bottom: 36px;
 }
 

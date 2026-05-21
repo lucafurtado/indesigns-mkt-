@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Monta e abre mensagem no WhatsApp
       const msg = encodeURIComponent(
-        `Ol� Indira! Vim pelo site.\n\n` +
+        `Olá Indira! Vim pelo site.\n\n` +
         `Nome: ${nome}\n` +
         `WhatsApp: ${tel}\n` +
         `E-mail: ${email}\n` +
@@ -270,8 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = {
       'residencial-novo': 'Projeto residencial novo',
       'reforma':          'Reforma residencial',
-      'coletivo':         'Espa�o coletivo',
-      'comercial':        'Espa�o comercial',
+      'coletivo':         'Espaço coletivo',
+      'comercial':        'Espaço comercial',
       'consultoria':      'Consultoria',
       'planejando':       'Ainda planejando',
     };
@@ -280,9 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const formatPrazo = (val) => {
     const map = {
-      'flexivel': 'Prazo flex�vel',
-      'meses':    'Nos pr�ximos meses',
-      'urgente':  'Com urg�ncia de prazo',
+      'flexivel': 'Prazo flexível',
+      'meses':    'Nos próximos meses',
+      'urgente':  'Com urgência de prazo',
     };
     return map[val] || val;
   };
@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
       success.className = 'cta-form__success visible';
       success.innerHTML = `
         <h3>Mensagem recebida.</h3>
-        <p>Obrigada pelo contato. Vou retornar em at� 24 horas.<br>
-           Enquanto isso, voc� pode explorar o portf�lio no Instagram.</p>
+        <p>Obrigada pelo contato. Vou retornar em até 24 horas.<br>
+           Enquanto isso, você pode explorar o portfólio no Instagram.</p>
       `;
       ctaForm.insertAdjacentElement('afterend', success);
     }, 400);
@@ -350,8 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
       counter:   '01 / 03',
       category:  'RESIDENCIAL',
       title:     'Cobertura Duplex<br>Noroeste',
-      place:     'Noroeste � Bras�lia, DF',
-      narrative: 'Uma fam�lia sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, conviv�ncia e continuidade afetiva.',
+      place:     'Noroeste · Brasília, DF',
+      narrative: 'Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e continuidade afetiva.',
       href:      'residencia-noroeste/',
       img:       'assets/projects/noroeste/cover.jpg',
       imgAlt:    'Cobertura Duplex Noroeste, living da cobertura',
@@ -359,21 +359,21 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       theme:     'light',
       counter:   '02 / 03',
-      category:  '�REA COLETIVA � REFORMA',
+      category:  'ÁREA COLETIVA · REFORMA',
       title:     'Cobertura<br>Porto Seguro',
-      place:     'Asa Sul � Bras�lia',
-      narrative: 'Gourmet, academia e circula��o clara em uma cobertura coletiva pensada para encontros, perman�ncia e conviv�ncia.',
+      place:     'Asa Sul · Brasília',
+      narrative: 'Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros, permanência e convivência.',
       href:      'cobertura-porto-seguro/',
       img:       'assets/hero-bg.jpg',
-      imgAlt:    'Cobertura Porto Seguro, �rea coletiva com espa�o gourmet e conviv�ncia',
+      imgAlt:    'Cobertura Porto Seguro, área coletiva com espaço gourmet e convivência',
     },
     {
       theme:     'light',
       counter:   '03 / 03',
-      category:  'SA�DE � REFORMA',
+      category:  'SAÚDE · REFORMA',
       title:     'Orbis<br>Psicologia',
-      place:     'Bras�lia, DF � 2025',
-      narrative: 'Um consult�rio psicol�gico compacto, resolvido para acolher, atender e reunir at� 30 pessoas sem perder sensibilidade.',
+      place:     'Brasília, DF · 2025',
+      narrative: 'Um consultório psicológico compacto, resolvido para acolher, atender e reunir até 30 pessoas sem perder sensibilidade.',
       href:      'clinica-orbis/',
       img:       'assets/projects/orbis/hero.jpg',
       imgAlt:    'Orbis Psicologia, sala de atendimento com sofá, poltrona e mobiliário amadeirado',
@@ -611,7 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.removeAttribute('hidden');
     container.innerHTML = videos.map((video, index) => `
       <button type="button" class="video-modal__related-item" data-related-index="${index}">
-        <span>${video.label || 'V�deo relacionado'}</span>
+        <span>${video.label || 'Vídeo relacionado'}</span>
       </button>
     `).join('');
   }
