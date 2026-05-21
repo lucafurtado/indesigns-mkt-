@@ -147,6 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
+  const showcaseSection = document.querySelector('.showcase');
+  if (showcaseSection) {
+    new IntersectionObserver(
+      ([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        showcaseSection.classList.add('is-visible');
+        observer.disconnect();
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -80px 0px',
+      }
+    ).observe(showcaseSection);
+  }
+
   // Elementos .fade-up do hero — animação de carregamento inicial
   const heroFadeEls = document.querySelectorAll('.hero .fade-up');
   heroFadeEls.forEach((el, i) => {
