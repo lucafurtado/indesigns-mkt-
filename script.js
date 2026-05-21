@@ -317,12 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
       theme:     'light',
       counter:   '02 / 03',
       category:  'APARTAMENTOS',
-      title:     'Cobertura<br>116 Sul',
+      title:     'Cobertura<br>Porto Seguro',
       place:     'Asa Sul · Brasília',
       narrative: 'Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros.',
-      href:      'cobertura-116-sul/',
+      href:      'cobertura-porto-seguro/',
       img:       'assets/hero-bg.jpg',
-      imgAlt:    'Cobertura 116 Sul — área coletiva com espaço gourmet e convivência',
+      imgAlt:    'Cobertura Porto Seguro — área coletiva com espaço gourmet e convivência',
     },
     {
       theme:     'light',
@@ -453,7 +453,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(() => modal.classList.add('is-open'));
-      if (modalVid && videoSrc) { modalVid.src = videoSrc; modalVid.play().catch(() => {}); }
+      if (modalVid && videoSrc) {
+        modalVid.src = videoSrc;
+        modalVid.muted = true;
+        modalVid.setAttribute('muted', '');
+        modalVid.play().catch(() => {});
+      }
     };
 
     const closeModal = () => {
