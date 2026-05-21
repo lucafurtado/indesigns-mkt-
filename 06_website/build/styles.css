@@ -1067,11 +1067,13 @@ button {
 
 .cta-form__pills--compact {
   min-height: 48px;
+  flex-wrap: nowrap;
 }
 
 .cta-form__pills--compact .cta-form__pill span {
-  padding: 13px 12px;
+  padding: 13px 10px;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* Mensagem de sucesso */
@@ -1551,19 +1553,13 @@ button {
 }
 
 .nav__logo::after {
-  content: 'INDESIGNS';
-  font-family: var(--font-label);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  color: var(--offwhite);
-  line-height: 1;
+  display: none;
 }
 
 .nav__logo-img {
   height: 30px;
   width: auto;
-  display: none;
+  display: block;
 }
 
 .nav__symbol {
@@ -2985,7 +2981,7 @@ button {
 .showcase-bento {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px 300px 230px 300px 300px 230px;
+  grid-template-rows: 300px 300px 230px 280px;
   gap: 3px;
 }
 
@@ -3000,10 +2996,8 @@ button {
 .sc-cell:nth-child(2) { grid-column: 2; grid-row: 1; }
 .sc-cell:nth-child(3) { grid-column: 2; grid-row: 2; }
 .sc-cell:nth-child(4) { grid-column: 1 / span 2; grid-row: 3; }
-.sc-cell:nth-child(5) { grid-column: 1; grid-row: 4 / span 2; }
+.sc-cell:nth-child(5) { grid-column: 1; grid-row: 4; }
 .sc-cell:nth-child(6) { grid-column: 2; grid-row: 4; }
-.sc-cell:nth-child(7) { grid-column: 2; grid-row: 5; }
-.sc-cell:nth-child(8) { grid-column: 1 / span 2; grid-row: 6; }
 
 .sc-cell img {
   width: 100%;
@@ -3056,9 +3050,18 @@ button {
   letter-spacing: -0.01em;
 }
 
+.sc-cell__catname {
+  font-family: var(--font-headline);
+  font-size: clamp(22px, 2.6vw, 36px);
+  font-weight: 400;
+  color: var(--offwhite);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+}
+
 @media (max-width: 900px) {
   .showcase-bento {
-    grid-template-rows: 240px 240px 180px 240px 240px 180px;
+    grid-template-rows: 240px 240px 180px 220px;
   }
 }
 
@@ -3069,10 +3072,10 @@ button {
     gap: 16px;
   }
   .showcase-bento {
-    grid-template-rows: 180px 180px 140px 180px 180px 140px;
+    grid-template-rows: 180px 180px 140px 180px;
     gap: 2px;
   }
-  .sc-cell__name { font-size: 13px; }
+  .sc-cell__catname { font-size: 20px; }
 }
 
 /* ============================================================
