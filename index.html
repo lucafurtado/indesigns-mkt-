@@ -103,18 +103,18 @@
 </head>
 <body>
 
+  <!-- INTRO OVERLAY -->
+  <div id="site-intro" class="site-intro" aria-hidden="true" role="presentation">
+    <video class="site-intro__video" id="site-intro-video" autoplay muted playsinline>
+      <source src="assets/intro.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <!-- NAVEGAÇÃO -->
   <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
       <a href="#hero" class="nav__logo" aria-label="Indesigns — início">
-        <svg class="nav__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
-          <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
-          <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#8ab0ab"/>
-          <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#ececea"/>
-        </svg>
-        <span class="nav__sep" aria-hidden="true"></span>
-        <span class="nav__wordmark">INDESIGNS</span>
+        <img src="assets/logo.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
       </a>
 
       <div class="nav__links" id="navLinks" role="menubar">
@@ -342,13 +342,12 @@
           <span class="label cta-section__label reveal">CONTATO</span>
           <h2 class="cta-section__headline reveal">Me conta o que você está imaginando.</h2>
           <p class="cta-section__sub reveal">
-            Conta o que você está imaginando.<br>
-            Ou o que ainda não sabe nomear.
+            Antes da planta, vem a conversa.
             <span class="cta-section__sub-note">Retorno em até 24 horas.</span>
           </p>
         </header>
 
-        <p class="cta-section__impulse">O projeto ainda não começou.<br>Mas esta conversa, já.</p>
+        <p class="cta-section__impulse">O projeto ainda não começou.<br>Esta conversa, sim.</p>
 
         <form class="cta-form reveal" id="ctaForm" novalidate>
           <div class="cta-form__row">
@@ -385,6 +384,7 @@
                 <option value="reforma">Reforma residencial</option>
                 <option value="coletivo">Espaço coletivo</option>
                 <option value="comercial">Espaço comercial</option>
+                <option value="consultoria">Consultoria</option>
                 <option value="planejando">Ainda estou planejando</option>
               </select>
             </div>
@@ -411,6 +411,24 @@
               required></textarea>
           </div>
 
+          <div class="cta-form__group cta-form__group--full">
+            <span class="cta-form__label">Prazo do projeto</span>
+            <div class="cta-form__pills" role="group" aria-label="Prazo do projeto">
+              <label class="cta-form__pill">
+                <input type="radio" name="prazo" value="flexivel" checked>
+                <span>Prazo flexível</span>
+              </label>
+              <label class="cta-form__pill">
+                <input type="radio" name="prazo" value="meses">
+                <span>Nos próximos meses</span>
+              </label>
+              <label class="cta-form__pill">
+                <input type="radio" name="prazo" value="urgente">
+                <span>Tenho urgência de prazo</span>
+              </label>
+            </div>
+          </div>
+
           <div class="cta-form__footer">
             <button type="submit" class="btn btn--light" id="submitBtn">
               Quero conversar
@@ -429,7 +447,7 @@
             <span class="cta-contact__value">61 99858-6151</span>
           </a>
           <span class="cta-contacts__sep" aria-hidden="true"></span>
-          <a href="mailto:indesigns.arq@gmail.com" class="cta-contact" aria-label="E-mail">
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20%E2%80%94%20Indesigns" class="cta-contact" aria-label="E-mail">
             <span class="cta-contact__label">E-mail</span>
             <span class="cta-contact__value">indesigns.arq@gmail.com</span>
           </a>
@@ -445,23 +463,14 @@
       <div class="footer__top">
         <div class="footer__brand">
           <div class="footer__logo-lockup">
-            <svg class="footer__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#173a4a"/>
-              <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
-              <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#8ab0ab"/>
-              <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#173a4a"/>
-            </svg>
-            <div class="footer__logo-text">
-              <span class="footer__logo-name">INDESIGNS</span>
-              <span class="footer__logo-sub">ARQUITETURA E DESIGN</span>
-            </div>
+            <img src="assets/logo.png" alt="Indesigns — Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
           </div>
           <span class="footer__tagline">Brasília, DF</span>
         </div>
         <nav class="footer__links" aria-label="Links de contato">
           <a href="https://www.instagram.com/indesigns/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://wa.me/5561998586151" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:indesigns.arq@gmail.com">E-mail</a>
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20%E2%80%94%20Indesigns">E-mail</a>
         </nav>
       </div>
       <div class="footer__divider" aria-hidden="true"></div>

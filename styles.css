@@ -3,6 +3,28 @@
    Sistema de Design Premium — Brasília Modernista Contemporâneo
    ============================================================ */
 
+/* Fonte oficial de corpo/labels — Montserrat via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+/* Fontes de marca (KyivType Sans + Sweet Sans Pro) — ativar ao adicionar
+   os arquivos em assets/fonts/KyivTypeSans-Medium3.woff2 e SweetSansPro.woff2 */
+@font-face {
+  font-family: 'KyivType Sans';
+  src: url('assets/fonts/KyivTypeSans-Medium3.woff2') format('woff2'),
+       url('assets/fonts/KyivTypeSans-Medium3.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sweet Sans Pro';
+  src: url('assets/fonts/SweetSansPro-Regular.woff2') format('woff2'),
+       url('assets/fonts/SweetSansPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── RESET ─────────────────────────────────────────────────── */
 
 *, *::before, *::after {
@@ -57,9 +79,9 @@ button {
   --teal-dim:       rgba(60, 110, 113, 0.18);
   --offwhite-dim:   rgba(236, 236, 234, 0.08);
 
-  /* Tipografia */
-  --font-headline: 'Cormorant Garamond', Georgia, serif;
-  --font-label:    'DM Sans', 'Inter', sans-serif;
+  /* Tipografia oficial da marca */
+  --font-headline: 'KyivType Sans', 'Cormorant Garamond', Georgia, serif;
+  --font-label:    'Sweet Sans Pro', 'Montserrat', sans-serif;
   --font-body:     'Montserrat', sans-serif;
 
   /* Transições */
@@ -1094,7 +1116,7 @@ button {
 
 .footer {
   padding: 56px 0;
-  background-color: var(--offwhite);
+  background-color: var(--petroleo-dark);
 }
 
 .footer__top {
@@ -1110,20 +1132,28 @@ button {
   gap: 6px;
 }
 
+.footer__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
 .footer__logo {
   font-family: var(--font-label);
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.2em;
-  color: var(--petroleo);
+  color: var(--offwhite);
   text-transform: uppercase;
 }
 
 .footer__tagline {
   font-family: var(--font-label);
   font-size: 10px;
-  color: var(--teal);
+  color: var(--sage);
   letter-spacing: 0.07em;
+  opacity: 0.62;
+  margin-top: 6px;
 }
 
 .footer__links {
@@ -1136,20 +1166,20 @@ button {
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: var(--petroleo);
+  color: var(--offwhite);
   opacity: 0.42;
   text-transform: uppercase;
   transition: opacity var(--t-fast), color var(--t-fast), letter-spacing var(--t-med) var(--ease);
 }
 .footer__links a:hover {
   opacity: 1;
-  color: var(--teal);
+  color: var(--sage);
   letter-spacing: 0.12em;
 }
 
 .footer__divider {
   height: 1px;
-  background: var(--greige);
+  background: rgba(236, 236, 234, 0.1);
   margin-bottom: 24px;
 }
 
@@ -1162,8 +1192,8 @@ button {
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 300;
-  color: var(--petroleo);
-  opacity: 0.32;
+  color: var(--offwhite);
+  opacity: 0.28;
 }
 
 /* ============================================================
@@ -1367,6 +1397,12 @@ button {
   gap: 14px;
 }
 
+.nav__logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
 .nav__symbol {
   width: 26px;
   height: 26px;
@@ -1455,36 +1491,6 @@ button {
   align-items: center;
   gap: 14px;
   margin-bottom: 6px;
-}
-
-.footer__symbol {
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-}
-
-.footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.footer__logo-name {
-  font-family: var(--font-label);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  color: var(--petroleo);
-  text-transform: uppercase;
-}
-
-.footer__logo-sub {
-  font-family: var(--font-label);
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  color: var(--teal);
-  text-transform: uppercase;
 }
 
 /* ── RESPONSIVO: Ghost hero em mobile ───────────────────────── */
@@ -3397,4 +3403,91 @@ button {
   color: var(--teal);
   opacity: 0.58;
   margin-bottom: 22px;
+}
+
+/* ============================================================
+   FORMULÁRIO — Pills de prazo/urgência
+   ============================================================ */
+
+.cta-form__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cta-form__pill {
+  position: relative;
+  cursor: pointer;
+}
+
+.cta-form__pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.cta-form__pill span {
+  display: inline-flex;
+  padding: 9px 20px;
+  border: 1px solid rgba(236, 236, 234, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: rgba(236, 236, 234, 0.58);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+  user-select: none;
+}
+
+.cta-form__pill:hover span {
+  border-color: rgba(138, 176, 171, 0.45);
+  color: rgba(236, 236, 234, 0.8);
+}
+
+.cta-form__pill:has(input:checked) span {
+  border-color: var(--sage);
+  color: var(--offwhite);
+  background-color: rgba(138, 176, 171, 0.1);
+}
+
+@media (max-width: 480px) {
+  .cta-form__pills { gap: 8px; }
+  .cta-form__pill span { padding: 8px 16px; font-size: 12px; }
+}
+
+/* ============================================================
+   INTRO OVERLAY — Abertura da marca
+   ============================================================ */
+
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--petroleo-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.9s var(--ease-premium);
+}
+
+.site-intro.is-exiting {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-intro__video {
+  width: auto;
+  height: auto;
+  max-width: min(480px, 80vw);
+  max-height: 80vh;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro { display: none; }
 }

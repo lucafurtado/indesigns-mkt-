@@ -4,6 +4,42 @@
 
 'use strict';
 
+/* ── INTRO OVERLAY ───────────────────────────────────────── */
+(function () {
+  const intro    = document.getElementById('site-intro');
+  const introVid = document.getElementById('site-intro-video');
+  if (!intro || !introVid) return;
+
+  // Mostrar só uma vez por sessão; pular se motion reduzido
+  if (
+    sessionStorage.getItem('indesigns-intro') ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    intro.remove();
+    return;
+  }
+
+  document.documentElement.style.overflow = 'hidden';
+
+  const exitIntro = () => {
+    if (intro._exiting) return;
+    intro._exiting = true;
+    intro.classList.add('is-exiting');
+    setTimeout(() => {
+      intro.remove();
+      document.documentElement.style.overflow = '';
+      sessionStorage.setItem('indesigns-intro', '1');
+    }, 900);
+  };
+
+  introVid.addEventListener('ended', exitIntro);
+  introVid.addEventListener('error', exitIntro);
+  // Fallback: sair após 6s máximo
+  setTimeout(exitIntro, 6000);
+  // Sair ao clicar
+  intro.addEventListener('click', exitIntro);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── REFERÊNCIAS DO DOM ──────────────────────────────────── */
@@ -167,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tipo    = formatTipo(data.get('tipo') || '');
       const bairro  = data.get('bairro')?.trim() || '';
       const imagina = data.get('imagina')?.trim() || '';
+      const prazo   = formatPrazo(data.get('prazo') || '');
 
       // Estado de loading
       submitBtn.textContent = 'Enviando...';
@@ -178,7 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `Nome: ${nome}\n` +
         `WhatsApp: ${tel}\n` +
         `Tipo de projeto: ${tipo}\n` +
-        `Local: ${bairro}\n\n` +
+        `Local: ${bairro}\n` +
+        `Prazo: ${prazo}\n\n` +
         `O que imagino: ${imagina}`
       );
 
@@ -195,7 +233,18 @@ document.addEventListener('DOMContentLoaded', () => {
       'residencial-novo': 'Projeto residencial novo',
       'reforma':          'Reforma residencial',
       'coletivo':         'Espaço coletivo',
+      'comercial':        'Espaço comercial',
+      'consultoria':      'Consultoria',
       'planejando':       'Ainda planejando',
+    };
+    return map[val] || val;
+  };
+
+  const formatPrazo = (val) => {
+    const map = {
+      'flexivel': 'Prazo flexível',
+      'meses':    'Nos próximos meses',
+      'urgente':  'Com urgência de prazo',
     };
     return map[val] || val;
   };
