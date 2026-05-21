@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -67,8 +67,15 @@
       padding: clamp(52px, 6vw, 80px) 0;
       border-top: 1px solid rgba(23,58,74,0.1);
       align-items: start;
+      scroll-margin-top: 88px;
     }
     .servico:last-child { border-bottom: 1px solid rgba(23,58,74,0.1); }
+    @keyframes svc-pulse {
+      0%   { box-shadow: inset 3px 0 0 var(--teal); }
+      65%  { box-shadow: inset 3px 0 0 var(--teal); }
+      100% { box-shadow: inset 3px 0 0 transparent; }
+    }
+    .servico:target { animation: svc-pulse 1.6s ease forwards; }
     .servico__index {
       font-family: var(--font-label);
       font-size: 10px;
@@ -153,14 +160,14 @@
   <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
       <a href="/" class="nav__logo" aria-label="Indesigns início">
-        <img src="/assets/logo.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
+        <img src="/assets/logo-nav.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
       </a>
       <div class="nav__links" id="navLinks" role="menubar">
         <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
         <a href="/servicos/" class="nav__link" role="menuitem">Serviços</a>
         <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
         <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
-        <a href="/parcerias/" class="nav__link" role="menuitem">Parcerias</a>
+        <a href="/collab/" class="nav__link" role="menuitem">Collab</a>
         <a href="/links/" class="nav__link" role="menuitem">Links</a>
         <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
       </div>
@@ -283,7 +290,7 @@
       <div class="footer__top">
         <div class="footer__brand">
           <div class="footer__logo-lockup">
-            <img src="/assets/logo.png" alt="Indesigns Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
+            <img src="/assets/logo-full.png" alt="Indesigns Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
           </div>
           <span class="footer__tagline">Brasília, DF</span>
         </div>

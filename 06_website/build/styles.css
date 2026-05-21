@@ -71,6 +71,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1281,9 +1282,9 @@ button {
 }
 
 .footer__logo-img {
-  height: 44px;
+  height: 36px;
   width: auto;
-  display: none;
+  display: block;
 }
 
 .footer__logo-lockup::after {
@@ -1294,7 +1295,7 @@ button {
   letter-spacing: 0.22em;
   color: var(--offwhite);
   line-height: 1;
-  display: block;
+  display: none;
 }
 
 .footer__logo {
@@ -1557,7 +1558,7 @@ button {
 }
 
 .nav__logo-img {
-  height: 30px;
+  height: 48px;
   width: auto;
   display: block;
 }
@@ -2982,7 +2983,14 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: clamp(200px, 26vw, 360px);
+  grid-auto-flow: dense;
   gap: 3px;
+}
+
+/* Home category grid: first card (Residencial) is featured hero */
+.showcase .sc-cell:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .sc-cell {
@@ -3056,6 +3064,10 @@ button {
   .showcase-bento {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: clamp(180px, 34vw, 280px);
+  }
+  .showcase .sc-cell:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
   }
 }
 
@@ -4164,7 +4176,7 @@ button {
 }
 
 .projetos-header {
-  padding: clamp(150px, 15vw, 205px) 0 clamp(70px, 8vw, 108px);
+  padding: clamp(118px, 13vw, 170px) 0 clamp(52px, 6vw, 80px);
   border-bottom: 1px solid rgba(23, 58, 74, 0.1);
 }
 
@@ -4181,27 +4193,27 @@ button {
 }
 
 .projetos-header__content {
-  max-width: 780px;
+  max-width: 640px;
 }
 
 .projetos-header__title {
   font-family: var(--font-headline);
-  font-size: clamp(36px, 4.8vw, 64px);
+  font-size: clamp(28px, 3.4vw, 46px);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.06;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
   color: var(--petroleo);
-  max-width: 730px;
+  max-width: 600px;
 }
 
 .projetos-header__text {
-  margin-top: 30px;
-  max-width: 470px;
+  margin-top: 24px;
+  max-width: 440px;
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.5vw, 17px);
+  font-size: clamp(14px, 1.4vw, 16px);
   font-weight: 300;
   line-height: 1.78;
-  color: rgba(23, 58, 74, 0.66);
+  color: rgba(23, 58, 74, 0.62);
 }
 
 .projetos-list {
