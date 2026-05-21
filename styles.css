@@ -722,7 +722,7 @@ button {
 
 .sobre {
   padding: clamp(148px, 14vw, 208px) 0;
-  background-color: var(--greige);
+  background-color: #d6ceb8;
 }
 
 .sobre__grid {
@@ -737,13 +737,38 @@ button {
   top: calc(var(--nav-h) + 32px);
 }
 
+/* Offset corner bracket frame — editorial architectural detail */
+.sobre__img-col::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 46%;
+  height: 36%;
+  border-top: 1px solid rgba(60, 110, 113, 0.45);
+  border-left: 1px solid rgba(60, 110, 113, 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sobre__img-col::after {
+  content: '';
+  position: absolute;
+  bottom: 62px;
+  right: -18px;
+  width: 46%;
+  height: 36%;
+  border-bottom: 1px solid rgba(60, 110, 113, 0.45);
+  border-right: 1px solid rgba(60, 110, 113, 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .sobre__img-wrap {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 16px 56px rgba(23, 58, 74, 0.11), 0 4px 16px rgba(23, 58, 74, 0.07);
-  outline: 1px solid rgba(23, 58, 74, 0.08);
-  outline-offset: -1px;
+  box-shadow: 0 28px 80px rgba(23, 58, 74, 0.20), 0 8px 28px rgba(23, 58, 74, 0.12);
 }
 
 .sobre__img {
@@ -771,11 +796,12 @@ button {
 .sobre__img-wrap::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 0;
-  bottom: 0;
-  width: 2px;
+  bottom: 10%;
+  width: 3px;
   background: var(--teal);
+  opacity: 0.75;
   z-index: 2;
 }
 
@@ -3269,12 +3295,13 @@ button {
 }
 
 .project-reel__ring {
-  width: 68px;
-  height: 68px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 1.5px solid rgba(138, 176, 171, 0.40);
+  border: 1.5px solid rgba(138, 176, 171, 0.50);
+  box-shadow: 0 6px 22px rgba(14, 36, 48, 0.18);
   transition: border-color 0.45s var(--ease-premium),
               transform 0.45s var(--ease-premium),
               box-shadow 0.45s var(--ease-premium);
@@ -3282,8 +3309,8 @@ button {
 
 .project-reel:hover .project-reel__ring {
   border-color: var(--sage);
-  transform: scale(1.07);
-  box-shadow: 0 4px 18px rgba(23, 58, 74, 0.16);
+  transform: scale(1.06);
+  box-shadow: 0 8px 30px rgba(14, 36, 48, 0.26);
 }
 
 .project-reel__ring video {
@@ -3397,8 +3424,8 @@ button {
     bottom: 28px;
   }
   .project-reel__ring {
-    width: 56px;
-    height: 56px;
+    width: 68px;
+    height: 68px;
   }
   .video-modal__close {
     top: 16px;
