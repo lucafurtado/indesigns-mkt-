@@ -6,6 +6,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/servicos", "destination": "/#servicos", "permanent": true },
+    { "source": "/servicos/", "destination": "/#servicos", "permanent": true },
     { "source": "/parcerias", "destination": "/collab", "permanent": true },
     { "source": "/parcerias/", "destination": "/collab", "permanent": true }
   ]
