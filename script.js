@@ -6,11 +6,9 @@
 
 /* ── INTRO OVERLAY ───────────────────────────────────────── */
 (function () {
-  const intro    = document.getElementById('site-intro');
-  const introVid = document.getElementById('site-intro-video');
-  if (!intro || !introVid) return;
+  const intro = document.getElementById('site-intro');
+  if (!intro) return;
 
-  // Mostrar só uma vez por sessão; pular se motion reduzido
   if (
     sessionStorage.getItem('indesigns-intro') ||
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -32,11 +30,8 @@
     }, 900);
   };
 
-  introVid.addEventListener('ended', exitIntro);
-  introVid.addEventListener('error', exitIntro);
-  // Fallback: sair após 6s máximo
-  setTimeout(exitIntro, 6000);
-  // Sair ao clicar
+  // Sair após a animação do logo (2.6s de animação + 0.2s de margem)
+  setTimeout(exitIntro, 2800);
   intro.addEventListener('click', exitIntro);
 })();
 

@@ -3480,12 +3480,18 @@ button {
   pointer-events: none;
 }
 
-.site-intro__video {
+.site-intro__logo {
   width: auto;
-  height: auto;
-  max-width: min(480px, 80vw);
-  max-height: 80vh;
+  height: clamp(52px, 9vw, 108px);
   display: block;
+  animation: intro-logo-in 2.6s var(--ease-premium) both;
+}
+
+@keyframes intro-logo-in {
+  0%   { opacity: 0; transform: scale(0.93) translateY(12px); }
+  28%  { opacity: 1; transform: scale(1)    translateY(0); }
+  80%  { opacity: 1; transform: scale(1)    translateY(0); }
+  100% { opacity: 0; transform: scale(1.02) translateY(-4px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
