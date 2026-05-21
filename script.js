@@ -429,12 +429,23 @@ document.addEventListener('DOMContentLoaded', () => {
       previewVid.play().catch(() => {});
     }
 
-    const projectHeroEl = document.querySelector('.project-hero');
-    if (projectHeroEl) {
+    // Inline → Floating: after user scrolls past testimonial, reel moves to corner
+    const testimonialEl = document.querySelector('.project-testimonial');
+    if (testimonialEl) {
       new IntersectionObserver(
-        ([entry]) => projectReel.classList.toggle('is-visible', !entry.isIntersecting),
-        { threshold: 0.15 }
-      ).observe(projectHeroEl);
+        ([entry]) => {
+          const pastIt = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          if (pastIt && !projectReel.classList.contains('is-floating')) {
+            projectReel.classList.add('is-floating');
+            requestAnimationFrame(() => {
+              setTimeout(() => projectReel.classList.add('is-visible'), 80);
+            });
+          } else if (!pastIt && projectReel.classList.contains('is-floating')) {
+            projectReel.classList.remove('is-floating', 'is-visible');
+          }
+        },
+        { threshold: 0.5 }
+      ).observe(testimonialEl);
     }
 
     const openModal = () => {

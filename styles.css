@@ -722,7 +722,7 @@ button {
 
 .sobre {
   padding: clamp(148px, 14vw, 208px) 0;
-  background-color: #d6ceb8;
+  background-color: var(--greige);
 }
 
 .sobre__grid {
@@ -737,38 +737,13 @@ button {
   top: calc(var(--nav-h) + 32px);
 }
 
-/* Offset corner bracket frame — editorial architectural detail */
-.sobre__img-col::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: -18px;
-  width: 46%;
-  height: 36%;
-  border-top: 1px solid rgba(60, 110, 113, 0.45);
-  border-left: 1px solid rgba(60, 110, 113, 0.45);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.sobre__img-col::after {
-  content: '';
-  position: absolute;
-  bottom: 62px;
-  right: -18px;
-  width: 46%;
-  height: 36%;
-  border-bottom: 1px solid rgba(60, 110, 113, 0.45);
-  border-right: 1px solid rgba(60, 110, 113, 0.45);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .sobre__img-wrap {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
   box-shadow: 0 28px 80px rgba(23, 58, 74, 0.20), 0 8px 28px rgba(23, 58, 74, 0.12);
+  outline: 1px solid rgba(60, 110, 113, 0.36);
+  outline-offset: 10px;
 }
 
 .sobre__img {
@@ -2359,6 +2334,14 @@ button {
   align-items: center;
 }
 
+.showcase__footer {
+  padding: 24px clamp(40px, 6vw, 88px) 40px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--sc-bg);
+  transition: background-color 0.8s var(--ease);
+}
+
 .showcase__dot {
   width: 28px;
   height: 2px;
@@ -2960,6 +2943,17 @@ button {
   color: rgba(236, 236, 234, 0.66);
 }
 
+/* "Voltar aos projetos" when placed inside project-body (light background) */
+.project-body .project-back {
+  color: rgba(23, 58, 74, 0.45);
+  margin-bottom: 0;
+  padding-bottom: 40px;
+  transition: color 0.2s;
+}
+.project-body .project-back:hover {
+  color: var(--teal);
+}
+
 .project-kicker {
   color: var(--sage);
   margin-bottom: 22px;
@@ -3272,15 +3266,23 @@ button {
    ============================================================ */
 
 .project-reel {
-  position: fixed;
-  right: 40px;
-  bottom: 48px;
-  z-index: 80;
-  display: flex;
+  /* Inline mode — inside project content */
+  position: relative;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 9px;
   cursor: pointer;
+  margin-top: 32px;
+}
+
+/* When floated to bottom-right corner */
+.project-reel.is-floating {
+  position: fixed;
+  right: 40px;
+  bottom: 48px;
+  z-index: 80;
+  margin: 0;
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.65s var(--ease-premium),
@@ -3288,10 +3290,16 @@ button {
   pointer-events: none;
 }
 
-.project-reel.is-visible {
+.project-reel.is-floating.is-visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* Grid: copy spans both rows when reel is present */
+.project-intro:has(.project-reel) .project-copy {
+  grid-row: 1 / span 2;
+  align-self: start;
 }
 
 .project-reel__ring {
