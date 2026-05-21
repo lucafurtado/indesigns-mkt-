@@ -1,10 +1,10 @@
 /* ============================================================
-   INDESIGNS · script.js
+   INDESIGNS � script.js
    ============================================================ */
 
 'use strict';
 
-/* ── INTRO OVERLAY ───────────────────────────────────────── */
+/* -- INTRO OVERLAY ----------------------------------------- */
 (function () {
   const intro = document.getElementById('site-intro');
   if (!intro) return;
@@ -30,14 +30,14 @@
     }, 900);
   };
 
-  // Sair após a animação do logo (2.6s de animação + 0.2s de margem)
+  // Sair ap�s a anima��o do logo (2.6s de anima��o + 0.2s de margem)
   setTimeout(exitIntro, 2800);
   intro.addEventListener('click', exitIntro);
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── REFERÊNCIAS DO DOM ──────────────────────────────────── */
+  /* -- REFER�NCIAS DO DOM ------------------------------------ */
 
   const nav         = document.getElementById('nav');
   const navToggle   = document.getElementById('navToggle');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctaForm     = document.getElementById('ctaForm');
   const submitBtn   = document.getElementById('submitBtn');
 
-  /* ── NAV: FUNDO AO FAZER SCROLL ─────────────────────────── */
+  /* -- NAV: FUNDO AO FAZER SCROLL --------------------------- */
 
   const updateNav = () => {
     const scrolled = window.scrollY > 72;
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav(); // estado inicial
 
-  /* ── MENU MOBILE ─────────────────────────────────────────── */
+  /* -- MENU MOBILE ------------------------------------------- */
 
   const openMenu = () => {
     navLinks.classList.add('open');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-    // esconde backdrop após transição
+    // esconde backdrop ap�s transi��o
     setTimeout(() => { navBackdrop.style.display = ''; }, 350);
   };
 
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ── SMOOTH SCROLL PARA ÂNCORAS ─────────────────────────── */
+  /* -- SMOOTH SCROLL PARA �NCORAS --------------------------- */
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── ANIMAÇÕES DE SCROLL (IntersectionObserver) ──────────── */
+  /* -- ANIMA��ES DE SCROLL (IntersectionObserver) ------------ */
 
-  // Elementos .reveal — animação ao entrar na viewport
+  // Elementos .reveal � anima��o ao entrar na viewport
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ).observe(showcaseSection);
   }
 
-  // Elementos .fade-up do hero — animação de carregamento inicial
+  // Elementos .fade-up do hero � anima��o de carregamento inicial
   const heroFadeEls = document.querySelectorAll('.hero .fade-up');
   heroFadeEls.forEach((el, i) => {
     setTimeout(() => {
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 180 + i * 190);
   });
 
-  /* ── HIGHLIGHT DO LINK DE NAV ATIVO ─────────────────────── */
+  /* -- HIGHLIGHT DO LINK DE NAV ATIVO ----------------------- */
 
   const sections = document.querySelectorAll('section[id]');
   const navLinkEls = document.querySelectorAll('.nav__link:not(.nav__link--cta)');
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(s => activeLinkObserver.observe(s));
 
-  /* ── FORMULÁRIO ──────────────────────────────────────────── */
+  /* -- FORMUL�RIO -------------------------------------------- */
 
   if (ctaForm) {
     const originInput = ctaForm.querySelector('[name="origem"]');
@@ -205,14 +205,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ctaForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Valida campos manualmente (já garantido pelo `required`, mas garante UX)
+      // Valida campos manualmente (j� garantido pelo `required`, mas garante UX)
       const isValid = ctaForm.checkValidity();
       if (!isValid) {
         ctaForm.reportValidity();
         return;
       }
 
-      // Captura os dados do formulário
+      // Captura os dados do formul�rio
       const data = new FormData(ctaForm);
       if ((data.get('empresa_site') || '').trim()) return;
 
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Monta e abre mensagem no WhatsApp
       const msg = encodeURIComponent(
-        `Olá Indira! Vim pelo site.\n\n` +
+        `Ol� Indira! Vim pelo site.\n\n` +
         `Nome: ${nome}\n` +
         `WhatsApp: ${tel}\n` +
         `E-mail: ${email}\n` +
@@ -270,8 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = {
       'residencial-novo': 'Projeto residencial novo',
       'reforma':          'Reforma residencial',
-      'coletivo':         'Espaço coletivo',
-      'comercial':        'Espaço comercial',
+      'coletivo':         'Espa�o coletivo',
+      'comercial':        'Espa�o comercial',
       'consultoria':      'Consultoria',
       'planejando':       'Ainda planejando',
     };
@@ -280,15 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const formatPrazo = (val) => {
     const map = {
-      'flexivel': 'Prazo flexível',
-      'meses':    'Nos próximos meses',
-      'urgente':  'Com urgência de prazo',
+      'flexivel': 'Prazo flex�vel',
+      'meses':    'Nos pr�ximos meses',
+      'urgente':  'Com urg�ncia de prazo',
     };
     return map[val] || val;
   };
 
   const showFormSuccess = () => {
-    // Oculta o formulário e mostra mensagem de sucesso
+    // Oculta o formul�rio e mostra mensagem de sucesso
     ctaForm.style.opacity = '0';
     ctaForm.style.transition = 'opacity 0.4s ease';
 
@@ -300,15 +300,15 @@ document.addEventListener('DOMContentLoaded', () => {
       success.className = 'cta-form__success visible';
       success.innerHTML = `
         <h3>Mensagem recebida.</h3>
-        <p>Obrigada pelo contato. Vou retornar em até 24 horas.<br>
-           Enquanto isso, você pode explorar o portfólio no Instagram.</p>
+        <p>Obrigada pelo contato. Vou retornar em at� 24 horas.<br>
+           Enquanto isso, voc� pode explorar o portf�lio no Instagram.</p>
       `;
       ctaForm.insertAdjacentElement('afterend', success);
     }, 400);
   };
 
-  /* ── EFEITO DE DIMMING NOS CARDS DO PORTFÓLIO ───────────── */
-  // Fallback JS para browsers que não suportam :has()
+  /* -- EFEITO DE DIMMING NOS CARDS DO PORTF�LIO ------------- */
+  // Fallback JS para browsers que n�o suportam :has()
 
   const portfolioCards = document.querySelectorAll('.portfolio__card');
   const supportsHas = CSS.supports('selector(:has(+ *))');
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── LINHA DE PROCESSO ANIMADA ───────────────────────────── */
+  /* -- LINHA DE PROCESSO ANIMADA ----------------------------- */
 
   const processoSteps = document.querySelector('.processo__steps');
   if (processoSteps) {
@@ -342,41 +342,41 @@ document.addEventListener('DOMContentLoaded', () => {
     lineObserver.observe(processoSteps);
   }
 
-  /* ── SHOWCASE DE PROJETOS ────────────────────────────────── */
+  /* -- SHOWCASE DE PROJETOS ---------------------------------- */
 
   const showcaseProjects = [
     {
       theme:     'light',
       counter:   '01 / 03',
       category:  'RESIDENCIAL',
-      title:     'Residência<br>Noroeste',
-      place:     'Noroeste · Brasília, DF',
-      narrative: 'Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.',
+      title:     'Cobertura Duplex<br>Noroeste',
+      place:     'Noroeste � Bras�lia, DF',
+      narrative: 'Uma fam�lia sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, conviv�ncia e continuidade afetiva.',
       href:      'residencia-noroeste/',
       img:       'assets/projects/noroeste/cover.jpg',
-      imgAlt:    'Residência Noroeste — living da cobertura',
+      imgAlt:    'Cobertura Duplex Noroeste, living da cobertura',
     },
     {
       theme:     'light',
       counter:   '02 / 03',
-      category:  'APARTAMENTOS',
+      category:  '�REA COLETIVA � REFORMA',
       title:     'Cobertura<br>Porto Seguro',
-      place:     'Asa Sul · Brasília',
-      narrative: 'Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros.',
+      place:     'Asa Sul � Bras�lia',
+      narrative: 'Gourmet, academia e circula��o clara em uma cobertura coletiva pensada para encontros, perman�ncia e conviv�ncia.',
       href:      'cobertura-porto-seguro/',
       img:       'assets/hero-bg.jpg',
-      imgAlt:    'Cobertura Porto Seguro — área coletiva com espaço gourmet e convivência',
+      imgAlt:    'Cobertura Porto Seguro, �rea coletiva com espa�o gourmet e conviv�ncia',
     },
     {
       theme:     'light',
       counter:   '03 / 03',
-      category:  'CORPORATIVO · SAÚDE',
-      title:     'Clínica<br>Orbis',
-      place:     'Brasília, DF · 2025',
-      narrative: 'Um consultório psicológico compacto, resolvido para acolher, atender e funcionar sem perder sensibilidade.',
+      category:  'SA�DE � REFORMA',
+      title:     'Orbis<br>Psicologia',
+      place:     'Bras�lia, DF � 2025',
+      narrative: 'Um consult�rio psicol�gico compacto, resolvido para acolher, atender e reunir at� 30 pessoas sem perder sensibilidade.',
       href:      'clinica-orbis/',
       img:       'assets/projects/orbis/hero.jpg',
-      imgAlt:    'Clínica Orbis — sala de atendimento com sofá, poltrona e mobiliário amadeirado',
+      imgAlt:    'Orbis Psicologia, sala de atendimento com sofá, poltrona e mobiliário amadeirado',
     },
   ];
 
@@ -455,7 +455,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── VIDEO REEL — Páginas de projeto ────────────────────── */
+  const projectList = document.querySelector('[data-projects-list]');
+  const projectItems = projectList ? Array.from(projectList.querySelectorAll('.projetos-item')) : [];
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  const viewButtons = document.querySelectorAll('[data-project-view]');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter || 'todos';
+      filterButtons.forEach(btn => btn.classList.toggle('is-active', btn === button));
+
+      projectItems.forEach((item) => {
+        const categories = (item.dataset.projectCategory || '').split(/\s+/);
+        const shouldShow = filter === 'todos' || categories.includes(filter);
+        item.classList.toggle('is-hidden', !shouldShow);
+      });
+    });
+  });
+
+  viewButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const view = button.dataset.projectView || 'editorial';
+      viewButtons.forEach(btn => btn.classList.toggle('is-active', btn === button));
+      projectList?.classList.toggle('is-list-view', view === 'lista');
+    });
+  });
+
+  /* -- VIDEO REEL � P�ginas de projeto ---------------------- */
 
   const projectReel = document.querySelector('.project-reel');
   if (projectReel) {
@@ -471,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const relatedWrap = modal?.querySelector('.video-modal__related');
     const relatedVideos = parseRelatedVideos(projectReel.dataset.relatedVideos);
 
-    // Inline → Floating: after user scrolls past testimonial, reel moves to corner
+    // Inline ? Floating: after user scrolls past testimonial, reel moves to corner
     const testimonialEl = document.querySelector('.project-testimonial');
     if (testimonialEl) {
       new IntersectionObserver(
@@ -563,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── GSAP: REFINOS SUTIS ───────────────────────────────── */
+  /* -- GSAP: REFINOS SUTIS --------------------------------- */
 
   function parseRelatedVideos(raw) {
     if (!raw) return [];
@@ -585,7 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.removeAttribute('hidden');
     container.innerHTML = videos.map((video, index) => `
       <button type="button" class="video-modal__related-item" data-related-index="${index}">
-        <span>${video.label || 'Vídeo relacionado'}</span>
+        <span>${video.label || 'V�deo relacionado'}</span>
       </button>
     `).join('');
   }

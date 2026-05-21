@@ -15,9 +15,6 @@
   <meta property="og:image" content="https://indesigns.arq.br/assets/projects/noroeste/cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="projetos-page">
@@ -45,21 +42,37 @@
         <span class="label projetos-header__kicker">PROJETOS</span>
         <div class="projetos-header__content">
           <h1 class="projetos-header__title">Espaços pensados para serem vividos.</h1>
-          <p class="projetos-header__text">Uma seleção de projetos autorais desenvolvidos com atenção à rotina, circulação, luz e permanência. Cada espaço nasce de uma leitura particular do modo de viver, trabalhar e ocupar o tempo.</p>
+          <p class="projetos-header__text">Uma seleção de projetos autorais desenvolvidos com atenção à rotina, circulação, luz e permanência. Cada espaço nasce de uma leitura particular do modo de viver, trabalhar e ocupar o tempo, revelando decisões que aproximam estética, função e memória cotidiana.</p>
         </div>
       </div>
     </header>
 
-    <section aria-label="Lista de projetos">
-      <ul class="projetos-list">
+    <section class="projetos-curadoria" aria-label="Lista de projetos">
+      <div class="container projetos-toolbar" aria-label="Filtros de projetos">
+        <div class="projetos-filter" role="list" aria-label="Filtrar por categoria">
+          <button class="projetos-filter__btn is-active" type="button" data-filter="todos">Todos</button>
+          <button class="projetos-filter__btn" type="button" data-filter="residencial">Residencial</button>
+          <button class="projetos-filter__btn" type="button" data-filter="saude">Saúde</button>
+          <button class="projetos-filter__btn" type="button" data-filter="corporativo">Corporativo</button>
+          <button class="projetos-filter__btn" type="button" data-filter="reforma">Reforma</button>
+          <button class="projetos-filter__btn" type="button" data-filter="consultoria">Consultoria</button>
+          <button class="projetos-filter__btn" type="button" data-filter="area-coletiva">Área coletiva</button>
+        </div>
+        <div class="projetos-view" role="group" aria-label="Visualização">
+          <button class="projetos-view__btn is-active" type="button" data-project-view="editorial">Editorial</button>
+          <button class="projetos-view__btn" type="button" data-project-view="lista">Lista</button>
+        </div>
+      </div>
 
-        <li class="projetos-item reveal">
-          <a href="/residencia-noroeste/" class="projetos-item__link" aria-label="Ver projeto Residência Noroeste">
+      <ul class="projetos-list" data-projects-list>
+
+        <li class="projetos-item reveal" data-project-category="residencial" id="cobertura-duplex-noroeste">
+          <a href="/residencia-noroeste/" class="projetos-item__link" aria-label="Ver projeto Cobertura Duplex Noroeste">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img
                   src="/assets/projects/noroeste/cover.jpg"
-                  alt="Living integrado da Residência Noroeste, cobertura familiar em Brasília"
+                  alt="Living integrado da Cobertura Duplex Noroeste, cobertura familiar em Brasília"
                   loading="eager"
                   fetchpriority="high"
                   decoding="async">
@@ -68,9 +81,9 @@
             <div class="projetos-item__info">
               <span class="label projetos-item__num">01</span>
               <span class="label projetos-item__cat">RESIDENCIAL</span>
-              <h2 class="projetos-item__title">Residência<br>Noroeste</h2>
+              <h2 class="projetos-item__title">Cobertura Duplex<br>Noroeste</h2>
               <p class="projetos-item__place">Noroeste · Brasília, DF</p>
-              <p class="projetos-item__desc">Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e sensação de lar.</p>
+              <p class="projetos-item__desc">Projeto de interiores de 220m² para uma família que mudou de escala sem abrir mão de conforto, reaproveitamento e continuidade afetiva.</p>
               <span class="projetos-item__cta">
                 Ver projeto
                 <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
@@ -81,7 +94,7 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal">
+        <li class="projetos-item reveal" data-project-category="area-coletiva reforma" id="cobertura-porto-seguro">
           <a href="/cobertura-porto-seguro/" class="projetos-item__link" aria-label="Ver projeto Cobertura Porto Seguro">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
@@ -94,10 +107,10 @@
             </div>
             <div class="projetos-item__info">
               <span class="label projetos-item__num">02</span>
-              <span class="label projetos-item__cat">ÁREA COLETIVA</span>
+              <span class="label projetos-item__cat">ÁREA COLETIVA · REFORMA</span>
               <h2 class="projetos-item__title">Cobertura<br>Porto Seguro</h2>
               <p class="projetos-item__place">Asa Sul · Brasília, DF</p>
-              <p class="projetos-item__desc">Gourmet, academia e circulação clara em uma cobertura coletiva pensada para encontros e permanência.</p>
+              <p class="projetos-item__desc">Reforma de 130m² na Asa Sul, com academia, área gourmet e convivência coletiva desenhadas para uso real do condomínio.</p>
               <span class="projetos-item__cta">
                 Ver projeto
                 <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
@@ -108,29 +121,119 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal">
-          <a href="/clinica-orbis/" class="projetos-item__link" aria-label="Ver projeto Clínica Orbis">
+        <li class="projetos-item reveal" data-project-category="saude reforma" id="orbis-psicologia">
+          <a href="/clinica-orbis/" class="projetos-item__link" aria-label="Ver projeto Orbis Psicologia">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img
                   src="/assets/projects/orbis/hero.jpg"
-                  alt="Sala de atendimento da Clínica Orbis com sofá, poltrona e marcenaria"
+                  alt="Sala de atendimento da Orbis Psicologia com sofá, poltrona e marcenaria"
                   loading="lazy"
                   decoding="async">
               </div>
             </div>
             <div class="projetos-item__info">
               <span class="label projetos-item__num">03</span>
-              <span class="label projetos-item__cat">CORPORATIVO · SAÚDE</span>
-              <h2 class="projetos-item__title">Clínica<br>Orbis</h2>
+              <span class="label projetos-item__cat">SAÚDE · REFORMA</span>
+              <h2 class="projetos-item__title">Orbis<br>Psicologia</h2>
               <p class="projetos-item__place">Brasília, DF</p>
-              <p class="projetos-item__desc">Consultório psicológico em 27 m² que combina acolhimento, funcionalidade e inteligência espacial.</p>
+              <p class="projetos-item__desc">Consultório psicológico compacto com multifuncionalidade, divã sob medida, copa oculta e capacidade para encontros de até 30 pessoas.</p>
               <span class="projetos-item__cta">
                 Ver projeto
                 <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
                   <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
+            </div>
+          </a>
+        </li>
+
+        <li class="projetos-item reveal" data-project-category="residencial" id="apto-ci-cecilia-santos">
+          <a href="/projetos/#apto-ci-cecilia-santos" class="projetos-item__link" aria-label="Ver projeto Apto CI, Cecilia Santos">
+            <div class="projetos-item__img-col">
+              <div class="projetos-item__img-wrap">
+                <img src="/assets/projects/noroeste/room-baby.jpg" alt="Composição residencial com marcenaria clara e atmosfera familiar" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="projetos-item__info">
+              <span class="label projetos-item__num">04</span>
+              <span class="label projetos-item__cat">RESIDENCIAL</span>
+              <h2 class="projetos-item__title">Apto CI<br>Cecilia Santos</h2>
+              <p class="projetos-item__place">Guará · Brasília, DF · 64m²</p>
+              <p class="projetos-item__desc">Projeto de interiores para funcionalidade familiar sem reforma, com escolhas precisas para reorganizar uso, circulação e permanência.</p>
+              <span class="projetos-item__cta">Ver projeto</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="projetos-item reveal" data-project-category="saude" id="consultorio-ml-mari-rodrigues">
+          <a href="/projetos/#consultorio-ml-mari-rodrigues" class="projetos-item__link" aria-label="Ver projeto Consultório ML, Mari Rodrigues">
+            <div class="projetos-item__img-col">
+              <div class="projetos-item__img-wrap">
+                <img src="/assets/projects/orbis/detail-01.jpg" alt="Detalhe de consultório com marcenaria, textura e iluminação acolhedora" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="projetos-item__info">
+              <span class="label projetos-item__num">05</span>
+              <span class="label projetos-item__cat">SAÚDE</span>
+              <h2 class="projetos-item__title">Consultório ML<br>Mari Rodrigues</h2>
+              <p class="projetos-item__place">Asa Sul · Brasília, DF · 27m²</p>
+              <p class="projetos-item__desc">Projeto de interiores para um consultório compacto, pensado para acolhimento, clareza de uso e presença profissional sem excesso visual.</p>
+              <span class="projetos-item__cta">Ver projeto</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="projetos-item reveal" data-project-category="corporativo" id="escritorio-advocacia-monique-rafael">
+          <a href="/projetos/#escritorio-advocacia-monique-rafael" class="projetos-item__link" aria-label="Ver projeto Escritório de Advocacia, Monique e Rafael">
+            <div class="projetos-item__img-col">
+              <div class="projetos-item__img-wrap">
+                <img src="/assets/projects/orbis/detail-02.jpg" alt="Ambiente corporativo com espelho, cor e marcenaria em composição precisa" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="projetos-item__info">
+              <span class="label projetos-item__num">06</span>
+              <span class="label projetos-item__cat">CORPORATIVO</span>
+              <h2 class="projetos-item__title">Escritório de Advocacia<br>Monique e Rafael</h2>
+              <p class="projetos-item__place">SIG · Brasília, DF · 86m²</p>
+              <p class="projetos-item__desc">Projeto de interiores para rotina corporativa, com imagem profissional, organização de fluxo e ambientes preparados para concentração e atendimento.</p>
+              <span class="projetos-item__cta">Ver projeto</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="projetos-item reveal" data-project-category="residencial reforma" id="chacara-recanto-do-jaburu">
+          <a href="/projetos/#chacara-recanto-do-jaburu" class="projetos-item__link" aria-label="Ver projeto Chácara Recanto do Jaburu">
+            <div class="projetos-item__img-col">
+              <div class="projetos-item__img-wrap">
+                <img src="/assets/hero-bg.jpg" alt="Área de convivência com arquitetura voltada ao encontro e permanência" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="projetos-item__info">
+              <span class="label projetos-item__num">07</span>
+              <span class="label projetos-item__cat">RESIDENCIAL · REFORMA</span>
+              <h2 class="projetos-item__title">Chácara<br>Recanto do Jaburu</h2>
+              <p class="projetos-item__place">Vila Planalto · Brasília, DF · 225m²</p>
+              <p class="projetos-item__desc">Projeto de reforma com rusticidade contemporânea, valorização da transformação e leitura sensível do que a casa já carregava.</p>
+              <span class="projetos-item__cta">Ver projeto</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="projetos-item reveal" data-project-category="residencial consultoria" id="mj-vx-maju-vitor">
+          <a href="/projetos/#mj-vx-maju-vitor" class="projetos-item__link" aria-label="Ver projeto MJ VX, Maju e Vitor">
+            <div class="projetos-item__img-col">
+              <div class="projetos-item__img-wrap">
+                <img src="/assets/projects/noroeste/palette.jpg" alt="Composição de materiais e tons para consultoria residencial autoral" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="projetos-item__info">
+              <span class="label projetos-item__num">08</span>
+              <span class="label projetos-item__cat">RESIDENCIAL · CONSULTORIA</span>
+              <h2 class="projetos-item__title">MJ VX<br>Maju e Vitor</h2>
+              <p class="projetos-item__place">Lago Sul · Brasília, DF · 150m²</p>
+              <p class="projetos-item__desc">Consultoria de interiores com foco em identidade, criação de conteúdo e um escritório pensado para representar a rotina criativa da Maju.</p>
+              <span class="projetos-item__cta">Ver projeto</span>
             </div>
           </a>
         </li>
