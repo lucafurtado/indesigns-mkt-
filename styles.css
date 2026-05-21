@@ -740,6 +740,9 @@ button {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 16px 56px rgba(23, 58, 74, 0.11), 0 4px 16px rgba(23, 58, 74, 0.07);
+  outline: 1px solid rgba(23, 58, 74, 0.08);
+  outline-offset: -1px;
 }
 
 .sobre__img {
@@ -2595,12 +2598,12 @@ button {
 .showcase__img {
   width: 100%;
   height: 100%;
-  min-height: clamp(620px, 82vh, 860px);
+  min-height: clamp(580px, 78vh, 840px);
   object-fit: cover;
   object-position: center;
   display: block;
   transform: scale(1.001);
-  transition: opacity 0.82s var(--ease-premium), transform 1.2s var(--ease-premium);
+  transition: opacity 0.50s var(--ease-premium), transform 0.72s var(--ease-premium);
   will-change: opacity, transform;
 }
 
@@ -2630,7 +2633,13 @@ button {
 .showcase__place,
 .showcase__narrative,
 .showcase__link {
-  transition: opacity 0.58s var(--ease-premium), transform 0.58s var(--ease-premium);
+  transition: opacity 0.36s var(--ease-premium), transform 0.36s var(--ease-premium);
+}
+
+.showcase__counter {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  opacity: 0.72;
 }
 
 .showcase__counter.is-transitioning,
@@ -2672,18 +2681,27 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(236, 236, 234, 0.42);
-  background: rgba(14, 36, 48, 0.22);
+  border: 1px solid rgba(236, 236, 234, 0.28);
+  background: rgba(14, 36, 48, 0.18);
   color: var(--offwhite);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: background 0.55s var(--ease-premium), border-color 0.55s var(--ease-premium), transform 0.55s var(--ease-premium);
+  opacity: 0.2;
+  transition: background 0.45s var(--ease-premium),
+              border-color 0.45s var(--ease-premium),
+              transform 0.45s var(--ease-premium),
+              opacity 0.45s var(--ease-premium);
+}
+
+.showcase__carousel:hover .showcase__arrow {
+  opacity: 0.75;
 }
 
 .showcase__arrow:hover {
   background: rgba(14, 36, 48, 0.42);
   border-color: rgba(236, 236, 234, 0.72);
-  transform: translateY(-50%) scale(1.04);
+  transform: translateY(-50%) scale(1.05);
+  opacity: 1;
 }
 
 .showcase__arrow--prev {
@@ -2691,7 +2709,7 @@ button {
 }
 
 .showcase__arrow--next {
-  right: calc(42% + 28px);
+  right: 28px;
 }
 
 @media (max-width: 960px) {

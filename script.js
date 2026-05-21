@@ -381,12 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
           scImg.classList.remove('is-transitioning');
           textEls.forEach(el => el.classList.remove('is-transitioning'));
           isAnimating = false;
-        }, 120);
+        }, 70);
       } else {
         textEls.forEach(el => el.classList.remove('is-transitioning'));
         isAnimating = false;
       }
-    }, 520);
+    }, 320);
 
     currentProject = index;
   };
