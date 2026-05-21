@@ -4,6 +4,37 @@
 
 'use strict';
 
+/* ── INTRO OVERLAY ───────────────────────────────────────── */
+(function () {
+  const intro = document.getElementById('site-intro');
+  if (!intro) return;
+
+  if (
+    sessionStorage.getItem('indesigns-intro') ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    intro.remove();
+    return;
+  }
+
+  document.documentElement.style.overflow = 'hidden';
+
+  const exitIntro = () => {
+    if (intro._exiting) return;
+    intro._exiting = true;
+    intro.classList.add('is-exiting');
+    setTimeout(() => {
+      intro.remove();
+      document.documentElement.style.overflow = '';
+      sessionStorage.setItem('indesigns-intro', '1');
+    }, 900);
+  };
+
+  // Sair após a animação do logo (2.6s de animação + 0.2s de margem)
+  setTimeout(exitIntro, 2800);
+  intro.addEventListener('click', exitIntro);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── REFERÊNCIAS DO DOM ──────────────────────────────────── */
@@ -167,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tipo    = formatTipo(data.get('tipo') || '');
       const bairro  = data.get('bairro')?.trim() || '';
       const imagina = data.get('imagina')?.trim() || '';
+      const prazo   = formatPrazo(data.get('prazo') || '');
 
       // Estado de loading
       submitBtn.textContent = 'Enviando...';
@@ -178,7 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `Nome: ${nome}\n` +
         `WhatsApp: ${tel}\n` +
         `Tipo de projeto: ${tipo}\n` +
-        `Local: ${bairro}\n\n` +
+        `Local: ${bairro}\n` +
+        `Prazo: ${prazo}\n\n` +
         `O que imagino: ${imagina}`
       );
 
@@ -195,7 +228,18 @@ document.addEventListener('DOMContentLoaded', () => {
       'residencial-novo': 'Projeto residencial novo',
       'reforma':          'Reforma residencial',
       'coletivo':         'Espaço coletivo',
+      'comercial':        'Espaço comercial',
+      'consultoria':      'Consultoria',
       'planejando':       'Ainda planejando',
+    };
+    return map[val] || val;
+  };
+
+  const formatPrazo = (val) => {
+    const map = {
+      'flexivel': 'Prazo flexível',
+      'meses':    'Nos próximos meses',
+      'urgente':  'Com urgência de prazo',
     };
     return map[val] || val;
   };
@@ -337,12 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
           scImg.classList.remove('is-transitioning');
           textEls.forEach(el => el.classList.remove('is-transitioning'));
           isAnimating = false;
-        }, 120);
+        }, 70);
       } else {
         textEls.forEach(el => el.classList.remove('is-transitioning'));
         isAnimating = false;
       }
-    }, 520);
+    }, 320);
 
     currentProject = index;
   };
@@ -385,12 +429,23 @@ document.addEventListener('DOMContentLoaded', () => {
       previewVid.play().catch(() => {});
     }
 
-    const projectHeroEl = document.querySelector('.project-hero');
-    if (projectHeroEl) {
+    // Inline → Floating: after user scrolls past testimonial, reel moves to corner
+    const testimonialEl = document.querySelector('.project-testimonial');
+    if (testimonialEl) {
       new IntersectionObserver(
-        ([entry]) => projectReel.classList.toggle('is-visible', !entry.isIntersecting),
-        { threshold: 0.15 }
-      ).observe(projectHeroEl);
+        ([entry]) => {
+          const pastIt = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          if (pastIt && !projectReel.classList.contains('is-floating')) {
+            projectReel.classList.add('is-floating');
+            requestAnimationFrame(() => {
+              setTimeout(() => projectReel.classList.add('is-visible'), 80);
+            });
+          } else if (!pastIt && projectReel.classList.contains('is-floating')) {
+            projectReel.classList.remove('is-floating', 'is-visible');
+          }
+        },
+        { threshold: 0.5 }
+      ).observe(testimonialEl);
     }
 
     const openModal = () => {

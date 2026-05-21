@@ -52,19 +52,14 @@
   <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
       <a href="/" class="nav__logo" aria-label="Indesigns início">
-        <svg class="nav__symbol" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="#ececea"/>
-          <path d="M 42 0 L 22 0 A 20 20 0 0 0 42 20 Z" fill="#8ab0ab"/>
-          <path d="M 0 42 L 0 22 A 20 20 0 0 1 20 42 Z" fill="#8ab0ab"/>
-          <path d="M 42 42 L 42 22 A 20 20 0 0 0 22 42 Z" fill="#ececea"/>
-        </svg>
-        <span class="nav__sep" aria-hidden="true"></span>
-        <span class="nav__wordmark">INDESIGNS</span>
+        <img src="/assets/logo.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
       </a>
       <div class="nav__links" id="navLinks" role="menubar">
         <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="/servicos/" class="nav__link" role="menuitem">Serviços</a>
         <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
         <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
+        <a href="/links/" class="nav__link" role="menuitem">Links</a>
         <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -77,7 +72,6 @@
     <section class="project-hero" aria-labelledby="project-title">
       <img src="/assets/hero-bg.jpg" alt="Área de convivência da Cobertura 116 Sul em Brasília" class="project-hero__img" fetchpriority="high" decoding="async" itemprop="image">
       <div class="project-hero__content">
-        <a href="/#projetos" class="project-back">Voltar aos projetos</a>
         <span class="label project-kicker">APARTAMENTOS · ÁREA COLETIVA</span>
         <h1 id="project-title" itemprop="name">Cobertura 116 Sul</h1>
         <p>Área coletiva com gourmet, academia e convivência mais confortável.</p>
@@ -86,6 +80,7 @@
 
     <section class="project-body" aria-label="Narrativa e detalhes do projeto">
       <div class="container">
+        <a href="/#projetos" class="project-back">← Projetos</a>
         <div class="project-intro">
           <div class="project-meta">
             <span><strong>Categoria</strong> Área coletiva</span>
@@ -98,12 +93,9 @@
           </div>
         </div>
 
-        <div class="project-gallery">
+        <div class="project-gallery project-gallery--single">
           <figure>
-            <img src="/assets/hero-bg.jpg" alt="Área coletiva com foco em convivência e integração dos usos" loading="lazy" decoding="async">
-          </figure>
-          <figure>
-            <img src="/assets/projects/116sul/cover.jpg" alt="Imagem complementar da Cobertura 116 Sul com ambiente social" loading="lazy" decoding="async">
+            <img src="/assets/hero-bg.jpg" alt="Área de convivência da Cobertura 116 Sul com gourmet e academia" loading="lazy" decoding="async">
           </figure>
         </div>
 
@@ -154,29 +146,6 @@
     </section>
     </article>
   </main>
-  <div class="project-reel" data-video="/assets/projects/cobertura/video.mp4" aria-hidden="true">
-    <div class="project-reel__ring">
-      <video playsinline muted loop></video>
-      <div class="project-reel__play">
-        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
-          <path d="M1 1l10 6-10 6V1z" fill="currentColor" opacity="0.9"/>
-        </svg>
-      </div>
-    </div>
-    <span class="project-reel__label">Atmosfera</span>
-  </div>
-
-  <div class="video-modal" id="projectVideoModal" role="dialog" aria-modal="true" aria-label="Vídeo do projeto" hidden>
-    <button class="video-modal__close" aria-label="Fechar vídeo">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-    </button>
-    <div class="video-modal__stage">
-      <video class="video-modal__player" playsinline controls></video>
-    </div>
-  </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="/script.js" defer></script>

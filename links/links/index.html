@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | Indesigns</title>
+  <meta name="description" content="Indesigns · Arquitetura e design de interiores em Brasília. Instagram, WhatsApp, e-mail e LinkedIn.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0e2430">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0e2430;
+      color: #ececea;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .links-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      gap: 0;
+    }
+
+    .links-logo {
+      width: auto;
+      height: 48px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .links-tagline {
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(138,176,171,0.52);
+      margin-bottom: 52px;
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .links-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 24px;
+      border: 1px solid rgba(236,236,234,0.1);
+      border-radius: 3px;
+      transition: border-color 0.25s, background-color 0.25s;
+      cursor: pointer;
+    }
+
+    .links-item:hover {
+      border-color: rgba(138,176,171,0.4);
+      background-color: rgba(138,176,171,0.05);
+    }
+
+    .links-item__left {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .links-item__label {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(138,176,171,0.6);
+    }
+
+    .links-item__value {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(236,236,234,0.9);
+      letter-spacing: 0.01em;
+    }
+
+    .links-item__arrow {
+      color: rgba(138,176,171,0.4);
+      flex-shrink: 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .links-item:hover .links-item__arrow {
+      color: rgba(138,176,171,0.8);
+      transform: translateX(3px);
+    }
+
+    .links-footer {
+      margin-top: 52px;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: rgba(236,236,234,0.2);
+      text-align: center;
+    }
+    .links-footer a {
+      color: rgba(236,236,234,0.2);
+      transition: color 0.2s;
+    }
+    .links-footer a:hover { color: rgba(236,236,234,0.5); }
+    .links-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 32px;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(138,176,171,0.35);
+      transition: color 0.2s;
+    }
+    .links-back:hover { color: rgba(138,176,171,0.7); }
+  </style>
+</head>
+<body>
+  <div class="links-page">
+    <a href="/"><img src="/assets/logo.png" alt="Indesigns, voltar ao início" class="links-logo"></a>
+    <p class="links-tagline">Arquitetura e design · Brasília, DF</p>
+
+    <nav class="links-list" aria-label="Links da Indesigns">
+
+      <a href="https://www.instagram.com/indesigns/" class="links-item" target="_blank" rel="noopener" aria-label="Instagram @indesigns">
+        <div class="links-item__left">
+          <span class="links-item__label">Instagram</span>
+          <span class="links-item__value">@indesigns</span>
+        </div>
+        <svg class="links-item__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+          <path d="M0 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a href="https://wa.me/5561998586151" class="links-item" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <div class="links-item__left">
+          <span class="links-item__label">WhatsApp</span>
+          <span class="links-item__value">61 99858-6151</span>
+        </div>
+        <svg class="links-item__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+          <path d="M0 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns" class="links-item" aria-label="E-mail">
+        <div class="links-item__left">
+          <span class="links-item__label">E-mail</span>
+          <span class="links-item__value">indesigns.arq@gmail.com</span>
+        </div>
+        <svg class="links-item__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+          <path d="M0 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/in/indira-bonfim-ba118a2a3/" class="links-item" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <div class="links-item__left">
+          <span class="links-item__label">LinkedIn</span>
+          <span class="links-item__value">Indira Bonfim</span>
+        </div>
+        <svg class="links-item__arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+          <path d="M0 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </nav>
+
+    <a href="/" class="links-back">← Voltar para o início</a>
+
+    <p class="links-footer">
+      <a href="https://indesigns.arq.br/">indesigns.arq.br</a>
+    </p>
+  </div>
+</body>
+</html>
