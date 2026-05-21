@@ -3977,18 +3977,20 @@ button {
   pointer-events: none;
 }
 
-.site-intro__logo {
-  width: auto;
-  height: clamp(52px, 9vw, 108px);
+.site-intro__video {
   display: block;
-  animation: intro-logo-in 2.6s var(--ease-premium) both;
+  width: auto;
+  height: clamp(160px, 26vw, 360px);
+  max-width: 72vw;
+  border: none;
+  outline: none;
+  object-fit: contain;
+  animation: intro-fade-in 0.5s var(--ease-premium) both;
 }
 
-@keyframes intro-logo-in {
-  0%   { opacity: 0; transform: scale(0.93) translateY(12px); }
-  28%  { opacity: 1; transform: scale(1)    translateY(0); }
-  80%  { opacity: 1; transform: scale(1)    translateY(0); }
-  100% { opacity: 0; transform: scale(1.02) translateY(-4px); }
+@keyframes intro-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

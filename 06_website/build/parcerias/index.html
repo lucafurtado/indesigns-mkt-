@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcerias | Indesigns Arquitetura e Design | Brasília</title>
+  <meta name="description" content="O Indesigns está aberto a colaborações com fornecedores, escritórios, marcas e profissionais. Parcerias editoriais, projetos especiais e trocas que ampliam o que um espaço pode ser.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#173a4a">
+  <link rel="canonical" href="https://indesigns.arq.br/parcerias/">
+  <meta property="og:title" content="Parcerias | Indesigns">
+  <meta property="og:description" content="Colaborações com fornecedores, escritórios, marcas e profissionais. Parcerias editoriais e projetos especiais com o Indesigns em Brasília.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://indesigns.arq.br/parcerias/">
+  <meta property="og:image" content="https://indesigns.arq.br/assets/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* ── Parcerias — estilos específicos da página ── */
+    .parcerias-header {
+      padding: clamp(140px, 18vw, 200px) 0 clamp(72px, 8vw, 100px);
+      background-color: var(--petroleo-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .parcerias-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 65% 45%, rgba(60,110,113,0.13) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .parcerias-header .container { position: relative; z-index: 1; }
+    .parcerias-header__kicker {
+      color: var(--sage);
+      margin-bottom: 24px;
+    }
+    .parcerias-header__title {
+      font-family: var(--font-headline);
+      font-size: clamp(40px, 5.5vw, 72px);
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.024em;
+      color: var(--offwhite);
+      max-width: 640px;
+      margin-bottom: 32px;
+    }
+    .parcerias-header__sub {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.6vw, 17px);
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(236,236,234,0.58);
+      max-width: 460px;
+    }
+
+    /* ── Corpo da página ── */
+    .parcerias-body {
+      padding: clamp(80px, 10vw, 130px) 0;
+      background-color: var(--offwhite);
+    }
+    .parcerias-body .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(60px, 8vw, 100px);
+      align-items: start;
+    }
+    .parcerias-intro {}
+    .parcerias-intro__label {
+      color: var(--teal);
+      margin-bottom: 28px;
+    }
+    .parcerias-intro__text {
+      font-family: var(--font-body);
+      font-size: clamp(15px, 1.5vw, 16px);
+      font-weight: 300;
+      line-height: 1.82;
+      color: rgba(23,58,74,0.72);
+      margin-bottom: 16px;
+    }
+
+    /* ── Reel Insize ── */
+    .parcerias-reel-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .parcerias-reel-label {
+      font-family: var(--font-label);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(23,58,74,0.45);
+    }
+
+    /* ── Tipos de parceria ── */
+    .parcerias-tipos {
+      padding: clamp(60px, 8vw, 100px) 0;
+      background-color: var(--petroleo);
+    }
+    .parcerias-tipos .container {}
+    .parcerias-tipos__heading {
+      font-family: var(--font-headline);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.2;
+      color: var(--offwhite);
+      max-width: 540px;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+    .parcerias-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background-color: rgba(236,236,234,0.1);
+    }
+    .parceria-item {
+      background-color: var(--petroleo);
+      padding: clamp(32px, 4vw, 48px);
+    }
+    .parceria-item__number {
+      font-family: var(--font-label);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--sage);
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+    .parceria-item__title {
+      font-family: var(--font-headline);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--offwhite);
+      margin-bottom: 16px;
+    }
+    .parceria-item__text {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(236,236,234,0.52);
+    }
+
+    /* ── CTA final ── */
+    .parcerias-cta {
+      padding: clamp(80px, 10vw, 120px) 0;
+      background-color: var(--offwhite);
+    }
+    .parcerias-cta .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      max-width: 640px;
+    }
+    .parcerias-cta__title {
+      font-family: var(--font-headline);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.018em;
+      color: var(--petroleo);
+    }
+    .parcerias-cta__sub {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(23,58,74,0.58);
+    }
+
+    @media (max-width: 900px) {
+      .parcerias-body .container {
+        grid-template-columns: 1fr;
+        gap: clamp(48px, 8vw, 64px);
+      }
+      .parcerias-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="servicos-page">
+  <nav class="nav project-nav" id="nav" role="navigation" aria-label="Navegação principal">
+    <div class="nav__container">
+      <a href="/" class="nav__logo" aria-label="Indesigns início">
+        <img src="/assets/logo.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
+      </a>
+      <div class="nav__links" id="navLinks" role="menubar">
+        <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
+        <a href="/servicos/" class="nav__link" role="menuitem">Serviços</a>
+        <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
+        <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
+        <a href="/parcerias/" class="nav__link" role="menuitem">Parcerias</a>
+        <a href="/links/" class="nav__link" role="menuitem">Links</a>
+        <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__backdrop" id="navBackdrop"></div>
+  </nav>
+
+  <main>
+    <header class="parcerias-header" aria-labelledby="parcerias-title">
+      <div class="container">
+        <span class="label parcerias-header__kicker">PARCERIAS</span>
+        <h1 id="parcerias-title" class="parcerias-header__title">Aberta a colaborações que ampliam o que um espaço pode ser.</h1>
+        <p class="parcerias-header__sub">Fornecedores, escritórios, marcas e profissionais que compartilham cuidado com o resultado. O formato depende do projeto.</p>
+      </div>
+    </header>
+
+    <section class="parcerias-body" aria-label="Sobre parcerias">
+      <div class="container">
+        <div class="parcerias-intro reveal">
+          <span class="label parcerias-intro__label">COMO FUNCIONA</span>
+          <p class="parcerias-intro__text">Cada parceria começa antes do contrato: com uma conversa sobre o que cada um traz ao projeto. O Indesigns não fecha acordos de prateleira. O que existe é abertura real para colaborar com quem entende o próprio campo.</p>
+          <p class="parcerias-intro__text">Seja em uma indicação recíproca, em um projeto conjunto, em uma curadoria de materiais ou em uma colaboração editorial — o formato certo aparece depois de entender o que o projeto pede.</p>
+          <p class="parcerias-intro__text">Brasília tem um ecossistema criativo que ainda se está descobrindo. A intenção aqui é contribuir para isso com rigor e sem fazer barulho.</p>
+        </div>
+
+        <div class="parcerias-reel-wrap reveal">
+          <span class="parcerias-reel-label">INSIZE · COLABORAÇÃO</span>
+          <div class="project-reel" data-video="/assets/insize.mp4" data-title="Insize" data-poster="/assets/hero-bg.jpg" aria-label="Vídeo da parceria, clicar para ver">
+            <div class="project-reel__ring">
+              <img src="/assets/hero-bg.jpg" alt="" loading="lazy" decoding="async" aria-hidden="true">
+              <div class="project-reel__play">
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
+                  <path d="M1 1l10 6-10 6V1z" fill="currentColor" opacity="0.9"/>
+                </svg>
+              </div>
+            </div>
+            <span class="project-reel__label">Ver vídeo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcerias-tipos" aria-label="Tipos de parceria">
+      <div class="container">
+        <h2 class="parcerias-tipos__heading">O que o Indesigns busca em uma parceria.</h2>
+        <div class="parcerias-grid">
+          <div class="parceria-item reveal">
+            <p class="parceria-item__number">01</p>
+            <h3 class="parceria-item__title">Fornecedores</h3>
+            <p class="parceria-item__text">Marcas de revestimento, mobiliário, iluminação e acabamentos com identidade própria. O critério é curatorial, não comercial: o produto precisa fazer sentido dentro de um projeto real.</p>
+          </div>
+          <div class="parceria-item reveal">
+            <p class="parceria-item__number">02</p>
+            <h3 class="parceria-item__title">Outros escritórios</h3>
+            <p class="parceria-item__text">Arquitetos e designers que atuam com escopo complementar. Indicações recíprocas, projetos que precisam de mais de uma perspectiva ou colaborações com disciplinas adjacentes.</p>
+          </div>
+          <div class="parceria-item reveal">
+            <p class="parceria-item__number">03</p>
+            <h3 class="parceria-item__title">Marcas e profissionais</h3>
+            <p class="parceria-item__text">Fotógrafos, artistas, estúdios criativos. Colaborações que entram no projeto como camada visual ou editorial, não como patrocínio.</p>
+          </div>
+          <div class="parceria-item reveal">
+            <p class="parceria-item__number">04</p>
+            <h3 class="parceria-item__title">Projetos especiais</h3>
+            <p class="parceria-item__text">Concepções fora do escopo padrão: showrooms, instalações, ambientações temporárias, projetos com briefing aberto. Aqui o ponto de partida é o tema, não o metro quadrado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parcerias-cta" aria-label="Contato para parcerias">
+      <div class="container">
+        <h2 class="parcerias-cta__title">Tem algo em mente que pode envolver o Indesigns?</h2>
+        <p class="parcerias-cta__sub">Manda uma mensagem com o contexto — a proposta, o projeto, o que você busca com a parceria. A conversa decide o próximo passo.</p>
+        <a href="mailto:indesigns.arq@gmail.com?subject=Parceria%20-%20Indesigns" class="btn btn--primary">Entrar em contato</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <img src="/assets/logo.png" alt="Indesigns Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
+          </div>
+          <span class="footer__tagline">Brasília, DF</span>
+        </div>
+        <nav class="footer__links" aria-label="Links de contato">
+          <a href="https://www.instagram.com/indesigns/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5561998586151" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns">E-mail</a>
+        </nav>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <div class="footer__bottom">
+        <span>© 2026 Indesigns. Todos os direitos reservados.</span>
+        <span>Indira Bonfim · Arquiteta · Brasília, DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="video-modal" id="projectVideoModal" role="dialog" aria-modal="true" aria-label="Vídeo da parceria" hidden>
+    <button class="video-modal__close" aria-label="Fechar vídeo">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="video-modal__stage">
+      <div class="video-modal__media">
+        <video class="video-modal__player" playsinline muted controls preload="none"></video>
+        <button class="video-modal__mute" type="button" aria-label="Ativar som">Ativar som</button>
+      </div>
+      <aside class="video-modal__panel" aria-label="Ações">
+        <span class="label">PARCERIA</span>
+        <h2 class="video-modal__title">Insize</h2>
+        <p>Uma colaboração com olhar compartilhado sobre espaço, detalhe e resultado.</p>
+        <div class="video-modal__actions">
+          <a href="mailto:indesigns.arq@gmail.com?subject=Parceria%20-%20Indesigns" class="video-modal__action video-modal__action--primary">Entrar em contato</a>
+          <a href="https://wa.me/5561998586151" class="video-modal__action" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/indesigns/" class="video-modal__action" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="video-modal__related" hidden></div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
