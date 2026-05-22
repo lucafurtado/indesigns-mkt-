@@ -399,106 +399,37 @@
         <header class="cta-section__header">
           <span class="label cta-section__label reveal">CONTATO</span>
           <h2 class="cta-section__headline reveal">Vamos colocar seus sonhos no papel?</h2>
-          <p class="cta-section__sub reveal">
-            <span class="cta-section__sub-note">Retorno em até 24 horas.</span>
-          </p>
         </header>
 
-        <p class="cta-section__impulse">Ainda não precisa ser um projeto.<br>Uma conversa já é um começo.</p>
+        <p class="cta-section__impulse reveal">Uma conversa já é um começo.</p>
 
-        <form class="cta-form reveal" id="ctaForm" data-crm-ready="true" data-crm-endpoint="" novalidate>
+        <form class="cta-form reveal" id="ctaForm" novalidate>
           <input type="hidden" id="f-origem" name="origem" value="site direto">
           <input type="text" class="cta-form__honeypot" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="cta-form__row">
             <div class="cta-form__group">
               <label class="cta-form__label" for="f-nome">Nome</label>
-              <input
-                class="cta-form__input"
-                type="text"
-                id="f-nome"
-                name="nome"
-                placeholder="Seu nome"
-                required
-                autocomplete="name">
+              <input class="cta-form__input" type="text" id="f-nome" name="nome"
+                placeholder="Seu nome" required autocomplete="name">
             </div>
             <div class="cta-form__group">
               <label class="cta-form__label" for="f-tel">WhatsApp</label>
-              <input
-                class="cta-form__input"
-                type="tel"
-                id="f-tel"
-                name="tel"
-                placeholder="(61) 99999-9999"
-                required
-                autocomplete="tel">
-            </div>
-          </div>
-
-          <div class="cta-form__row">
-            <div class="cta-form__group">
-              <label class="cta-form__label" for="f-email">E-mail</label>
-              <input
-                class="cta-form__input"
-                type="email"
-                id="f-email"
-                name="email"
-                placeholder="seu@email.com"
-                required
-                autocomplete="email">
-            </div>
-            <div class="cta-form__group">
-              <label class="cta-form__label" for="f-bairro">Local do imóvel</label>
-              <input
-                class="cta-form__input"
-                type="text"
-                id="f-bairro"
-                name="bairro"
-                placeholder="Bairro ou cidade"
-                autocomplete="address-level2">
-            </div>
-          </div>
-
-          <div class="cta-form__row">
-            <div class="cta-form__group">
-              <label class="cta-form__label" for="f-tipo">Tipo de projeto</label>
-              <select class="cta-form__input cta-form__select" id="f-tipo" name="tipo" required>
-                <option value="" disabled selected>Selecione</option>
-                <option value="residencial-novo">Projeto residencial novo</option>
-                <option value="reforma">Reforma residencial</option>
-                <option value="coletivo">Espaço coletivo</option>
-                <option value="comercial">Espaço comercial</option>
-                <option value="consultoria">Consultoria</option>
-                <option value="planejando">Ainda estou planejando</option>
-              </select>
-            </div>
-            <div class="cta-form__group">
-              <span class="cta-form__label">Urgência de prazo</span>
-              <div class="cta-form__pills cta-form__pills--compact" role="group" aria-label="Urgência de prazo">
-                <label class="cta-form__pill">
-                  <input type="radio" name="prazo" value="flexivel" checked>
-                  <span>Flexível</span>
-                </label>
-                <label class="cta-form__pill">
-                  <input type="radio" name="prazo" value="meses">
-                  <span>Próximos meses</span>
-                </label>
-                <label class="cta-form__pill">
-                  <input type="radio" name="prazo" value="urgente">
-                  <span>Urgente</span>
-                </label>
-              </div>
+              <input class="cta-form__input" type="tel" id="f-tel" name="tel"
+                placeholder="(61) 99999-9999" required autocomplete="tel">
             </div>
           </div>
 
           <div class="cta-form__group cta-form__group--full">
+            <label class="cta-form__label" for="f-email">E-mail</label>
+            <input class="cta-form__input" type="email" id="f-email" name="email"
+              placeholder="seu@email.com" required autocomplete="email">
+          </div>
+
+          <div class="cta-form__group cta-form__group--full">
             <label class="cta-form__label" for="f-imagina">Mensagem</label>
-            <textarea
-              class="cta-form__input cta-form__textarea"
-              id="f-imagina"
-              name="imagina"
-              placeholder="Em uma frase, o que você imagina."
-              rows="3"
-              required></textarea>
+            <textarea class="cta-form__input cta-form__textarea" id="f-imagina" name="imagina"
+              placeholder="Em uma frase, o que você imagina." rows="3" required></textarea>
           </div>
 
           <div class="cta-form__footer">
@@ -509,17 +440,19 @@
         </form>
 
         <div class="cta-contacts reveal">
-          <a href="https://www.instagram.com/indesigns/" class="cta-contact" target="_blank" rel="noopener" aria-label="Instagram @indesigns">
+          <a href="https://www.instagram.com/indesigns/" class="cta-contact"
+            target="_blank" rel="noopener" aria-label="Instagram @indesigns">
             <span class="cta-contact__label">Instagram</span>
             <span class="cta-contact__value">@indesigns</span>
           </a>
           <span class="cta-contacts__sep" aria-hidden="true"></span>
-          <a href="https://wa.me/5561998586151" class="cta-contact" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a href="https://wa.me/5561998586151" class="cta-contact"
+            target="_blank" rel="noopener" aria-label="WhatsApp">
             <span class="cta-contact__label">WhatsApp</span>
             <span class="cta-contact__value">61 99858-6151</span>
           </a>
           <span class="cta-contacts__sep" aria-hidden="true"></span>
-          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns" class="cta-contact" aria-label="E-mail">
+          <a href="mailto:indesigns.arq@gmail.com" class="cta-contact" aria-label="E-mail">
             <span class="cta-contact__label">E-mail</span>
             <span class="cta-contact__value">indesigns.arq@gmail.com</span>
           </a>
