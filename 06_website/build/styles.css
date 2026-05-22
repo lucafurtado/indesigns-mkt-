@@ -437,7 +437,7 @@ button {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 800px;
+  max-width: 920px;
   margin-left: 0;
   margin-right: auto;
   text-align: left;
@@ -459,6 +459,7 @@ button {
   color: var(--offwhite);
   max-width: 720px;
   margin: 0 0 clamp(28px, 4vh, 48px) 0;
+  text-shadow: 0 1px 18px rgba(23, 58, 74, 0.45);
 }
 
 .hero__headline em {
