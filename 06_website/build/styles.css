@@ -839,11 +839,12 @@ button {
 .sobre__dropcap {
   font-family: var(--font-headline);
   font-style: italic;
-  font-size: 4.2em;
-  line-height: 0.78;
+  font-size: 3.6em;
+  line-height: 0.72;
   float: left;
-  margin-right: 6px;
+  margin-right: 4px;
   margin-top: 6px;
+  margin-bottom: -4px;
   color: var(--teal);
 }
 
