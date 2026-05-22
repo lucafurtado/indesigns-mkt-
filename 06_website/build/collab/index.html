@@ -161,37 +161,6 @@
       flex-direction: column;
       gap: 16px;
     }
-    .collab-card__media {
-      position: relative;
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      background: var(--petroleo);
-      outline: 1px solid rgba(23,58,74,0.12);
-      outline-offset: -1px;
-    }
-    .collab-card__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .collab-card:hover .collab-card__media img {
-      transform: scale(1.03);
-    }
-    .collab-card__play {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(23,58,74,0.28);
-      color: var(--offwhite);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .collab-card:hover .collab-card__play {
-      opacity: 1;
-    }
     .collab-card__info {
       display: flex;
       flex-direction: column;
@@ -305,21 +274,33 @@
           <p class="parcerias-intro__text">Brasília tem um ecossistema criativo que ainda se está descobrindo. A intenção aqui é contribuir para isso com rigor e sem fazer barulho.</p>
         </div>
 
-        <div class="collabs-grid reveal">
-          <article class="collab-card" data-video="/assets/insize.mp4" data-title="Insize" data-poster="/assets/capa-insize.jpg" role="button" tabindex="0" aria-label="Ver collab Insize">
-            <div class="collab-card__media">
-              <img src="/assets/capa-insize.jpg" alt="Insize" loading="lazy" decoding="async">
-              <div class="collab-card__play" aria-hidden="true">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                  <path d="M1 1l10 6-10 6V1z" fill="currentColor" opacity="0.9"/>
-                </svg>
+        <div class="collabs-grid">
+          <div class="collab-card reveal"
+            data-video="/assets/insize.mp4"
+            data-title="Insize"
+            data-poster="/assets/capa-insize.jpg">
+            <div class="project-reel"
+              data-video="/assets/insize.mp4"
+              data-title="Insize"
+              data-poster="/assets/capa-insize.jpg"
+              aria-label="Ver vídeo da collab com Insize">
+              <div class="project-reel__ring">
+                <img src="/assets/capa-insize.jpg"
+                  alt="Collab Indesigns x Insize"
+                  loading="lazy" decoding="async">
+                <div class="project-reel__play">
+                  <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
+                    <path d="M1 1l10 6-10 6V1z" fill="currentColor" opacity="0.9"/>
+                  </svg>
+                </div>
               </div>
+              <span class="project-reel__label">Ver vídeo</span>
             </div>
             <div class="collab-card__info">
-              <span class="collab-card__type label">Fornecedor</span>
               <span class="collab-card__name">Insize</span>
+              <span class="collab-card__type">FORNECEDOR</span>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
