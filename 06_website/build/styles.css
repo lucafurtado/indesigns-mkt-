@@ -438,8 +438,17 @@ button {
   z-index: 10;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: 0;
+  margin-right: auto;
+  align-self: flex-start;
+  text-align: left;
   padding: 0 48px calc(var(--section-gap) * 0.95);
+}
+
+.hero__headline,
+.hero__actions,
+.hero__scroll-link {
+  text-align: left;
 }
 
 .hero__headline {
