@@ -440,7 +440,6 @@ button {
   max-width: 800px;
   margin-left: 0;
   margin-right: auto;
-  align-self: flex-start;
   text-align: left;
   padding: 0 48px calc(var(--section-gap) * 0.95);
 }
