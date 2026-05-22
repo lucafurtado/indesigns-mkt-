@@ -763,10 +763,12 @@ button {
 }
 
 .sobre__img-wrap {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
   box-shadow: 0 28px 80px rgba(23, 58, 74, 0.20), 0 8px 28px rgba(23, 58, 74, 0.12);
+  outline: 1px solid rgba(60, 110, 113, 0.36);
+  outline-offset: 10px;
 }
 
 .sobre__img {
@@ -775,6 +777,19 @@ button {
 
 .sobre__img-wrap:hover .sobre__img {
   transform: scale(1.025);
+}
+
+/* Detalhe de linha teal na borda esquerda */
+.sobre__img-wrap::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  bottom: 10%;
+  width: 3px;
+  background: var(--teal);
+  opacity: 0.75;
+  z-index: 2;
 }
 
 /* Placeholder para foto */
@@ -840,11 +855,10 @@ button {
   font-family: var(--font-headline);
   font-style: italic;
   font-size: 3.6em;
-  line-height: 0.72;
+  line-height: 0.78;
   float: left;
-  margin-right: 4px;
-  margin-top: 6px;
-  margin-bottom: -4px;
+  margin-right: 6px;
+  margin-top: 8px;
   color: var(--teal);
 }
 
