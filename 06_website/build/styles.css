@@ -3863,10 +3863,24 @@ button {
   color: rgba(23, 58, 74, 0.42);
 }
 
+.project-reel,
+.project-reel__ring,
+video,
+iframe {
+  touch-action: pan-y;
+  pointer-events: none;
+}
+
+.project-reel__play,
+.project-reel__label {
+  pointer-events: auto;
+}
+
 .video-modal {
   position: fixed;
   inset: 0;
   z-index: 995;
+  touch-action: pan-y;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3941,6 +3955,8 @@ button {
   max-height: 80vh;
   display: block;
   background: var(--petroleo-dark);
+  pointer-events: auto;
+  touch-action: auto;
 }
 
 .video-modal__media {

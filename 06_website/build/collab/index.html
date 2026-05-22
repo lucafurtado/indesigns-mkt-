@@ -209,6 +209,20 @@
       color: var(--petroleo);
     }
 
+    /* ── Mobile scroll fix ── */
+    video,
+    iframe {
+      touch-action: pan-y;
+      pointer-events: none;
+    }
+    .video-modal {
+      touch-action: pan-y;
+    }
+    .video-modal__player {
+      pointer-events: auto;
+      touch-action: auto;
+    }
+
     /* ── CTA editorial ── */
     .parcerias-cta__editorial {
       font-family: var(--font-headline);
