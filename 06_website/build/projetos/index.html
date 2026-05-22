@@ -43,26 +43,46 @@
         <span class="label projetos-header__kicker">PROJETOS</span>
         <div class="projetos-header__content">
           <h1 class="projetos-header__title">Espaços pensados para serem vividos.</h1>
+          <p class="projetos-header__ponte">Oito projetos entre 2018 e 2025.</p>
           <p class="projetos-header__text">Uma seleção de projetos autorais desenvolvidos com atenção à rotina, circulação, luz e permanência. Cada espaço nasce de uma leitura particular do modo de viver, trabalhar e ocupar o tempo, revelando decisões que aproximam estética, função e memória cotidiana.</p>
         </div>
       </div>
     </header>
 
     <section class="projetos-curadoria" aria-label="Lista de projetos">
-      <div class="container projetos-toolbar" aria-label="Filtros de projetos">
-        <div class="projetos-filter" role="list" aria-label="Filtrar por categoria">
-          <button class="projetos-filter__btn is-active" type="button" data-filter="todos">Todos</button>
-          <button class="projetos-filter__btn" type="button" data-filter="residencial">Residencial</button>
-          <button class="projetos-filter__btn" type="button" data-filter="apartamentos">Apartamentos</button>
-          <button class="projetos-filter__btn" type="button" data-filter="saude">Saúde</button>
-          <button class="projetos-filter__btn" type="button" data-filter="corporativo">Corporativo e Comercial</button>
-          <button class="projetos-filter__btn" type="button" data-filter="reforma">Reforma</button>
-          <button class="projetos-filter__btn" type="button" data-filter="consultoria">Consultoria</button>
-          <button class="projetos-filter__btn" type="button" data-filter="area-coletiva">Área coletiva</button>
-        </div>
-        <div class="projetos-view" role="group" aria-label="Visualização">
-          <button class="projetos-view__btn is-active" type="button" data-project-view="editorial">Editorial</button>
-          <button class="projetos-view__btn" type="button" data-project-view="lista">Lista</button>
+      <div class="projetos-toolbar">
+        <nav class="projetos-filter" aria-label="Filtrar projetos">
+          <button class="projetos-filter__inline is-active" data-filter="todos">Todos</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="residencial">Residencial</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="apartamentos">Apartamentos</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="saude">Consultório</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="corporativo">Corporativo</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="reforma">Reforma</button>
+          <span class="projetos-filter__sep" aria-hidden="true">·</span>
+          <button class="projetos-filter__inline" data-filter="consultoria">Consultoria</button>
+        </nav>
+
+        <div class="projetos-view" role="group" aria-label="Modo de visualização">
+          <button class="projetos-view__icon is-active" data-project-view="editorial" aria-label="Vista editorial">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="0" y="0" width="7" height="7" fill="currentColor"/>
+              <rect x="9" y="0" width="7" height="7" fill="currentColor"/>
+              <rect x="0" y="9" width="7" height="7" fill="currentColor"/>
+              <rect x="9" y="9" width="7" height="7" fill="currentColor"/>
+            </svg>
+          </button>
+          <button class="projetos-view__icon" data-project-view="lista" aria-label="Vista em lista">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="0" y="1" width="16" height="2" fill="currentColor"/>
+              <rect x="0" y="7" width="16" height="2" fill="currentColor"/>
+              <rect x="0" y="13" width="16" height="2" fill="currentColor"/>
+            </svg>
+          </button>
         </div>
       </div>
 

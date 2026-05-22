@@ -4426,6 +4426,81 @@ button {
   background: var(--petroleo);
 }
 
+/* Filtros inline editoriais */
+.projetos-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.projetos-filter__inline {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(23, 58, 74, 0.42);
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.projetos-filter__inline:hover {
+  color: var(--petroleo);
+}
+
+.projetos-filter__inline.is-active {
+  color: var(--petroleo);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.projetos-filter__sep {
+  font-family: var(--font-label);
+  font-size: 10px;
+  color: rgba(23, 58, 74, 0.22);
+  padding: 0 10px;
+  user-select: none;
+}
+
+/* Toggle como ícones discretos */
+.projetos-view {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projetos-view__icon {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: rgba(23, 58, 74, 0.28);
+  cursor: pointer;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.projetos-view__icon:hover {
+  color: var(--petroleo);
+}
+
+.projetos-view__icon.is-active {
+  color: var(--petroleo);
+}
+
+/* Frase-ponte */
+.projetos-header__ponte {
+  margin-top: 12px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(23, 58, 74, 0.38);
+}
+
 .projetos-item {
   overflow: hidden;
   transition: opacity 0.45s var(--ease-premium);
