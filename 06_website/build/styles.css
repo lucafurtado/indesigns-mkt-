@@ -3678,6 +3678,33 @@ button {
   margin: 0;
 }
 
+.atm-break--axo {
+  height: auto;
+  background: none;
+}
+
+.axo-marginalia-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 clamp(24px, 6vw, 96px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.axo-marginalia {
+  width: clamp(80px, 10vw, 140px);
+  opacity: 0.12;
+  filter: invert(14%) sepia(28%) saturate(800%)
+          hue-rotate(162deg) brightness(60%);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .axo-marginalia {
+    display: none;
+  }
+}
+
 /* ============================================================
    SHOWCASE � Introdu��o editorial
    ============================================================ */
