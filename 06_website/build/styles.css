@@ -78,7 +78,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--offwhite);
   color: var(--petroleo);
-  line-height: 1.6;
+  line-height: 1.72;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -133,6 +133,11 @@ button {
   --container:     1200px;
   --section-gap:   130px;
   --nav-h:         82px;
+
+  /* Respiração */
+  --gap-sm: 88px;
+  --gap-md: 144px;
+  --gap-lg: 200px;
 }
 
 /* -- CONTAINER ------------------------------------------------ */
@@ -156,7 +161,7 @@ button {
 }
 
 .section-header {
-  margin-bottom: 88px;
+  margin-bottom: 56px;
 }
 
 .section-header .label {
@@ -165,7 +170,7 @@ button {
 
 .section-title {
   font-family: var(--font-headline);
-  font-size: clamp(38px, 4.5vw, 56px);
+  font-size: clamp(36px, 4vw, 52px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -423,9 +428,8 @@ button {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(23,58,74,0.10) 0%,
-    rgba(23,58,74,0.00) 35%,
-    rgba(23,58,74,0.55) 100%
+    rgba(23, 58, 74, 0) 0%,
+    rgba(23, 58, 74, 0.35) 100%
   );
 }
 
@@ -440,7 +444,7 @@ button {
 
 .hero__headline {
   font-family: var(--font-headline);
-  font-size: clamp(56px, 7.5vw, 104px);
+  font-size: clamp(48px, 6.5vw, 96px);
   font-weight: 400;
   line-height: 0.96;
   letter-spacing: -0.025em;
