@@ -763,12 +763,10 @@ button {
 }
 
 .sobre__img-wrap {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   position: relative;
   box-shadow: 0 28px 80px rgba(23, 58, 74, 0.20), 0 8px 28px rgba(23, 58, 74, 0.12);
-  outline: 1px solid rgba(60, 110, 113, 0.36);
-  outline-offset: 10px;
 }
 
 .sobre__img {
@@ -792,18 +790,6 @@ button {
   position: relative;
 }
 
-/* Detalhe de linha teal na borda esquerda */
-.sobre__img-wrap::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 0;
-  bottom: 10%;
-  width: 3px;
-  background: var(--teal);
-  opacity: 0.75;
-  z-index: 2;
-}
 
 .sobre__tag {
   margin-top: 20px;
@@ -849,6 +835,29 @@ button {
   margin-bottom: 24px;
 }
 .sobre__text p:last-child { margin-bottom: 0; }
+
+.sobre__dropcap {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: 4.2em;
+  line-height: 0.78;
+  float: left;
+  margin-right: 6px;
+  margin-top: 6px;
+  color: var(--teal);
+}
+
+.sobre__marginalia {
+  display: block;
+  margin-top: 40px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(23, 58, 74, 0.38);
+  padding-top: 20px;
+  border-top: 1px solid rgba(23, 58, 74, 0.1);
+}
 
 /* ============================================================
    DEPOIMENTOS
