@@ -313,9 +313,8 @@ button {
 .nav__logo:hover { opacity: 0.72; }
 
 .nav__logo--hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav.is-scrolled .nav__logo--hidden {
