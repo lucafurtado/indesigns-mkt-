@@ -408,7 +408,8 @@ button {
 .hero {
   display: grid;
   grid-template-columns: 38fr 62fr;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 800px;
   overflow: hidden;
 }
 
@@ -420,6 +421,7 @@ button {
   padding: clamp(40px, 5vw, 72px);
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .hero__brand-logo {
