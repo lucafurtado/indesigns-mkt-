@@ -414,7 +414,12 @@ button {
 }
 
 .hero__left {
-  background: var(--petroleo);
+  background: linear-gradient(
+    105deg,
+    rgba(23, 58, 74, 1) 0%,
+    rgba(23, 58, 74, 0.88) 55%,
+    rgba(23, 58, 74, 0.55) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -425,10 +430,11 @@ button {
 }
 
 .hero__brand-logo {
-  width: clamp(120px, 14vw, 200px);
+  width: clamp(140px, 16vw, 220px);
   height: auto;
   display: block;
-  opacity: 0.9;
+  margin: 0 auto;
+  opacity: 0.95;
 }
 
 .hero__content {
@@ -508,11 +514,25 @@ button {
   overflow: hidden;
 }
 
+.hero__right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 30%;
+  background: linear-gradient(
+    to right,
+    rgba(23, 58, 74, 0.55) 0%,
+    rgba(23, 58, 74, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
 .hero__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: 65% 75%;
   display: block;
 }
 
