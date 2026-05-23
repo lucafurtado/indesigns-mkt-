@@ -46,15 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctaForm     = document.getElementById('ctaForm');
   const submitBtn   = document.getElementById('submitBtn');
 
-  /* -- NAV: FUNDO AO FAZER SCROLL --------------------------- */
+  /* -- NAV: TRANSPARENTE NO HERO, PETRÓLEO APÓS SCROLL ------- */
+
+  const heroEl = document.getElementById('hero');
 
   const updateNav = () => {
-    const scrolled = window.scrollY > 72;
-    nav.classList.toggle('scrolled', scrolled);
+    const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
+    nav.classList.toggle('is-scrolled', heroBottom <= 80);
   };
 
   window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav(); // estado inicial
+  updateNav();
 
   /* -- MENU MOBILE ------------------------------------------- */
 

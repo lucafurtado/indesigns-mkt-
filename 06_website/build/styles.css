@@ -282,17 +282,13 @@ button {
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: background var(--t-slow) var(--ease),
-              height var(--t-med) var(--ease),
-              box-shadow var(--t-slow) var(--ease);
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-.nav.scrolled {
-  background: rgba(23, 58, 74, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  height: calc(var(--nav-h) - 14px);
-  box-shadow: 0 1px 0 rgba(60, 110, 113, 0.15);
+.nav.is-scrolled {
+  background: var(--petroleo);
+  box-shadow: 0 1px 0 rgba(60, 110, 113, 0.18);
 }
 
 .nav__container {
@@ -315,6 +311,17 @@ button {
   transition: opacity var(--t-fast);
 }
 .nav__logo:hover { opacity: 0.72; }
+
+.nav__logo--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.nav.is-scrolled .nav__logo--hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .nav__links {
   display: flex;
@@ -1604,7 +1611,7 @@ button {
   }
 
   .nav__logo-img {
-    height: 38px;
+    height: 36px;
   }
 
   /* Menu mobile � gaveta lateral */
@@ -1732,7 +1739,7 @@ button {
 }
 
 .nav__logo-img {
-  height: 52px;
+  height: 36px;
   width: auto;
   display: block;
 }
