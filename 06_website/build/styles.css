@@ -431,6 +431,7 @@ button {
     rgba(23, 58, 74, 0) 0%,
     rgba(23, 58, 74, 0.35) 100%
   );
+  pointer-events: none;
 }
 
 .hero__content {
