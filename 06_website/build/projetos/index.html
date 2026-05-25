@@ -20,19 +20,27 @@
 <body class="projetos-page">
   <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
     <div class="nav__container">
-      <a href="/" class="nav__logo" aria-label="Indesigns início">
-        <img src="/assets/logo-full.png" alt="Indesigns" class="nav__logo-img" width="auto" height="30">
-      </a>
-      <div class="nav__links" id="navLinks" role="menubar">
+
+      <nav class="nav__links nav__links--left" id="navLinks" role="menubar">
         <a href="/#projetos" class="nav__link" role="menuitem">Projetos</a>
         <a href="/#servicos" class="nav__link" role="menuitem">Serviços</a>
         <a href="/#processo" class="nav__link" role="menuitem">Processo</a>
+      </nav>
+
+      <a href="/" class="nav__logo" id="navLogo" aria-label="Indesigns, início">
+        <img src="/assets/logo-nav.png" alt="Indesigns" class="nav__logo-img" width="auto" height="36">
+      </a>
+
+      <nav class="nav__links nav__links--right" role="menubar">
         <a href="/#sobre" class="nav__link" role="menuitem">Sobre</a>
         <a href="/collab/" class="nav__link" role="menuitem">Collab</a>
-        <a href="/links/" class="nav__link" role="menuitem">Links</a>
         <a href="/#contato" class="nav__link nav__link--cta" role="menuitem">Contato</a>
-      </div>
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
     <div class="nav__backdrop" id="navBackdrop"></div>
   </nav>
@@ -57,15 +65,11 @@
           <span class="projetos-filter__sep" aria-hidden="true">·</span>
           <button class="projetos-filter__inline" data-filter="residencial">Residencial</button>
           <span class="projetos-filter__sep" aria-hidden="true">·</span>
-          <button class="projetos-filter__inline" data-filter="apartamentos">Apartamentos</button>
-          <span class="projetos-filter__sep" aria-hidden="true">·</span>
-          <button class="projetos-filter__inline" data-filter="saude">Consultório</button>
-          <span class="projetos-filter__sep" aria-hidden="true">·</span>
           <button class="projetos-filter__inline" data-filter="corporativo">Corporativo</button>
           <span class="projetos-filter__sep" aria-hidden="true">·</span>
-          <button class="projetos-filter__inline" data-filter="reforma">Reforma</button>
+          <button class="projetos-filter__inline" data-filter="infantil">Infantil</button>
           <span class="projetos-filter__sep" aria-hidden="true">·</span>
-          <button class="projetos-filter__inline" data-filter="consultoria">Consultoria</button>
+          <button class="projetos-filter__inline" data-filter="coletivos">Espaços Coletivos</button>
         </nav>
 
         <div class="projetos-view" role="group" aria-label="Modo de visualização">
@@ -90,7 +94,7 @@
 
       <ul class="projetos-list" data-projects-list>
 
-        <li class="projetos-item reveal" data-project-category="residencial apartamentos" id="cobertura-duplex-noroeste">
+        <li class="projetos-item reveal" data-project-category="residencial" id="cobertura-duplex-noroeste">
           <a href="/assets/projects/noroeste/" class="projetos-item__link" aria-label="Ver projeto Cobertura Duplex Noroeste">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
@@ -118,12 +122,12 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="area-coletiva reforma" id="cobertura-porto-seguro">
+        <li class="projetos-item reveal" data-project-category="coletivos" id="cobertura-porto-seguro">
           <a href="/assets/projects/porto-seguro/" class="projetos-item__link" aria-label="Ver projeto Cobertura Porto Seguro">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img
-                  src="/assets/hero-bg.jpg"
+                  src="/assets/projects/porto-seguro/capa-coletivos.png"
                   alt="Área de convivência da Cobertura Porto Seguro com gourmet e academia"
                   loading="lazy"
                   decoding="async">
@@ -145,12 +149,12 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="saude reforma" id="orbis-psicologia">
+        <li class="projetos-item reveal" data-project-category="corporativo" id="orbis-psicologia">
           <a href="/assets/projects/orbis/" class="projetos-item__link" aria-label="Ver projeto Orbis Psicologia">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img
-                  src="/assets/projects/orbis/hero.jpg"
+                  src="/assets/projects/orbis/capa-corporativo.jpg"
                   alt="Sala de atendimento da Orbis Psicologia com sofá, poltrona e marcenaria"
                   loading="lazy"
                   decoding="async">
@@ -172,17 +176,17 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="residencial apartamentos" id="apto-ci-cecilia-santos">
-          <a href="/assets/projects/cecilia-santos/" class="projetos-item__link" aria-label="Ver projeto Apto CI, Cecilia Santos">
+        <li class="projetos-item reveal" data-project-category="residencial" id="apto-ci-cecilia-santos">
+          <a href="/assets/projects/cecilia-santos/" class="projetos-item__link" aria-label="Ver projeto Apto CI">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
-                <img src="/assets/projects/noroeste/room-baby.jpg" alt="Composição residencial com marcenaria clara e atmosfera familiar" loading="lazy" decoding="async">
+                <img src="/assets/projects/noroeste/capa-categoria.png" alt="Composição residencial com marcenaria clara e atmosfera familiar" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="projetos-item__info">
               <span class="label projetos-item__num">04</span>
               <span class="label projetos-item__cat">RESIDENCIAL</span>
-              <h2 class="projetos-item__title">Apto CI<br>Cecilia Santos</h2>
+              <h2 class="projetos-item__title">Apto CI</h2>
               <p class="projetos-item__place">Guará · Brasília, DF · 64m²</p>
               <p class="projetos-item__desc">Projeto de interiores para funcionalidade familiar sem reforma, com escolhas precisas para reorganizar uso, circulação e permanência.</p>
               <span class="projetos-item__cta">
@@ -195,8 +199,8 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="saude" id="consultorio-ml-mari-rodrigues">
-          <a href="/assets/projects/mari-rodrigues/" class="projetos-item__link" aria-label="Ver projeto Consultório ML, Mari Rodrigues">
+        <li class="projetos-item reveal" data-project-category="corporativo" id="consultorio-ml-mari-rodrigues">
+          <a href="/assets/projects/mari-rodrigues/" class="projetos-item__link" aria-label="Ver projeto Consultório ML">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img src="/assets/projects/orbis/detail-01.jpg" alt="Detalhe de consultório com marcenaria, textura e iluminação acolhedora" loading="lazy" decoding="async">
@@ -204,8 +208,8 @@
             </div>
             <div class="projetos-item__info">
               <span class="label projetos-item__num">05</span>
-              <span class="label projetos-item__cat">SAÚDE</span>
-              <h2 class="projetos-item__title">Consultório ML<br>Mari Rodrigues</h2>
+              <span class="label projetos-item__cat">CORPORATIVO</span>
+              <h2 class="projetos-item__title">Consultório ML</h2>
               <p class="projetos-item__place">Asa Sul · Brasília, DF · 27m²</p>
               <p class="projetos-item__desc">Projeto de interiores para um consultório compacto, pensado para acolhimento, clareza de uso e presença profissional sem excesso visual.</p>
               <span class="projetos-item__cta">
@@ -219,7 +223,7 @@
         </li>
 
         <li class="projetos-item reveal" data-project-category="corporativo" id="escritorio-advocacia-monique-rafael">
-          <a href="/assets/projects/monique-rafael/" class="projetos-item__link" aria-label="Ver projeto Escritório de Advocacia, Monique e Rafael">
+          <a href="/assets/projects/monique-rafael/" class="projetos-item__link" aria-label="Ver projeto Escritório MR">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
                 <img src="/assets/projects/orbis/detail-02.jpg" alt="Ambiente corporativo com espelho, cor e marcenaria em composição precisa" loading="lazy" decoding="async">
@@ -228,7 +232,7 @@
             <div class="projetos-item__info">
               <span class="label projetos-item__num">06</span>
               <span class="label projetos-item__cat">CORPORATIVO</span>
-              <h2 class="projetos-item__title">Escritório de Advocacia<br>Monique e Rafael</h2>
+              <h2 class="projetos-item__title">Escritório MR</h2>
               <p class="projetos-item__place">SIG · Brasília, DF · 86m²</p>
               <p class="projetos-item__desc">Projeto de interiores para rotina corporativa, com imagem profissional, organização de fluxo e ambientes preparados para concentração e atendimento.</p>
               <span class="projetos-item__cta">
@@ -241,11 +245,11 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="residencial reforma" id="chacara-recanto-do-jaburu">
+        <li class="projetos-item reveal" data-project-category="residencial" id="chacara-recanto-do-jaburu">
           <a href="/assets/projects/recanto-jaburu/" class="projetos-item__link" aria-label="Ver projeto Chácara Recanto do Jaburu">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
-                <img src="/assets/hero-bg.jpg" alt="Área de convivência com arquitetura voltada ao encontro e permanência" loading="lazy" decoding="async">
+                <img src="/assets/projects/noroeste/capa-categoria.png" alt="Área de convivência com arquitetura voltada ao encontro e permanência" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="projetos-item__info">
@@ -264,17 +268,17 @@
           </a>
         </li>
 
-        <li class="projetos-item reveal" data-project-category="residencial consultoria" id="mj-vx-maju-vitor">
-          <a href="/assets/projects/maju-vitor/" class="projetos-item__link" aria-label="Ver projeto MJ VX, Maju e Vitor">
+        <li class="projetos-item reveal" data-project-category="residencial" id="mj-vx-maju-vitor">
+          <a href="/assets/projects/maju-vitor/" class="projetos-item__link" aria-label="Ver projeto MJ VX">
             <div class="projetos-item__img-col">
               <div class="projetos-item__img-wrap">
-                <img src="/assets/projects/noroeste/palette.jpg" alt="Composição de materiais e tons para consultoria residencial autoral" loading="lazy" decoding="async">
+                <img src="/assets/projects/noroeste/capa-categoria.png" alt="Composição de materiais e tons para consultoria residencial autoral" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="projetos-item__info">
               <span class="label projetos-item__num">08</span>
               <span class="label projetos-item__cat">RESIDENCIAL · CONSULTORIA</span>
-              <h2 class="projetos-item__title">MJ VX<br>Maju e Vitor</h2>
+              <h2 class="projetos-item__title">MJ VX</h2>
               <p class="projetos-item__place">Lago Sul · Brasília, DF · 150m²</p>
               <p class="projetos-item__desc">Consultoria de interiores com foco em identidade, criação de conteúdo e um escritório pensado para representar a rotina criativa da Maju.</p>
               <span class="projetos-item__cta">
