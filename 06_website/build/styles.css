@@ -433,6 +433,7 @@ button {
 
 .hero {
   position: relative;
+  z-index: 1;
   height: 100vh;
   max-height: 900px;
   overflow: hidden;
@@ -3149,8 +3150,13 @@ button {
    ============================================================ */
 
 .showcase {
+  position: relative;
+  z-index: 2;
+  background: var(--offwhite);
+  border-radius: 16px 16px 0 0;
+  margin-top: -24px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.18);
   padding-bottom: clamp(16px, 3vw, 28px);
-  background-color: var(--offwhite);
 }
 
 .sc-header {
