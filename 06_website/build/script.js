@@ -723,4 +723,36 @@ document.addEventListener('DOMContentLoaded', () => {
   track.addEventListener('mouseleave', startAutoPlay);
 
   startAutoPlay();
+
+  /* Teclado */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      stopAutoPlay();
+      goTo(current - 1);
+      startAutoPlay();
+    }
+    if (e.key === 'ArrowRight') {
+      stopAutoPlay();
+      goTo(current + 1);
+      startAutoPlay();
+    }
+  });
+
+  /* Swipe mobile */
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoPlay();
+  }, { passive: true });
+
+  track.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      goTo(diff > 0 ? current + 1 : current - 1);
+    }
+    startAutoPlay();
+  }, { passive: true });
 })();

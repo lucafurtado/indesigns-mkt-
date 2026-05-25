@@ -4481,7 +4481,7 @@ iframe {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 24px;
 }
 
 .projetos-curadoria {
@@ -4497,11 +4497,14 @@ iframe {
   padding-bottom: clamp(30px, 4vw, 48px);
 }
 
-.projetos-filter,
-.projetos-view {
+.projetos-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.projetos-view {
+  display: none;
 }
 
 .projetos-filter__btn,
@@ -4904,55 +4907,61 @@ iframe {
 .projetos-carousel__nav {
   position: absolute;
   bottom: clamp(24px, 4vw, 48px);
-  right: clamp(32px, 5vw, 72px);
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  gap: 16px;
-  z-index: 3;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
 }
 
 .projetos-carousel__arrow {
-  background: none;
-  border: none;
-  color: rgba(236, 236, 234, 0.5);
+  background: rgba(23, 58, 74, 0.6);
+  border: 1px solid rgba(236, 236, 234, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--offwhite);
   cursor: pointer;
-  padding: 8px;
-  transition: color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
 }
 
 .projetos-carousel__arrow:hover {
-  color: var(--offwhite);
+  background: rgba(23, 58, 74, 0.9);
+  border-color: rgba(236, 236, 234, 0.6);
 }
 
 .projetos-carousel__dots {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .projetos-carousel__dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(236, 236, 234, 0.25);
-  border: none;
+  background: rgba(236, 236, 234, 0.35);
+  border: 1px solid rgba(236, 236, 234, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
 }
 
 .projetos-carousel__dot.is-active {
-  width: 20px;
-  border-radius: 3px;
-  background: var(--teal);
+  width: 24px;
+  border-radius: 4px;
+  background: var(--offwhite);
+  border-color: var(--offwhite);
 }
 
 @media (max-width: 768px) {
   .projetos-carousel {
     height: 70vh;
-  }
-  .projetos-carousel__nav {
-    right: 50%;
-    transform: translateX(50%);
   }
 }
