@@ -4416,6 +4416,7 @@ iframe {
 
 .projetos-page {
   background-color: var(--offwhite);
+  padding-top: 0;
 }
 
 .projetos-page .nav {
@@ -4504,7 +4505,7 @@ iframe {
 }
 
 .projetos-view {
-  display: none;
+  display: none !important;
 }
 
 .projetos-filter__btn,
@@ -4572,9 +4573,7 @@ iframe {
 
 /* Toggle como ícones discretos */
 .projetos-view {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: none !important;
 }
 
 .projetos-view__icon {
@@ -4814,6 +4813,8 @@ iframe {
   background: var(--petroleo);
   height: 85vh;
   max-height: 700px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .projetos-carousel__track {
