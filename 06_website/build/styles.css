@@ -720,8 +720,13 @@ button {
    ============================================================ */
 
 .processo {
+  position: relative;
+  z-index: 4;
+  background: var(--offwhite);
+  border-radius: 16px 16px 0 0;
+  margin-top: -24px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.18);
   padding: clamp(142px, 14vw, 196px) 0;
-  background-color: var(--offwhite);
 }
 
 .processo .section-header {
@@ -1240,7 +1245,12 @@ button {
    ============================================================ */
 
 .servicos-home {
+  position: relative;
+  z-index: 3;
   background: var(--petroleo);
+  border-radius: 16px 16px 0 0;
+  margin-top: -24px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.35);
   padding: clamp(80px, 10vw, 140px) 0;
 }
 
@@ -2431,7 +2441,12 @@ button {
   --sc-dot-bg:     rgba(23, 58, 74, 0.18);
   --sc-dot-active: var(--teal);
 
+  position: relative;
+  z-index: 2;
   background-color: var(--sc-bg);
+  border-radius: 16px 16px 0 0;
+  margin-top: -24px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.18);
   transition: background-color 0.8s var(--ease);
   overflow: hidden;
 }
