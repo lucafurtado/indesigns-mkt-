@@ -801,6 +801,11 @@ button {
    ============================================================ */
 
 .sobre {
+  position: relative;
+  z-index: 5;
+  border-radius: 16px 16px 0 0;
+  margin-top: -16px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.12);
   padding: clamp(148px, 14vw, 208px) 0;
   background-color: var(--greige);
 }
@@ -1011,9 +1016,13 @@ button {
    ============================================================ */
 
 .cta-section {
+  position: relative;
+  z-index: 6;
+  border-radius: 16px 16px 0 0;
+  margin-top: -16px;
+  box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.25);
   padding: 160px 0 128px;
   background-color: var(--petroleo);
-  position: relative;
   overflow: hidden;
 }
 
@@ -1249,7 +1258,7 @@ button {
   z-index: 3;
   background: var(--petroleo);
   border-radius: 16px 16px 0 0;
-  margin-top: -24px;
+  margin-top: -16px;
   box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.35);
   padding: clamp(80px, 10vw, 140px) 0;
 }
