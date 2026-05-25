@@ -469,31 +469,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const projectList = document.querySelector('[data-projects-list]');
-  const projectItems = projectList ? Array.from(projectList.querySelectorAll('.projetos-item')) : [];
-  const filterButtons = document.querySelectorAll('[data-filter]');
-  const viewButtons = document.querySelectorAll('[data-project-view]');
+  (function() {
+    const filterBtns = document.querySelectorAll('.projetos-filter__inline');
+    const gridItems = document.querySelectorAll('.projetos-grid__item');
+    const emptyMsg = document.getElementById('projetosEmpty');
+    if (!filterBtns.length) return;
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const filter = button.dataset.filter || 'todos';
-      filterButtons.forEach(btn => btn.classList.toggle('is-active', btn === button));
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
 
-      projectItems.forEach((item) => {
-        const categories = (item.dataset.projectCategory || '').split(/\s+/);
-        const shouldShow = filter === 'todos' || categories.includes(filter);
-        item.classList.toggle('is-hidden', !shouldShow);
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+
+        let visible = 0;
+        gridItems.forEach(item => {
+          const match = filter === 'todos' || item.dataset.category === filter;
+          item.classList.toggle('is-hidden', !match);
+          if (match) visible++;
+        });
+
+        if (emptyMsg) {
+          emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+        }
       });
     });
-  });
-
-  viewButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const view = button.dataset.projectView || 'editorial';
-      viewButtons.forEach(btn => btn.classList.toggle('is-active', btn === button));
-      projectList?.classList.toggle('is-list-view', view === 'lista');
-    });
-  });
+  })();
 
   /* -- VIDEO REEL � P�ginas de projeto ---------------------- */
 
