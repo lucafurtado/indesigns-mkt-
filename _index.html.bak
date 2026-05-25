@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indesigns | Arquitetura autoral e interiores em Brasília</title>
+  <meta name="description" content="Indesigns é um escritório de arquitetura e interiores em Brasília conduzido por Indira Bonfim. Projetos residenciais, corporativos e áreas coletivas com escuta, funcionalidade, luz e cuidado em cada detalhe.">
+  <meta name="keywords" content="arquitetura Brasília, arquitetura residencial Brasília, arquitetura de interiores Brasília, arquiteta Brasília, escritório de arquitetura Brasília, interiores autorais Brasília">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Indesigns Arquitetura e Design">
+  <meta name="theme-color" content="#173a4a">
+  <meta property="og:title" content="Indesigns | Arquitetura autoral e interiores em Brasília">
+  <meta property="og:description" content="Escritório de arquitetura em Brasília especializado em projetos residenciais, interiores autorais, espaços corporativos e áreas coletivas pensadas para a rotina real.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://indesigns.arq.br/">
+  <meta property="og:image" content="https://indesigns.arq.br/assets/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Indesigns | Arquitetura autoral em Brasília">
+  <meta name="twitter:description" content="Projetos de arquitetura e interiores em Brasília com escuta, precisão e espaços pensados para serem vividos.">
+  <meta name="twitter:image" content="https://indesigns.arq.br/assets/hero-bg.jpg">
+  <link rel="canonical" href="https://indesigns.arq.br/">
+  <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://indesigns.arq.br/#organization",
+    "name": "Indesigns Arquitetura e Design",
+    "description": "Escritório de arquitetura e interiores em Brasília conduzido por Indira Bonfim. Atua em projetos residenciais, interiores autorais, espaços corporativos e áreas coletivas com foco em rotina, funcionalidade, luz e cuidado no detalhe.",
+    "url": "https://indesigns.arq.br/",
+    "image": "https://indesigns.arq.br/assets/hero-bg.jpg",
+    "logo": "https://indesigns.arq.br/assets/favicon.svg",
+    "telephone": "+5561998586151",
+    "email": "indesigns.arq@gmail.com",
+    "areaServed": ["Brasília", "Distrito Federal"],
+    "knowsAbout": [
+      "arquitetura Brasília",
+      "arquitetura residencial Brasília",
+      "arquitetura de interiores Brasília",
+      "interiores autorais Brasília",
+      "arquitetura humanizada",
+      "projetos residenciais premium"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Indira Bonfim",
+      "jobTitle": "Arquiteta",
+      "worksFor": { "@id": "https://indesigns.arq.br/#organization" }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de arquitetura e interiores",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto residencial em Brasília" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto de interiores autorais" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto corporativo e áreas coletivas" } }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://indesigns.arq.br/#projects",
+    "name": "Projetos selecionados do Indesigns",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://indesigns.arq.br/residencia-noroeste/",
+        "name": "Cobertura Duplex Noroeste"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://indesigns.arq.br/cobertura-porto-seguro/",
+        "name": "Cobertura Porto Seguro"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://indesigns.arq.br/clinica-orbis/",
+        "name": "Orbis Psicologia"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- INTRO OVERLAY -->
+  <div id="site-intro" class="site-intro" aria-hidden="true" role="presentation">
+    <img src="assets/logo.png" alt="" class="site-intro__logo" aria-hidden="true" draggable="false">
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
+    <div class="nav__container">
+      <nav class="nav__links nav__links--left" aria-label="Links esquerda">
+        <a href="#projetos" class="nav__link">Projetos</a>
+        <a href="#servicos" class="nav__link nav__link--hide-md">Serviços</a>
+        <a href="#processo" class="nav__link nav__link--hide-md">Processo</a>
+      </nav>
+
+      <a href="#hero" class="nav__logo" aria-label="Indesigns, início">
+        <img src="assets/logo-nav.png" alt="Indesigns" class="nav__logo-img" height="40">
+      </a>
+
+      <nav class="nav__links nav__links--right" aria-label="Links direita">
+        <a href="#sobre" class="nav__link nav__link--hide-md">Sobre</a>
+        <a href="/collab/" class="nav__link nav__link--hide-md">Collab</a>
+        <a href="#contato" class="nav__link nav__link--cta">Contato</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__backdrop" id="navBackdrop"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="Apresentação">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <span class="label hero__label fade-up">DENTRO DE CADA DETALHE</span>
+      <h1 class="hero__headline fade-up">
+        Projetar começa<br>
+        por entender<br>
+        <em>antes de desenhar.</em>
+      </h1>
+      <p class="hero__sub fade-up">
+        A gente projeta o espaço que a sua rotina precisa.
+      </p>
+      <div class="hero__actions fade-up">
+        <a href="https://wa.me/5561998586151?text=Olá+Indira,+vim+pelo+site+e+gostaria+de+conversar+sobre+um+projeto"
+           class="btn btn--primary" target="_blank" rel="noopener">Agende uma conversa</a>
+        <a href="#projetos" class="hero__scroll-link">Explorar projetos <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="atm-break" aria-hidden="true"></div>
+
+  <!-- SHOWCASE DE PROJETOS -->
+  <section class="showcase" id="projetos" data-theme="light" aria-labelledby="projetos-heading">
+    <div class="showcase__carousel" tabindex="0">
+      <button class="showcase__arrow showcase__arrow--prev" type="button" data-carousel-dir="-1" aria-label="Projeto anterior">
+        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true">
+          <path d="M28 7H2M8 1 2 7l6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="showcase__visual">
+        <img
+          class="showcase__img"
+          id="sc-img"
+          src="assets/projects/noroeste/cover.jpg"
+          alt="Cobertura Duplex Noroeste, living da cobertura"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+      </div>
+
+      <div class="showcase__panel">
+        <div class="showcase__section-intro">
+          <span class="label">PROJETOS</span>
+          <h2 id="projetos-heading" class="showcase__section-heading">Espaços pensados<br>para serem vividos.</h2>
+          <a href="/projetos/" class="showcase__all-link" id="sc-all-link">Ver todos os projetos</a>
+        </div>
+        <div class="showcase__project-content" aria-live="polite">
+          <div class="showcase__panel-top">
+            <span class="label showcase__counter" id="sc-counter">01 / 03</span>
+            <span class="label showcase__category" id="sc-category">RESIDENCIAL</span>
+          </div>
+          <h3 class="showcase__title" id="projetos-title"><span id="sc-title">Cobertura Duplex<br>Noroeste</span></h3>
+          <p class="showcase__place" id="sc-place">Noroeste · Brasília, DF</p>
+          <p class="showcase__narrative" id="sc-narrative">Uma família sai de uma casa ampla para uma cobertura mais compacta. O projeto preserva conforto, convivência e continuidade afetiva.</p>
+          <a href="residencia-noroeste/" class="showcase__link" id="sc-link">
+            <span>Ver projeto</span>
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" aria-hidden="true">
+              <path d="M0 5h18M13 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <nav class="showcase__nav" aria-label="Navegar entre projetos">
+            <button class="showcase__dot is-active" type="button" data-project="0" aria-label="Cobertura Duplex Noroeste" aria-current="true"></button>
+            <button class="showcase__dot" type="button" data-project="1" aria-label="Cobertura Porto Seguro"></button>
+            <button class="showcase__dot" type="button" data-project="2" aria-label="Clínica Orbis"></button>
+          </nav>
+        </div>
+      </div>
+
+      <button class="showcase__arrow showcase__arrow--next" type="button" data-carousel-dir="1" aria-label="Próximo projeto">
+        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" aria-hidden="true">
+          <path d="M0 7h26M20 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <div class="atm-break" aria-hidden="true"></div>
+
+  <!-- SERVIÇOS (resumo) -->
+  <section class="servicos-home" id="servicos" aria-label="Serviços">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">SERVIÇOS</span>
+        <h2 class="section-title">O que eu faço.</h2>
+        <p class="section-sub">Acompanhamento próximo para transformar espaços com direção autoral,<br>escuta e decisões pensadas para a rotina real.</p>
+      </header>
+
+      <div class="servicos-home__grid">
+        <div class="servico-home__item reveal">
+          <span class="servico-home__num">01</span>
+          <h3 class="servico-home__title">Projeto de Arquitetura</h3>
+          <p class="servico-home__text">Do primeiro estudo à documentação da obra, com planta, luz, circulação e materialidade conduzidas como parte da vida real.</p>
+        </div>
+        <div class="servico-home__item reveal">
+          <span class="servico-home__num">02</span>
+          <h3 class="servico-home__title">Reforma</h3>
+          <p class="servico-home__text">Trabalhar dentro do que já existe, com todas as suas restrições e possibilidades. É o serviço que mais exige e mais transforma.</p>
+        </div>
+        <div class="servico-home__item reveal">
+          <span class="servico-home__num">03</span>
+          <h3 class="servico-home__title">Design de Interiores</h3>
+          <p class="servico-home__text">Mobiliário, materiais, marcenaria, iluminação. As escolhas que ninguém lista, mas que todo mundo sente.</p>
+        </div>
+        <div class="servico-home__item reveal">
+          <span class="servico-home__num">04</span>
+          <h3 class="servico-home__title">Orientação de Ambientes</h3>
+          <p class="servico-home__text">Reorganização de layout, mobiliário e ambientação para melhorar o uso do espaço sem precisar entrar em reforma.</p>
+        </div>
+      </div>
+
+      <div class="servicos-home__cta reveal">
+        <a href="/servicos/" class="btn btn--outline">Ver todos os serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="atm-break" aria-hidden="true"></div>
+
+  <!-- PROCESSO -->
+  <section class="processo" id="processo" aria-label="Processo de trabalho">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">PROCESSO</span>
+        <h2 class="section-title">O método.</h2>
+        <p class="section-sub">
+          Do primeiro encontro ao projeto executivo.<br>
+          Você acompanha cada decisão.
+        </p>
+      </header>
+
+      <div class="processo__steps">
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">01</span>
+          <h3 class="processo__title">Briefing</h3>
+          <p class="processo__text">Antes do desenho, vem a escuta. Rotina, desejos e limites são o ponto de partida de qualquer projeto.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">02</span>
+          <h3 class="processo__title">Levantamento</h3>
+          <p class="processo__text">Medição, visita técnica e leitura do espaço existente. O projeto começa no contato direto com a realidade.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">03</span>
+          <h3 class="processo__title">Estudo preliminar</h3>
+          <p class="processo__text">Planta, conceito e primeiras imagens. As principais decisões tomam forma antes da obra começar.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">04</span>
+          <h3 class="processo__title">Anteprojeto</h3>
+          <p class="processo__text">O projeto ganha profundidade: materiais, marcenaria, esquemas de iluminação e especificações técnicas.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">05</span>
+          <h3 class="processo__title">Projeto executivo</h3>
+          <p class="processo__text">Documentação completa para a obra. Cada prancha orienta o que precisa ser executado com precisão.</p>
+        </div>
+        <div class="processo__step reveal">
+          <span class="processo__num" aria-hidden="true">06</span>
+          <h3 class="processo__title">Detalhamento</h3>
+          <p class="processo__text">As decisões menores que definem o resultado final. O que fica bonito e o que funciona bem nascem aqui.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="atm-break" aria-hidden="true"></div>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre" aria-label="Sobre Indira Bonfim">
+    <div class="container">
+      <div class="sobre__grid">
+        <div class="sobre__img-col reveal">
+          <div class="sobre__img-wrap">
+            <!--
+              Foto de Indira — usando imagem da pasta "Fotos para o site".
+              Para produção: copiar para images/indira.jpg e atualizar o src.
+            -->
+            <img
+              src="assets/people/indira-profile.jpg"
+              alt="Indira Bonfim, arquiteta, Indesigns, Brasília"
+              loading="lazy"
+              decoding="async"
+              class="sobre__img"
+              onerror="this.parentElement.innerHTML='<div class=\'sobre__img-placeholder\' role=\'img\' aria-label=\'Indira Bonfim\'></div>'">
+          </div>
+        </div>
+
+        <div class="sobre__content reveal">
+          <h2 class="sobre__name">Indira Bonfim</h2>
+          <p class="sobre__title">Arquiteta e Urbanista</p>
+          <div class="sobre__divider" aria-hidden="true"></div>
+          <div class="sobre__text">
+            <p>O Indesigns parte de uma ideia simples: um espaço só faz sentido quando acompanha a vida de quem usa. Antes da planta, vêm a escuta, a rotina e aquilo que precisa funcionar com naturalidade todos os dias.</p>
+            <p>Conduzimos projetos de arquitetura e interiores em Brasília com atenção ao que nem sempre aparece de imediato: circulação, luz, armazenamento, convivência e pequenas escolhas que mudam o uso do espaço.</p>
+            <p>O trabalho combina sensibilidade e precisão. Ambientes contemporâneos, bem resolvidos e próximos, pensados para serem vividos com calma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS — oculto na V1, ativar quando tiver depoimentos reais -->
+  <!--
+  <section class="depoimentos" id="depoimentos" aria-label="Depoimentos de clientes">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">CLIENTES</span>
+        <h2 class="section-title">Na voz de quem contratou.</h2>
+      </header>
+
+      <div class="depoimentos__grid">
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome, Síndica</cite>
+            <span class="depoimento__project">Cobertura Coletiva · Porto Seguro</span>
+          </footer>
+        </blockquote>
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome</cite>
+            <span class="depoimento__project">Projeto Residencial · Sudoeste</span>
+          </footer>
+        </blockquote>
+        <blockquote class="depoimento reveal">
+          <p class="depoimento__text">"[Depoimento — a coletar]"</p>
+          <footer class="depoimento__author">
+            <cite class="depoimento__name">Nome</cite>
+            <span class="depoimento__project">Projeto Residencial · Lago Sul</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- CTA FINAL + FORMULÁRIO -->
+  <section class="cta-section" id="contato" aria-label="Entre em contato">
+    <div class="container">
+      <div class="cta-section__inner">
+        <header class="cta-section__header">
+          <span class="label cta-section__label reveal">CONTATO</span>
+          <h2 class="cta-section__headline reveal">Me conta o que você está imaginando.</h2>
+          <p class="cta-section__sub reveal">
+            <span class="cta-section__sub-note">Retorno em até 24 horas.</span>
+          </p>
+        </header>
+
+        <p class="cta-section__impulse">Ainda não precisa ser um projeto.<br>Uma conversa já é um começo.</p>
+
+        <form class="cta-form reveal" id="ctaForm" data-crm-ready="true" data-crm-endpoint="" novalidate>
+          <input type="hidden" id="f-origem" name="origem" value="site direto">
+          <input type="text" class="cta-form__honeypot" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="cta-form__row">
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-nome">Nome</label>
+              <input
+                class="cta-form__input"
+                type="text"
+                id="f-nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+                autocomplete="name">
+            </div>
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-tel">WhatsApp</label>
+              <input
+                class="cta-form__input"
+                type="tel"
+                id="f-tel"
+                name="tel"
+                placeholder="(61) 99999-9999"
+                required
+                autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="cta-form__row">
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-email">E-mail</label>
+              <input
+                class="cta-form__input"
+                type="email"
+                id="f-email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+                autocomplete="email">
+            </div>
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-bairro">Local do imóvel</label>
+              <input
+                class="cta-form__input"
+                type="text"
+                id="f-bairro"
+                name="bairro"
+                placeholder="Bairro ou cidade"
+                autocomplete="address-level2">
+            </div>
+          </div>
+
+          <div class="cta-form__row">
+            <div class="cta-form__group">
+              <label class="cta-form__label" for="f-tipo">Tipo de projeto</label>
+              <select class="cta-form__input cta-form__select" id="f-tipo" name="tipo" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="residencial-novo">Projeto residencial novo</option>
+                <option value="reforma">Reforma residencial</option>
+                <option value="coletivo">Espaço coletivo</option>
+                <option value="comercial">Espaço comercial</option>
+                <option value="consultoria">Consultoria</option>
+                <option value="planejando">Ainda estou planejando</option>
+              </select>
+            </div>
+            <div class="cta-form__group">
+              <span class="cta-form__label">Urgência de prazo</span>
+              <div class="cta-form__pills cta-form__pills--compact" role="group" aria-label="Urgência de prazo">
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="flexivel" checked>
+                  <span>Flexível</span>
+                </label>
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="meses">
+                  <span>Próximos meses</span>
+                </label>
+                <label class="cta-form__pill">
+                  <input type="radio" name="prazo" value="urgente">
+                  <span>Urgente</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-form__group cta-form__group--full">
+            <label class="cta-form__label" for="f-imagina">Mensagem</label>
+            <textarea
+              class="cta-form__input cta-form__textarea"
+              id="f-imagina"
+              name="imagina"
+              placeholder="Em uma frase, o que você imagina."
+              rows="3"
+              required></textarea>
+          </div>
+
+          <div class="cta-form__footer">
+            <button type="submit" class="btn btn--light" id="submitBtn">
+              Quero conversar
+            </button>
+          </div>
+        </form>
+
+        <div class="cta-contacts reveal">
+          <a href="https://www.instagram.com/indesigns/" class="cta-contact" target="_blank" rel="noopener" aria-label="Instagram @indesigns">
+            <span class="cta-contact__label">Instagram</span>
+            <span class="cta-contact__value">@indesigns</span>
+          </a>
+          <span class="cta-contacts__sep" aria-hidden="true"></span>
+          <a href="https://wa.me/5561998586151" class="cta-contact" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="cta-contact__label">WhatsApp</span>
+            <span class="cta-contact__value">61 99858-6151</span>
+          </a>
+          <span class="cta-contacts__sep" aria-hidden="true"></span>
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns" class="cta-contact" aria-label="E-mail">
+            <span class="cta-contact__label">E-mail</span>
+            <span class="cta-contact__value">indesigns.arq@gmail.com</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <img src="assets/logo.png" alt="Indesigns Arquitetura e Design" class="footer__logo-img" width="auto" height="44">
+          </div>
+          <span class="footer__tagline">Brasília, DF</span>
+        </div>
+        <nav class="footer__links" aria-label="Links de contato">
+          <a href="https://www.instagram.com/indesigns/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5561998586151" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:indesigns.arq@gmail.com?subject=Contato%20via%20site%20-%20Indesigns">E-mail</a>
+        </nav>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <div class="footer__bottom">
+        <span>© 2026 Indesigns. Todos os direitos reservados.</span>
+        <span>Indira Bonfim · Arquiteta · Brasília, DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
