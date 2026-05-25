@@ -4494,8 +4494,8 @@ iframe {
   justify-content: space-between;
   align-items: flex-start;
   gap: 28px;
-  padding-top: clamp(34px, 5vw, 56px);
-  padding-bottom: clamp(30px, 4vw, 48px);
+  padding-top: clamp(20px, 3vw, 32px);
+  padding-bottom: clamp(16px, 2vw, 24px);
 }
 
 .projetos-filter {
@@ -4974,8 +4974,8 @@ iframe {
 .projetos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  padding: clamp(24px, 4vw, 48px) 0;
+  gap: 12px;
+  padding: clamp(8px, 1.5vw, 16px) clamp(16px, 4vw, 48px) clamp(16px, 3vw, 32px);
 }
 
 .projetos-grid__item {
