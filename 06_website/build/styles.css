@@ -5119,33 +5119,31 @@ iframe {
 /* GALERIA */
 .projeto-galeria {
   background: var(--offwhite);
-  padding: clamp(32px, 5vw, 64px) 0;
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 48px);
 }
 
 .projeto-galeria__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  padding: 0 clamp(16px, 4vw, 48px);
+  columns: 2;
+  column-gap: 16px;
 }
 
 .projeto-galeria__item {
   display: block;
   overflow: hidden;
-  aspect-ratio: 4/3;
+  margin-bottom: 16px;
+  break-inside: avoid;
   cursor: zoom-in;
 }
 
 .projeto-galeria__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .projeto-galeria__item:hover .projeto-galeria__img {
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 /* LIGHTBOX */
@@ -5217,15 +5215,9 @@ iframe {
   margin: 0 0 28px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .projeto-galeria__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .projeto-galeria__grid {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
@@ -5251,4 +5243,51 @@ iframe {
   padding: clamp(48px, 8vw, 96px) 0;
   text-align: center;
   letter-spacing: 0.04em;
+}
+
+/* ANTES E DEPOIS */
+.projeto-antes {
+  background: var(--offwhite);
+  padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 48px);
+  border-top: 0.5px solid rgba(23, 58, 74, 0.08);
+}
+
+.projeto-antes__label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(23, 58, 74, 0.35);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.projeto-antes__grid {
+  columns: 4;
+  column-gap: 8px;
+}
+
+.projeto-antes__item {
+  display: block;
+  margin-bottom: 8px;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.projeto-antes__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.projeto-antes__item:hover .projeto-antes__img {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .projeto-antes__grid {
+    columns: 2;
+  }
 }
