@@ -757,3 +757,20 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
   }, { passive: true });
 })();
+
+(function() {
+  const triggers = document.querySelectorAll('.servico-accordion__trigger');
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      const isOpen = this.getAttribute('aria-expanded') === 'true';
+      triggers.forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.nextElementSibling.classList.remove('is-open');
+      });
+      if (!isOpen) {
+        this.setAttribute('aria-expanded', 'true');
+        this.nextElementSibling.classList.add('is-open');
+      }
+    });
+  });
+})();

@@ -231,67 +231,106 @@
   <!-- SERVIÇOS -->
   <section class="servicos-home" id="servicos" aria-label="Serviços">
     <div class="container">
-      <header class="section-header">
-        <span class="label">SERVIÇOS</span>
-        <h2 class="section-title">Como o escritório atua.</h2>
-        <p class="section-sub">Cada formato nasce de uma leitura do espaço, da rotina e do tipo de decisão que precisa ser conduzida com presença.</p>
-      </header>
-
-      <div class="servicos-home__journey">
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">01</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Projeto de Arquitetura</h3>
-            <p class="servico-home__text">Do primeiro estudo até a documentação técnica. Planta, volumetria, circulação, luz natural e materialidade são pensadas como parte de uma rotina que precisa funcionar com beleza e calma.</p>
-            <p class="servico-home__note">Para construir ou transformar um espaço com direção clara desde o princípio.</p>
-          </div>
-        </article>
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">02</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Reforma</h3>
-            <p class="servico-home__text">Reformar é trabalhar dentro do que já existe, com suas restrições e possibilidades. Cada decisão precisa reconhecer o que permanece, o que muda e o que não pode ser desfeito depois.</p>
-            <p class="servico-home__note">Um processo de precisão para quando o espaço pede transformação real.</p>
-          </div>
-        </article>
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">03</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Design de Interiores</h3>
-            <p class="servico-home__text">Mobiliário, paleta, materiais, marcenaria, iluminação e texturas. É onde o espaço ganha caráter: onde a luz cai de um jeito específico e o material aparece no toque.</p>
-            <p class="servico-home__note">São as escolhas que ninguém lista, mas que todo mundo sente.</p>
-          </div>
-        </article>
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">04</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Orientação de Ambientes</h3>
-            <p class="servico-home__text">Uma leitura personalizada para reorganizar layout, mobiliário, ambientação e funcionalidade sem a necessidade de uma reforma completa.</p>
-            <p class="servico-home__note">Para decidir o que manter, o que mover e por onde começar.</p>
-          </div>
-        </article>
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">05</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Visitas em loja</h3>
-            <p class="servico-home__text">Acompanhamento estratégico para escolher revestimentos, peças, mobiliário e acabamentos com coerência. A visita organiza o olhar e evita decisões soltas.</p>
-            <p class="servico-home__note">Cada escolha entra no conjunto do projeto, não apenas na beleza isolada de uma peça.</p>
-          </div>
-        </article>
-        <article class="servico-home__item reveal">
-          <span class="servico-home__num">06</span>
-          <div class="servico-home__content">
-            <h3 class="servico-home__title">Visitas em obra</h3>
-            <p class="servico-home__text">Presença pontual para orientar decisões no espaço real, acompanhar dúvidas de execução e proteger a intenção do projeto nos momentos em que a obra pede resposta.</p>
-            <p class="servico-home__note">Uma curadoria prática, próxima e criteriosa para manter o resultado alinhado ao que foi pensado.</p>
-          </div>
-        </article>
+      <div class="servicos-home__header">
+        <div>
+          <span class="label servicos-home__label">SERVIÇOS</span>
+          <h2 class="servicos-home__title">Como o escritório atua.</h2>
+        </div>
+        <p class="servicos-home__sub">Cada formato nasce de uma leitura do espaço, da rotina e do tipo de decisão que precisa ser conduzida com presença.</p>
       </div>
 
-      <div class="servicos-home__closing reveal">
-        <div class="servicos-home__closing-line" aria-hidden="true"></div>
-        <p>O formato certo aparece depois de entender o que o espaço pede.</p>
+      <div class="servicos-home__accordion">
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">01</span>
+              <span class="servico-accordion__title">Projeto de Arquitetura</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Do primeiro estudo até a documentação técnica. Planta, volumetria, circulação, luz natural e materialidade são pensadas como parte de uma rotina que precisa funcionar com beleza e calma.</p>
+            <span class="servico-accordion__note">Para construir ou transformar um espaço com direção clara desde o princípio.</span>
+          </div>
+        </div>
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">02</span>
+              <span class="servico-accordion__title">Reforma</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Reformar é trabalhar dentro do que já existe, com suas restrições e possibilidades. Cada decisão precisa reconhecer o que permanece, o que muda e o que não pode ser desfeito depois.</p>
+            <span class="servico-accordion__note">Um processo de precisão para quando o espaço pede transformação real.</span>
+          </div>
+        </div>
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">03</span>
+              <span class="servico-accordion__title">Design de Interiores</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Mobiliário, paleta, materiais, marcenaria, iluminação e texturas. É onde o espaço ganha caráter: onde a luz cai de um jeito específico e o material aparece no toque.</p>
+            <span class="servico-accordion__note">São as escolhas que ninguém lista, mas que todo mundo sente.</span>
+          </div>
+        </div>
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">04</span>
+              <span class="servico-accordion__title">Orientação de Ambientes</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Uma leitura personalizada para reorganizar layout, mobiliário, ambientação e funcionalidade sem a necessidade de uma reforma completa.</p>
+            <span class="servico-accordion__note">Para decidir o que manter, o que mover e por onde começar.</span>
+          </div>
+        </div>
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">05</span>
+              <span class="servico-accordion__title">Visitas em loja</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Acompanhamento estratégico para escolher revestimentos, peças, mobiliário e acabamentos com coerência. A visita organiza o olhar e evita decisões soltas.</p>
+            <span class="servico-accordion__note">Cada escolha entra no conjunto do projeto, não apenas na beleza isolada de uma peça.</span>
+          </div>
+        </div>
+
+        <div class="servico-accordion__item">
+          <button class="servico-accordion__trigger" aria-expanded="false">
+            <div class="servico-accordion__left">
+              <span class="servico-accordion__num">06</span>
+              <span class="servico-accordion__title">Visitas em obra</span>
+            </div>
+            <span class="servico-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="servico-accordion__body">
+            <p class="servico-accordion__text">Presença pontual para orientar decisões no espaço real, acompanhar dúvidas de execução e proteger a intenção do projeto nos momentos em que a obra pede resposta.</p>
+            <span class="servico-accordion__note">Uma curadoria prática, próxima e criteriosa para manter o resultado alinhado ao que foi pensado.</span>
+          </div>
+        </div>
+
       </div>
+
+      <div class="servicos-home__footer">
+        <span>O formato certo aparece depois de entender o que o espaço pede.</span>
+      </div>
+
     </div>
   </section>
 
