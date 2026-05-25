@@ -292,6 +292,7 @@ button {
 }
 
 .nav__container {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-areas: "left logo right";
