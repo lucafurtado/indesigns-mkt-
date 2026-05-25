@@ -51,8 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroEl = document.getElementById('hero');
 
   const updateNav = () => {
-    const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
-    nav.classList.toggle('is-scrolled', heroBottom <= 80);
+    const heroBottom = heroEl
+      ? heroEl.getBoundingClientRect().bottom
+      : 0;
+    const heroHeight = heroEl ? heroEl.offsetHeight : 0;
+    const progress = Math.min(
+      Math.max((heroHeight - heroBottom) / heroHeight, 0),
+      1
+    );
+
+    if (heroBottom <= 80) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
   };
 
   window.addEventListener('scroll', updateNav, { passive: true });
