@@ -1019,7 +1019,7 @@ button {
   position: relative;
   z-index: 6;
   border-radius: 16px 16px 0 0;
-  margin-top: -16px;
+  margin-top: -8px;
   box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.25);
   padding: 160px 0 128px;
   background-color: var(--petroleo);
@@ -5226,6 +5226,12 @@ iframe {
 @media (max-width: 480px) {
   .projeto-galeria__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .servicos-home__sub {
+    display: none;
   }
 }
 
