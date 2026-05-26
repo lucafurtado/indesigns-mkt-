@@ -5,34 +5,21 @@
 'use strict';
 
 /* -- INTRO OVERLAY ----------------------------------------- */
-(function () {
+(function() {
   const intro = document.getElementById('site-intro');
+  const progress = document.getElementById('introProgress');
   if (!intro) return;
 
-  if (
-    sessionStorage.getItem('indesigns-intro') ||
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  ) {
-    intro.remove();
-    return;
-  }
+  requestAnimationFrame(() => {
+    if (progress) progress.style.width = '100%';
+  });
 
-  document.documentElement.style.overflow = 'hidden';
-
-  const exitIntro = () => {
-    if (intro._exiting) return;
-    intro._exiting = true;
+  setTimeout(() => {
     intro.classList.add('is-exiting');
     setTimeout(() => {
-      intro.remove();
-      document.documentElement.style.overflow = '';
-      sessionStorage.setItem('indesigns-intro', '1');
+      intro.style.display = 'none';
     }, 900);
-  };
-
-  // Sair ap�s a anima��o do logo (2.6s de anima��o + 0.2s de margem)
-  setTimeout(exitIntro, 2800);
-  intro.addEventListener('click', exitIntro);
+  }, 1600);
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

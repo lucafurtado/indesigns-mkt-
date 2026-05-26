@@ -4360,11 +4360,12 @@ iframe {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: var(--petroleo-dark);
+  background: var(--petroleo);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.9s var(--ease-premium);
+  transition: opacity 0.8s ease;
 }
 
 .site-intro.is-exiting {
@@ -4372,20 +4373,48 @@ iframe {
   pointer-events: none;
 }
 
-.site-intro__video {
+.site-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: intro-fade-in 0.6s ease both;
+}
+
+.site-intro__logo {
+  width: clamp(160px, 20vw, 280px);
+  height: auto;
   display: block;
-  width: auto;
-  height: clamp(160px, 26vw, 360px);
-  max-width: 72vw;
-  border: none;
-  outline: none;
-  object-fit: contain;
-  animation: intro-fade-in 0.5s var(--ease-premium) both;
+}
+
+.site-intro__tagline {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(236, 236, 234, 0.35);
+  margin: 0;
+}
+
+.site-intro__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(138, 176, 171, 0.2);
+}
+
+.site-intro__progress {
+  height: 100%;
+  background: var(--teal);
+  width: 0%;
+  transition: width 1.4s ease;
 }
 
 @keyframes intro-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
