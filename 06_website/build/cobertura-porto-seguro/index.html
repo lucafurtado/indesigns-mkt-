@@ -129,10 +129,71 @@
       </div>
     </section>
 
-    <section class="projeto-cta">
+    <section class="projeto-cta" aria-label="Entre em contato">
       <div class="container">
-        <p class="projeto-cta__text">Gostou deste projeto?</p>
-        <a href="/#contato" class="btn btn--primary">Falar com a Indira</a>
+        <div class="cta-section__inner">
+          <header class="cta-section__header">
+            <span class="label cta-section__label">CONTATO</span>
+            <h2 class="cta-section__headline">Vamos colocar seus sonhos no papel?</h2>
+          </header>
+
+          <p class="cta-section__impulse">Uma conversa já é um começo.</p>
+
+          <form class="cta-form" id="ctaFormProjeto" novalidate>
+            <input type="hidden" name="origem" value="subpage projeto">
+            <input type="text" class="cta-form__honeypot" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="cta-form__row">
+              <div class="cta-form__group">
+                <label class="cta-form__label" for="p-nome">Nome</label>
+                <input class="cta-form__input" type="text" id="p-nome" name="nome"
+                  placeholder="Seu nome" required autocomplete="name">
+              </div>
+              <div class="cta-form__group">
+                <label class="cta-form__label" for="p-tel">WhatsApp</label>
+                <input class="cta-form__input" type="tel" id="p-tel" name="tel"
+                  placeholder="(61) 99999-9999" required autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="cta-form__group cta-form__group--full">
+              <label class="cta-form__label" for="p-email">E-mail</label>
+              <input class="cta-form__input" type="email" id="p-email" name="email"
+                placeholder="seu@email.com" required autocomplete="email">
+            </div>
+
+            <div class="cta-form__group cta-form__group--full">
+              <label class="cta-form__label" for="p-mensagem">Mensagem</label>
+              <textarea class="cta-form__input cta-form__textarea" id="p-mensagem" name="mensagem"
+                placeholder="Em uma frase, o que você imagina." rows="3" required></textarea>
+            </div>
+
+            <div class="cta-form__footer">
+              <button type="submit" class="btn btn--light">
+                Quero conversar
+              </button>
+            </div>
+          </form>
+
+          <div class="cta-contacts">
+            <a href="https://www.instagram.com/indesigns/" class="cta-contact"
+              target="_blank" rel="noopener">
+              <span class="cta-contact__label">Instagram</span>
+              <span class="cta-contact__value">@indesigns</span>
+            </a>
+            <span class="cta-contacts__sep" aria-hidden="true"></span>
+            <a href="https://wa.me/5561998586151" class="cta-contact"
+              target="_blank" rel="noopener">
+              <span class="cta-contact__label">WhatsApp</span>
+              <span class="cta-contact__value">61 99858-6151</span>
+            </a>
+            <span class="cta-contacts__sep" aria-hidden="true"></span>
+            <a href="mailto:indesigns.arq@gmail.com" class="cta-contact">
+              <span class="cta-contact__label">E-mail</span>
+              <span class="cta-contact__value">indesigns.arq@gmail.com</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
