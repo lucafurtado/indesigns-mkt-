@@ -1287,17 +1287,6 @@ button {
   margin: 0;
 }
 
-.servicos-home__sub {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(236, 236, 234, 0.4);
-  line-height: 1.75;
-  max-width: 300px;
-  text-align: right;
-  margin: 0;
-}
-
 .servicos-home__accordion {
   border-top: 0.5px solid rgba(236, 236, 234, 0.1);
 }
@@ -1334,10 +1323,10 @@ button {
 
 .servico-accordion__num {
   font-family: var(--font-label);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--teal);
-  opacity: 0.6;
+  opacity: 1;
   min-width: 24px;
 }
 
@@ -1436,10 +1425,6 @@ button {
   .servicos-home__header {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .servicos-home__sub {
-    text-align: left;
-    max-width: 100%;
   }
 }
 
@@ -5226,12 +5211,6 @@ iframe {
 @media (max-width: 640px) {
   .projeto-galeria__grid {
     columns: 1;
-  }
-}
-
-@media (max-width: 900px) {
-  .servicos-home__sub {
-    display: none;
   }
 }
 
