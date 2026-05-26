@@ -5291,3 +5291,29 @@ iframe {
     columns: 2;
   }
 }
+
+/* ── Botão voltar nas subpages ── */
+.projeto-back {
+  position: fixed;
+  top: calc(var(--nav-h) + 16px);
+  left: clamp(24px, 4vw, 48px);
+  z-index: 50;
+}
+
+.projeto-back__link {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 236, 234, 0.7);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  background: rgba(23, 58, 74, 0.4);
+  padding: 8px 14px;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.projeto-back__link:hover {
+  color: var(--offwhite);
+}
