@@ -3182,8 +3182,9 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: clamp(400px, 52vw, 640px);
-  max-height: 860px;
+  height: calc(100vh - 314px);
+  min-height: 400px;
+  max-height: 640px;
   gap: clamp(6px, 0.8vw, 12px);
 }
 
@@ -3264,9 +3265,9 @@ button {
 
 @media (max-width: 900px) {
   .showcase-bento {
-    height: clamp(360px, 56vw, 560px);
-    max-height: 700px;
-    min-height: 420px;
+    height: calc(100vh - 280px);
+    min-height: 360px;
+    max-height: 560px;
   }
 }
 
@@ -3277,9 +3278,9 @@ button {
     gap: 16px;
   }
   .showcase-bento {
-    height: clamp(300px, 80vw, 440px);
-    max-height: 600px;
-    min-height: 360px;
+    height: calc(100vh - 240px);
+    min-height: 300px;
+    max-height: 480px;
     gap: 5px;
   }
   .sc-cell__catname { font-size: 10px; letter-spacing: 0.18em; }
