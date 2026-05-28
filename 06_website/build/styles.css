@@ -806,7 +806,7 @@ button {
   border-radius: 16px 16px 0 0;
   margin-top: -16px;
   box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.12);
-  padding: clamp(80px, 8vw, 120px) 0 clamp(60px, 5vw, 80px);
+  padding: clamp(80px, 8vw, 120px) 0 0;
   background-color: var(--greige);
 }
 
@@ -3181,7 +3181,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: calc(100dvh - 64px);
+  height: 75vh;
   max-height: 860px;
   min-height: 480px;
   gap: clamp(6px, 0.8vw, 12px);
@@ -3262,7 +3262,7 @@ button {
 
 @media (max-width: 900px) {
   .showcase-bento {
-    height: calc(100dvh - 56px);
+    height: 70vh;
     max-height: 700px;
     min-height: 420px;
   }
@@ -3275,7 +3275,7 @@ button {
     gap: 16px;
   }
   .showcase-bento {
-    height: calc(100dvh - 52px);
+    height: 65vh;
     max-height: 600px;
     min-height: 360px;
     gap: 5px;
@@ -3715,6 +3715,7 @@ button {
     transparent 100%
   );
   margin: 0;
+  display: none;
 }
 
 .atm-break--axo {
