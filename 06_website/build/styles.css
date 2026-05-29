@@ -731,7 +731,7 @@ button {
 }
 
 .processo .section-header {
-  margin-bottom: 96px;
+  margin-bottom: 48px;
 }
 
 .processo__steps {
@@ -807,9 +807,10 @@ button {
   border-radius: 16px 16px 0 0;
   margin-top: -16px;
   box-shadow: 0 -12px 40px rgba(23, 58, 74, 0.12);
-  padding: clamp(80px, 8vw, 120px) 0 0;
+  padding: clamp(40px, 4vw, 56px) 0 0;
   margin-bottom: 0;
   background-color: var(--greige);
+  scroll-margin-top: var(--nav-h);
 }
 
 .sobre__grid {
