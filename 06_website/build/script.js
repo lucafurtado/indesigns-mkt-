@@ -498,6 +498,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectReel = document.querySelector('.project-reel');
   if (projectReel) {
     const videoSrc    = projectReel.dataset.video;
+    if (!videoSrc) {
+      projectReel.style.display = 'none';
+    } else {
     const projectName = projectReel.dataset.title || document.getElementById('project-title')?.textContent?.trim() || 'Projeto Indesigns';
     const videoPoster = projectReel.dataset.poster || '';
     const modal       = document.getElementById('projectVideoModal');
@@ -599,7 +602,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal && !modal.hasAttribute('hidden')) closeModal();
     });
-  }
+  } // close else (has video)
+  } // close if (projectReel)
 
   /* -- GSAP: REFINOS SUTIS --------------------------------- */
 
