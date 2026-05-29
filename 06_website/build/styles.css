@@ -3185,7 +3185,8 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 280px);
-  gap: clamp(6px, 0.8vw, 12px);
+  gap: 20px;
+  padding: 0 clamp(40px, 7vw, 96px);
 }
 
 .sc-cell {
@@ -3276,7 +3277,8 @@ button {
   }
   .showcase-bento {
     height: 280px;
-    gap: 5px;
+    gap: 8px;
+    padding: 0 16px;
   }
   .sc-cell__catname { font-size: 10px; letter-spacing: 0.18em; }
 }
