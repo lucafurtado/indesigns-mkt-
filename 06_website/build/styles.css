@@ -3181,8 +3181,7 @@ button {
 .showcase-bento {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  height: 520px;
+  grid-template-rows: repeat(2, 280px);
   gap: clamp(6px, 0.8vw, 12px);
 }
 
@@ -3193,7 +3192,6 @@ button {
   text-decoration: none;
   outline: 1px solid rgba(23, 58, 74, 0.18);
   outline-offset: -1px;
-  min-height: 300px;
   height: 100%;
 }
 
