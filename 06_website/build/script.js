@@ -1,8 +1,13 @@
 /* ============================================================
-   INDESIGNS � script.js
+   INDESIGNS — script.js
    ============================================================ */
 
 'use strict';
+
+/* -- CONFIGURAÇÃO CRM --------------------------------------- */
+// Cole aqui a URL do webhook do Make após configurar o cenário.
+// Deixe vazio ('') para desativar o envio automático.
+const WEBHOOK_URL = '';
 
 /* -- INTRO OVERLAY ----------------------------------------- */
 (function() {
@@ -242,9 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Enviando...';
       submitBtn.disabled = true;
 
-      // Preparado para Formspree, Make, Zapier ou Google Sheets.
-      // Quando houver endpoint, preencher data-crm-endpoint no form e enviar leadPayload via fetch.
-      ctaForm.dispatchEvent(new CustomEvent('indesigns:lead', { detail: leadPayload }));
+      // Envia para o Make (webhook) se configurado — fire and forget, não bloqueia o WhatsApp
+      if (WEBHOOK_URL) {
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadPayload),
+        }).catch(() => {}); // falha silenciosa — WhatsApp abre de qualquer forma
+      }
 
       // Monta e abre mensagem no WhatsApp
       const msg = encodeURIComponent(
