@@ -5131,6 +5131,16 @@ iframe {
   margin: 0;
 }
 
+.projeto-hero__tagline {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 300;
+  color: rgba(236, 236, 234, 0.72);
+  line-height: 1.65;
+  margin: 14px 0 0;
+  max-width: 480px;
+}
+
 /* GALERIA */
 .projeto-galeria {
   background: var(--offwhite);
