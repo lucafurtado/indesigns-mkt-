@@ -3194,8 +3194,9 @@ button {
   overflow: hidden;
   display: block;
   text-decoration: none;
-  outline: 1px solid rgba(23, 58, 74, 0.18);
+  outline: 1px solid rgba(23, 58, 74, 0.14);
   outline-offset: -1px;
+  box-shadow: 0 2px 8px rgba(23, 58, 74, 0.10);
   height: 100%;
 }
 
@@ -4995,6 +4996,9 @@ iframe {
   position: relative;
   text-decoration: none;
   cursor: pointer;
+  outline: 1px solid rgba(23, 58, 74, 0.14);
+  outline-offset: -1px;
+  box-shadow: 0 2px 8px rgba(23, 58, 74, 0.10);
 }
 
 .projetos-grid__item.is-hidden {
