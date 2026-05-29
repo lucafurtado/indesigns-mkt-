@@ -2705,7 +2705,7 @@ button {
    ============================================================ */
 
 .showcase {
-  padding: clamp(82px, 10vw, 132px) 0;
+  padding: 0 0 clamp(82px, 10vw, 132px);
   background-color: var(--offwhite);
   scroll-margin-top: var(--nav-h);
 }
@@ -3144,8 +3144,8 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  padding-top: clamp(84px, 9vw, 112px);
-  padding-bottom: clamp(42px, 5vw, 60px);
+  padding-top: clamp(40px, 4vw, 56px);
+  padding-bottom: clamp(28px, 3vw, 40px);
 }
 
 .sc-header__text .label {
