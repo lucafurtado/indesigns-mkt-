@@ -2707,6 +2707,7 @@ button {
 .showcase {
   padding: clamp(82px, 10vw, 132px) 0;
   background-color: var(--offwhite);
+  scroll-margin-top: var(--nav-h);
 }
 
 .showcase__header {
