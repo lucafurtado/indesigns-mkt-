@@ -1,6 +1,10 @@
 # CRM de Leads — Indesigns
 
-Quando alguém preenche o formulário do site, os dados vão automaticamente para uma planilha no Google Sheets. Você não precisa fazer nada — o lead chega na planilha e no seu WhatsApp ao mesmo tempo.
+Quando alguém preenche o formulário do site, duas coisas acontecem automaticamente:
+1. Os dados entram na sua planilha
+2. O lead recebe um e-mail de confirmação na hora
+
+Você não precisa fazer nada imediatamente. Avalia com calma e responde quando quiser.
 
 ---
 
@@ -8,7 +12,23 @@ Quando alguém preenche o formulário do site, os dados vão automaticamente par
 
 - Conta Google (você já tem)
 - Conta Make — gratuita em make.com
-- 20 minutos para configurar uma única vez
+- 30 minutos para configurar uma única vez
+
+---
+
+## Como vai funcionar no dia a dia
+
+```
+Lead preenche o formulário do site
+         ↓
+Recebe e-mail automático de confirmação
+         ↓
+Dados entram na planilha com data e hora
+         ↓
+Você avalia o lead com calma e responde no WhatsApp quando quiser
+         ↓
+Se avançar → você personaliza a proposta e envia manualmente
+```
 
 ---
 
@@ -19,7 +39,7 @@ Quando alguém preenche o formulário do site, os dados vão automaticamente par
 3. Na primeira linha, crie essas colunas exatamente assim (uma por célula):
 
 ```
-Data | Nome | WhatsApp | E-mail | Tipo de projeto | Prazo | Local | Mensagem | Origem
+Data | Nome | WhatsApp | E-mail | Tipo de projeto | Prazo | Local | Mensagem | Origem | Status | Próximo passo
 ```
 
 4. Copie o link da planilha — você vai precisar dele no Make
@@ -36,20 +56,23 @@ Data | Nome | WhatsApp | E-mail | Tipo de projeto | Prazo | Local | Mensagem | O
 
 ## Passo 3 — Criar o cenário no Make
 
+O cenário tem 3 módulos: **Webhook → Planilha → E-mail**
+
+### Módulo 1 — Webhook (recebe o lead do site)
+
 1. No Make, clique em **Create a new scenario**
-2. Clique no **"+"** para adicionar o primeiro módulo
-3. Busque por **"Webhooks"** e selecione **Custom webhook**
-4. Clique em **Add** → dê o nome **"Lead site Indesigns"** → **Save**
-5. O Make vai gerar uma URL — **copie essa URL** (parece com `https://hook.make.com/abc123...`)
-6. Clique em **OK**
+2. Clique no **"+"** e busque **"Webhooks"** → selecione **Custom webhook**
+3. Clique em **Add** → nome: **"Lead site Indesigns"** → **Save**
+4. O Make gera uma URL — **copie essa URL** (ex: `https://hook.make.com/abc123...`)
+5. Clique em **OK**
 
-Agora adicione o segundo módulo (o que salva na planilha):
+### Módulo 2 — Google Sheets (salva o lead)
 
-7. Clique no **"+"** depois do webhook
-8. Busque por **"Google Sheets"** e selecione **Add a Row**
-9. Conecte sua conta Google quando pedido
-10. Selecione a planilha **"Leads Indesigns"** e a aba correta
-11. Mapeie os campos assim:
+6. Clique no **"+"** depois do webhook
+7. Busque **"Google Sheets"** → selecione **Add a Row**
+8. Conecte sua conta Google quando pedido
+9. Selecione a planilha **"Leads Indesigns"**
+10. Mapeie os campos:
 
 | Coluna da planilha | Campo do Make |
 |---|---|
@@ -63,34 +86,49 @@ Agora adicione o segundo módulo (o que salva na planilha):
 | Mensagem | `mensagem` |
 | Origem | `origem` |
 
-12. Clique em **OK** → **Save** → ative o cenário com o botão no canto inferior esquerdo
+11. Clique em **OK**
+
+### Módulo 3 — E-mail (resposta automática para o lead)
+
+12. Clique no **"+"** depois do Google Sheets
+13. Busque **"Email"** → selecione **Send an Email**
+14. Configure assim:
+
+**Para:** `email` (campo do webhook)
+**Assunto:** `Recebi seu contato, {{nome}}!`
+**Corpo:**
+
+```
+Oi, {{nome}}!
+
+Recebi seu contato aqui e já vi o que você está pensando para o seu projeto.
+
+Vou analisar com atenção e te retorno em breve para conversarmos melhor.
+
+Até logo,
+Indira Bonfim
+Indesigns — Arquitetura e Design
+Instagram: @indesigns
+```
+
+15. Clique em **OK** → **Save** → ative o cenário com o botão no canto inferior esquerdo
 
 ---
 
 ## Passo 4 — Ativar no site
 
-Envie para o Luca a URL do webhook que você copiou no Passo 3 (etapa 5). Ele cola no código do site em 2 minutos e a integração está ativa.
+Envie para o Luca a URL do webhook copiada no Passo 3 (etapa 4). Ele cola no código em 2 minutos e está ativo.
 
 ---
 
-## Como vai funcionar no dia a dia
+## Planilha — o que você preenche manualmente
 
-1. Alguém preenche o formulário no site
-2. Você recebe a mensagem no WhatsApp com os dados
-3. **Automaticamente**, os dados entram na planilha com data e hora
-4. Leads que chegam por indicação ou WhatsApp direto você adiciona manualmente na planilha
-
----
-
-## Planilha — colunas adicionais que você preenche
-
-Depois que o lead entra, adicione essas colunas manualmente conforme a conversa avança:
+Depois de conversar com o lead, atualize:
 
 | Coluna | O que colocar |
 |---|---|
 | **Status** | Novo / Em conversa / Proposta enviada / Fechado / Perdido |
-| **Valor estimado** | R$ 5.500 a R$ 6.500 conforme o projeto |
-| **Próximo passo** | O que fazer e quando |
+| **Próximo passo** | Ex: "Enviar proposta até 02/06" ou "Follow-up semana que vem" |
 
 ---
 
