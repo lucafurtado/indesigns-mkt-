@@ -830,3 +830,73 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') next();
   });
 })();
+
+/* -- LIGHTBOX "COMO ERA ANTES" ------------------------------ */
+(function () {
+  const lb = document.createElement('div');
+  lb.className = 'antes-lb';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML =
+    '<div class="antes-lb__backdrop"></div>' +
+    '<button class="antes-lb__nav antes-lb__nav--prev" aria-label="Anterior">&#8249;</button>' +
+    '<img class="antes-lb__img" src="" alt="">' +
+    '<button class="antes-lb__nav antes-lb__nav--next" aria-label="Pr&#xF3;xima">&#8250;</button>' +
+    '<button class="antes-lb__close" aria-label="Fechar">&#x2715;</button>';
+  document.body.appendChild(lb);
+
+  const lbImg   = lb.querySelector('.antes-lb__img');
+  const prevBtn = lb.querySelector('.antes-lb__nav--prev');
+  const nextBtn = lb.querySelector('.antes-lb__nav--next');
+  let srcs = [];
+  let cur  = 0;
+
+  function updateNav() {
+    const show = srcs.length > 1 ? '' : 'none';
+    prevBtn.style.display = show;
+    nextBtn.style.display = show;
+  }
+
+  function open(index) {
+    cur = index;
+    lbImg.src = srcs[cur];
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    updateNav();
+  }
+
+  function close() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function prev() { cur = (cur - 1 + srcs.length) % srcs.length; lbImg.src = srcs[cur]; }
+  function next() { cur = (cur + 1) % srcs.length; lbImg.src = srcs[cur]; }
+
+  lb.querySelector('.antes-lb__backdrop').addEventListener('click', close);
+  lb.querySelector('.antes-lb__close').addEventListener('click', close);
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  document.addEventListener('click', function (e) {
+    const item = e.target.closest('.projeto-antes__item');
+    if (!item) return;
+    const section = item.closest('.projeto-antes');
+    if (!section) return;
+    const all = Array.from(section.querySelectorAll('.projeto-antes__img'));
+    srcs = all.map(function (img) { return img.src; });
+    const clicked = item.querySelector('.projeto-antes__img');
+    open(all.indexOf(clicked));
+  });
+
+  document.querySelectorAll('.projeto-antes').forEach(function (sec) {
+    if (!sec.querySelector('.projeto-antes__item')) sec.style.display = 'none';
+  });
+})();
