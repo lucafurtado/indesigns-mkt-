@@ -3721,12 +3721,7 @@ button {
 }
 
 .axo-marginalia-wrap {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 clamp(24px, 6vw, 96px);
-  pointer-events: none;
-  user-select: none;
-  background-color: var(--greige);
+  display: none;
 }
 
 .axo-marginalia {
