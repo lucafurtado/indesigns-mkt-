@@ -191,6 +191,32 @@
       pointer-events: auto;
     }
 
+    /* ── Card desc ── */
+    .collab-card__desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.72;
+      color: rgba(23,58,74,0.56);
+      margin-top: 10px;
+      max-width: 300px;
+    }
+
+    /* ── CTA link secundário ── */
+    .parcerias-cta__link {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(23,58,74,0.52);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(23,58,74,0.22);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .parcerias-cta__link:hover {
+      color: var(--teal);
+      border-color: var(--teal);
+    }
+
     /* ── CTA editorial ── */
     .parcerias-cta__editorial {
       font-family: var(--font-headline);
@@ -271,7 +297,7 @@
           <h1 id="collab-title" class="projetos-header__title">
             Aberta a colaborações que ampliam o que um espaço pode ser.
           </h1>
-          <p class="projetos-header__text">Fornecedores, escritórios, marcas e profissionais que compartilham cuidado com o resultado. O formato depende do projeto.</p>
+          <p class="projetos-header__text">Fornecedores, escritórios, marcas e profissionais que compartilham cuidado com o resultado. Atende no Plano Piloto e nas áreas mais exigentes de Brasília. O formato depende do projeto.</p>
         </div>
       </div>
     </header>
@@ -281,8 +307,7 @@
         <div class="parcerias-intro reveal">
           <span class="label parcerias-intro__label">COMO FUNCIONA</span>
           <p class="parcerias-intro__text">Cada collab começa antes do contrato: com uma conversa sobre o que cada um traz ao projeto. O Indesigns não fecha acordos de prateleira. O que existe é abertura real para colaborar com quem entende o próprio campo.</p>
-          <p class="parcerias-intro__text">Seja em uma indicação recíproca, em um projeto conjunto, em uma curadoria de materiais ou em uma colaboração editorial. O formato certo aparece depois de entender o que o projeto pede.</p>
-          <p class="parcerias-intro__text">Brasília tem um ecossistema criativo que ainda se está descobrindo. A intenção aqui é contribuir para isso com rigor e sem fazer barulho.</p>
+          <p class="parcerias-intro__text">Se a indicação faz sentido pro projeto, ela acontece. O formato de compensação a gente acerta depois — o que importa é que o produto ou serviço pertença ao espaço.</p>
           <div class="axo-marginalia-wrap" aria-hidden="true">
             <img src="/assets/axo-03.png" class="axo-marginalia" alt="">
           </div>
@@ -312,7 +337,8 @@
             </div>
             <div class="collab-card__info">
               <span class="collab-card__name">Insize</span>
-              <span class="collab-card__type">FORNECEDOR</span>
+              <span class="collab-card__type">FORNECEDOR · TECNOLOGIA</span>
+              <p class="collab-card__desc">Visualização de projetos em escala real. Fui conhecer o espaço — é o tipo de experiência que muda a conversa com o cliente antes de qualquer obra começar.</p>
             </div>
           </div>
         </div>
@@ -353,8 +379,8 @@
           Tem algo em mente que pode envolver o Indesigns?
         </h2>
         <p class="parcerias-cta__sub">Manda uma mensagem com o contexto: a proposta, o projeto, o que você busca com a collab. A conversa decide o próximo passo.</p>
-        <a href="mailto:indesigns.arq@gmail.com?subject=Collab%20-%20Indesigns"
-          class="btn btn--primary">Entrar em contato</a>
+        <a href="https://wa.me/5561998586151" class="btn btn--primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a href="mailto:indesigns.arq@gmail.com?subject=Collab%20-%20Indesigns" class="parcerias-cta__link">ou prefere e-mail</a>
       </div>
     </section>
   </main>
