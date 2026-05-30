@@ -904,3 +904,50 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!sec.querySelector('.projeto-antes__item')) sec.style.display = 'none';
   });
 })();
+
+/* -- NAVEGAÇÃO DO CAROUSEL "COMO ERA ANTES" ----------------- */
+(function () {
+  document.querySelectorAll('.projeto-antes').forEach(function (section) {
+    const wrap  = section.querySelector('.projeto-antes__track-wrap');
+    const items = section.querySelectorAll('.projeto-antes__item');
+    if (!wrap || !items.length) return;
+
+    function itemStep() {
+      return (items[0] ? items[0].offsetWidth : 200) + 10;
+    }
+
+    function updateBtns() {
+      const prev = section.querySelector('[data-antes-dir="-1"]');
+      const next = section.querySelector('[data-antes-dir="1"]');
+      if (prev) prev.disabled = wrap.scrollLeft <= 4;
+      if (next) next.disabled = wrap.scrollLeft >= wrap.scrollWidth - wrap.clientWidth - 4;
+    }
+
+    section.querySelectorAll('[data-antes-dir]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const dir = parseInt(btn.dataset.antesDir, 10);
+        wrap.scrollBy({ left: dir * itemStep(), behavior: 'smooth' });
+      });
+    });
+
+    wrap.addEventListener('scroll', updateBtns, { passive: true });
+
+    document.addEventListener('keydown', function (e) {
+      if (document.querySelector('.antes-lb.is-open')) return;
+      const rect = section.getBoundingClientRect();
+      if (rect.top > window.innerHeight * 0.8 || rect.bottom < window.innerHeight * 0.2) return;
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); wrap.scrollBy({ left: -itemStep(), behavior: 'smooth' }); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); wrap.scrollBy({ left:  itemStep(), behavior: 'smooth' }); }
+    });
+
+    // touch swipe
+    let tx = 0;
+    wrap.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    wrap.addEventListener('touchend', function (e) {
+      const dx = tx - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 40) wrap.scrollBy({ left: dx > 0 ? itemStep() : -itemStep(), behavior: 'smooth' });
+    });
+
+    updateBtns();
+  });
+})();
