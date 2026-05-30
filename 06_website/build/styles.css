@@ -5305,8 +5305,9 @@ iframe {
 
 .projeto-antes__track {
   display: flex;
-  gap: 6px;
+  gap: 10px;
   padding: 0 clamp(16px, 4vw, 48px);
+  align-items: center;
 }
 
 .projeto-antes__item {
@@ -5319,11 +5320,15 @@ iframe {
 }
 
 .projeto-antes__img {
-  height: 152px;
+  height: 220px;
   width: auto;
   display: block;
   filter: grayscale(15%);
   transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.projeto-antes__item:nth-child(4n) .projeto-antes__img {
+  height: 300px;
 }
 
 .projeto-antes__item:hover .projeto-antes__img {
