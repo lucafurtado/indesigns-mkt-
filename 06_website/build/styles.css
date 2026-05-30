@@ -5340,7 +5340,7 @@ iframe {
 }
 
 .projeto-antes__item {
-  flex: 0 0 clamp(160px, 17vw, 235px);
+  flex: 0 0 clamp(200px, 22vw, 290px);
   cursor: zoom-in;
   overflow: hidden;
   border-radius: 2px;
@@ -5349,7 +5349,7 @@ iframe {
 
 .projeto-antes__img {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: cover;
   object-position: center;
   display: block;
