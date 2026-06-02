@@ -3,3 +3,6 @@
 *.mov
 *.avi
 *.webm
+
+# Exceções — vídeos pequenos usados no site
+!06_website/build/assets/intro-gif.mp4

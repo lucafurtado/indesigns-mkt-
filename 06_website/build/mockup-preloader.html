@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup — Preloader com GIF</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #d1d3c4;
+      padding: 40px 24px 60px;
+    }
+
+    h1 {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #173a4a;
+      opacity: 0.5;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      display: inline-block;
+      background: #173a4a;
+      color: #ececea;
+    }
+
+    .label--new {
+      background: #3c6e71;
+    }
+
+    .preloader {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      max-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .preloader--dark {
+      background: #173a4a;
+    }
+
+    .preloader--white {
+      background: #ffffff;
+    }
+
+    /* Versão atual — logo + barra */
+    .preloader__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .preloader__logo {
+      width: clamp(120px, 30%, 200px);
+      height: auto;
+      display: block;
+    }
+
+    .preloader__tagline {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(236, 236, 234, 0.45);
+      margin: 0;
+    }
+
+    .preloader__bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(138, 176, 171, 0.2);
+    }
+
+    .preloader__progress {
+      height: 100%;
+      width: 0%;
+      background: #3c6e71;
+      animation: progress 1.6s ease forwards;
+    }
+
+    @keyframes progress {
+      to { width: 100%; }
+    }
+
+    /* Versão nova — vídeo */
+    .preloader__video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 32px auto 0;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: #173a4a;
+      opacity: 0.55;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mockup — Tela de Carregamento</h1>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="label">Anterior — logo + barra</span>
+      <div class="preloader preloader--dark">
+        <div class="preloader__inner">
+          <img src="assets/logo-hero.png" alt="Indesigns" class="preloader__logo">
+          <p class="preloader__tagline">Brasília · DF</p>
+        </div>
+        <div class="preloader__bar">
+          <div class="preloader__progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="label label--new">Novo — GIF + fundo branco</span>
+      <div class="preloader preloader--white">
+        <video
+          class="preloader__video"
+          src="assets/intro-gif.mp4"
+          autoplay
+          muted
+          playsinline
+          loop
+        ></video>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="note">No site real, o vídeo toca uma vez até o fim e a tela desaparece. No mockup está em loop para facilitar a visualização.</p>
+
+</body>
+</html>

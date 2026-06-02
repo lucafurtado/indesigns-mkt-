@@ -12,19 +12,27 @@ const WEBHOOK_URL = '';
 /* -- INTRO OVERLAY ----------------------------------------- */
 (function() {
   const intro = document.getElementById('site-intro');
-  const progress = document.getElementById('introProgress');
+  const video = document.getElementById('introVideo');
   if (!intro) return;
 
-  requestAnimationFrame(() => {
-    if (progress) progress.style.width = '100%';
-  });
-
-  setTimeout(() => {
+  function exitIntro() {
     intro.classList.add('is-exiting');
-    setTimeout(() => {
-      intro.style.display = 'none';
-    }, 900);
-  }, 1600);
+    setTimeout(() => { intro.style.display = 'none'; }, 900);
+  }
+
+  if (video) {
+    const fallback = setTimeout(exitIntro, 15000);
+    video.addEventListener('ended', () => {
+      clearTimeout(fallback);
+      exitIntro();
+    });
+    video.addEventListener('error', () => {
+      clearTimeout(fallback);
+      exitIntro();
+    });
+  } else {
+    setTimeout(exitIntro, 1600);
+  }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
