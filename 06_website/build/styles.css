@@ -4364,6 +4364,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   transition: opacity 0.8s ease;
 }
 
@@ -4372,11 +4373,41 @@ iframe {
   pointer-events: none;
 }
 
+.site-intro__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  animation: intro-fade-in 0.8s ease both;
+}
+
+.site-intro__logo {
+  width: clamp(160px, 20vw, 280px);
+  height: auto;
+  display: block;
+  filter: brightness(0);
+}
+
+.site-intro__cta {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--petroleo);
+  opacity: 0.4;
+  margin: 0;
+}
+
 .site-intro__video {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
+  display: none;
+}
+
+@keyframes intro-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
