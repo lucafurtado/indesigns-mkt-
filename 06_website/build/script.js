@@ -11,9 +11,8 @@ const WEBHOOK_URL = '';
 
 /* -- INTRO OVERLAY ----------------------------------------- */
 (function() {
-  const intro  = document.getElementById('site-intro');
-  const prompt = document.getElementById('introPrompt');
-  const video  = document.getElementById('introVideo');
+  const intro = document.getElementById('site-intro');
+  const video = document.getElementById('introVideo');
   if (!intro) return;
 
   function exitIntro() {
@@ -21,28 +20,15 @@ const WEBHOOK_URL = '';
     setTimeout(() => { intro.style.display = 'none'; }, 900);
   }
 
-  if (video && prompt) {
-    intro.addEventListener('click', function onFirstClick() {
-      intro.removeEventListener('click', onFirstClick);
-
-      prompt.style.display = 'none';
-      video.style.display  = 'block';
-
-      const fallback = setTimeout(exitIntro, 15000);
-
-      video.play().catch(() => {
-        video.muted = true;
-        video.play();
-      });
-
-      video.addEventListener('ended', () => {
-        clearTimeout(fallback);
-        exitIntro();
-      });
-      video.addEventListener('error', () => {
-        clearTimeout(fallback);
-        exitIntro();
-      });
+  if (video) {
+    const fallback = setTimeout(exitIntro, 15000);
+    video.addEventListener('ended', () => {
+      clearTimeout(fallback);
+      exitIntro();
+    });
+    video.addEventListener('error', () => {
+      clearTimeout(fallback);
+      exitIntro();
     });
   } else {
     setTimeout(exitIntro, 1600);
