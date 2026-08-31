@@ -28,25 +28,22 @@ Esse cliente está disposto a pagar mais por:
 
 ---
 
-## Análise Competitiva (A Preencher)
+## Análise Competitiva
 
-> Esta seção deve ser preenchida com pesquisa real dos concorrentes.
-
-### Como Pesquisar Concorrentes
-1. Pesquisar "arquiteto em Brasília" no Google e Instagram
-2. Analisar os 5–10 perfis mais visíveis
-3. Para cada um, registrar:
-   - Posicionamento (o que comunicam)
-   - Ticket aparente (se disponível)
-   - Qualidade do portfólio
-   - Presença digital
-   - Ponto fraco que a Indesigns pode explorar
+> Pesquisa real feita em 2026-08-31 (WebSearch/WebFetch). Detalhe completo + brechas de SEO em `03_acquisition/seo/02-concorrentes.md`.
 
 | Concorrente | Posicionamento | Ponto Forte | Ponto Fraco | Aprendizado |
 |---|---|---|---|---|
-| A definir | | | | |
-| A definir | | | | |
-| A definir | | | | |
+| CoDA | Coletivo brasiliense, forma moderna + vida contemporânea | Prêmios e imprensa (ArchDaily, Casa Vogue) | Sem conteúdo educacional, sem FAQ; angle "coletivo" impessoal | Angle modernista igual ao nosso — diferenciar pela Indira conduzindo de perto |
+| BLOCO Arquitetos | Residencial autoral de revista | Volume publicado no ArchDaily | Pouca conversão local, "arquitetura de revista" | Espaço para "premium mas próximo e acessível" |
+| Suna Arquitetura | "Arquitetura artesanal", multi-cidade | Página `/arquiteto-em-brasilia/` bem otimizada (H1 + FAQ + 1.800 palavras) | Rede, não 100% brasiliense | É o modelo de SEO local a estudar e superar |
+| BORA | Casal de arquitetos, residencial | Marca pessoal forte | — | Confirma: em Brasília, marca pessoal do arquiteto converte |
+| Studio RC / Kanno | Residencial + clínicas (Kanno só clínica) | Nicho de saúde declarado, SEO de nicho | — | Temos case de saúde real (Orbis, Consultório ML) e não comunicamos como nicho |
+| ALF / Occa / Attrium / D. Morato / RSAI / BIA / A. Pestana / F. Goulart | Residencial e interiores de alto padrão | Tempo de mercado, volume | "Mais do mesmo premium", copy genérica | Diferencial: voz da Indira, easter eggs, velocidade, brasiliense-modernista explícito |
+
+**Diretórios que rankeiam "melhores arquitetos de Brasília" e são citados por IAs:** ohub, StarOfService, arquitetorio, brasilarq, infoisinfo, Cronoshare, Houzz, homify. A Indesigns não está em nenhum — ação em `03_acquisition/seo/05-geo.md`.
+
+**Maior gap da Indesigns vs. todos:** zero prova social / depoimento no site.
 
 ---
 
