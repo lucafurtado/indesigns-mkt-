@@ -4383,6 +4383,9 @@ iframe {
   .site-intro { display: none; }
 }
 
+/* Sessão já viu a intro: não renderiza de novo */
+:root.intro-seen .site-intro { display: none; }
+
 /* ============================================================
    P�GINA DE PROJETOS � /projetos/
    ============================================================ */

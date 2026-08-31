@@ -95,6 +95,15 @@
   }
   </script>
 
+  <script>
+    /* Intro só no primeiro acesso da sessão. Marca o <html> antes do render pra não piscar. */
+    try {
+      if (sessionStorage.getItem('introSeen') === '1') {
+        document.documentElement.classList.add('intro-seen');
+      }
+    } catch (e) {}
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>

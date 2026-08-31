@@ -15,6 +15,18 @@ const WEBHOOK_URL = '';
   const video = document.getElementById('introVideo');
   if (!intro) return;
 
+  /* Só toca no primeiro acesso da sessão. Reload/volta pra home não reseta a entrada. */
+  let seen = false;
+  try { seen = sessionStorage.getItem('introSeen') === '1'; } catch (e) {}
+
+  if (seen) {
+    intro.style.display = 'none';
+    if (video) { try { video.pause(); video.removeAttribute('src'); } catch (e) {} }
+    return;
+  }
+
+  try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+
   function exitIntro() {
     intro.classList.add('is-exiting');
     setTimeout(() => { intro.style.display = 'none'; }, 900);
