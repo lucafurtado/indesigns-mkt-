@@ -90,7 +90,7 @@ Notificação para Indira agendar reunião
 ## Próximos Passos
 
 - [ ] Configurar WhatsApp Business (foto, descrição, respostas rápidas)
-- [ ] Criar e-mail profissional (ex: contato@indesigns.arq.br)
+- [ ] Criar e-mail profissional (ex: contato@indesigns.com.br)
 - [ ] Escolher entre Notion ou Trello para CRM e projetos
 - [ ] Estruturar pasta-padrão no Google Drive
 - [ ] Criar formulário de briefing no Typeform ou Tally (gratuito)

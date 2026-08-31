@@ -12,7 +12,7 @@
 - Responsivo por padrão — 80%+ do tráfego vem do celular
 - Custo: ~$20/mês no plano profissional
 
-**Domínio recomendado:** `indesigns.arq.br`
+**Domínio recomendado:** `indesigns.com.br`
 - `.arq.br` é domínio exclusivo para arquitetos registrados no CAU — confere credibilidade imediata
 - Alternativa: `indesigns.com.br`
 
@@ -37,7 +37,7 @@ O visitante deve sentir em 5 segundos que está diante de algo diferente. Não p
 ### Fase 1 — Lançamento (site de uma página com âncoras)
 
 ```
-indesigns.arq.br/
+indesigns.com.br/
 
 ├── #hero          → Posicionamento + CTA principal
 ├── #portfolio     → 6 projetos selecionados
@@ -51,7 +51,7 @@ indesigns.arq.br/
 ### Fase 2 — Expansão (após 90 dias)
 
 ```
-indesigns.arq.br/
+indesigns.com.br/
 
 ├── /                → Home (uma página)
 ├── /projetos        → Portfólio completo com filtros
@@ -181,7 +181,7 @@ Cada etapa: ícone minimalista + nome + 2 linhas de descrição.
 
 ## Próximos Passos
 
-- [ ] Registrar domínio indesigns.arq.br (CAU-BR) ou indesigns.com.br
+- [ ] Registrar domínio indesigns.com.br (CAU-BR) ou indesigns.com.br
 - [ ] Criar conta no Framer (framer.com)
 - [ ] Contratar fotógrafo para fotografar projetos entregues
 - [ ] Escrever copy de cada seção (ver homepage.md)

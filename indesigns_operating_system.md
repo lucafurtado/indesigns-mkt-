@@ -154,7 +154,7 @@ Sistema de design completo (posts, carrossel, feed, highlights) em `03_acquisiti
 **Lógica da landing page:** Emoção → Reconhecimento → Evidência → Decisão.
 O formulário fica no final — quem chega até lá já está comprometido.
 
-**Próximo passo crítico:** Registrar domínio indesigns.arq.br e publicar.
+**Próximo passo crítico:** Registrar domínio indesigns.com.br e publicar.
 
 ---
 
@@ -205,7 +205,7 @@ Detalhes em `04_operations/processes.md`.
 | Posicionamento estratégico                       | ✅ Concluído |
 | 15 posts roteirizados                            | ✅ Concluído |
 | Sistema de design Instagram                      | ✅ Concluído |
-| Site publicado (indesigns.arq.br)                | ⬜ Pendente  |
+| Site publicado (indesigns.com.br)                | ⬜ Pendente  |
 | Primeiros 15 posts publicados                    | ⬜ Pendente  |
 | Depoimentos coletados (síndica + 2 residenciais) | ⬜ Pendente  |
 | Migração de seguidores iniciada                  | ⬜ Pendente  |
@@ -215,8 +215,8 @@ Detalhes em `04_operations/processes.md`.
 
 1. **Ligar para a síndica da 116 Sul** — pedir depoimento formal (roteiro: `05_client_experience/retention.md`)
 2. **Publicar Story no perfil pessoal** direcionando para @indesigns
-3. **Configurar e-mail profissional** contato@indesigns.arq.br
-4. **Registrar domínio** indesigns.arq.br e publicar site
+3. **Configurar e-mail profissional** contato@indesigns.com.br
+4. **Registrar domínio** indesigns.com.br e publicar site
 
 ### A Ação Mais Estratégica do Momento
 

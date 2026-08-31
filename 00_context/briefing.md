@@ -14,7 +14,7 @@
 **Escritório:** Indesigns — operação solo (sem equipe fixa)
 **Instagram profissional:** @indesigns (411 seguidores em Mai/2026)
 **Instagram pessoal:** ~3.000 seguidores (audiência inexplorada)
-**Site:** criado, domínio pendente de registro (indesigns.arq.br)
+**Site:** no ar em https://indesigns.com.br (Vercel, deploy automático via GitHub)
 
 ---
 
@@ -57,8 +57,8 @@ Meses 1–2 do roadmap de 12 meses.
 **O que está pendente (próximas ações críticas):**
 1. Contatar síndica da 116 Sul para depoimento formal ← **ação mais estratégica do momento**
 2. Publicar Story no perfil pessoal direcionando para @indesigns
-3. Configurar e-mail profissional: contato@indesigns.arq.br
-4. Registrar domínio indesigns.arq.br e publicar site
+3. Configurar e-mail profissional: contato@indesigns.com.br
+4. Registrar domínio indesigns.com.br e publicar site
 5. Agendar ensaio fotográfico (portrait editorial + detalhes de projetos)
 6. Publicar primeiros 3 posts no novo formato visual
 

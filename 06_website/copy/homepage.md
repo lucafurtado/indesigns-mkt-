@@ -225,7 +225,7 @@ A conversa é gratuita e sem compromisso.
 
 **CTA secundário:**
 ```
-contato@indesigns.arq.br
+contato@indesigns.com.br
 ```
 
 **Instagram:**

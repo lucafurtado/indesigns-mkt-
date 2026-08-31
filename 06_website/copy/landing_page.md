@@ -538,7 +538,7 @@ CAU nº [número]
 
 Instagram: @indesigns
 WhatsApp: [número]
-E-mail: contato@indesigns.arq.br
+E-mail: contato@indesigns.com.br
 
 © 2026 Indesigns. Todos os direitos reservados.
 ```

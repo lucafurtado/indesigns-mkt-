@@ -395,7 +395,7 @@ CORPO ETAPA:
 │                                                                                │  ← 64px
 │                         [  Falar no WhatsApp  ]                               │  ← CTA / #3c6e71 bg / #ececea text
 │                                                                                │  ← 24px
-│                         contato@indesigns.arq.br                              │  ← link / Montserrat / 14px / #8ab0ab
+│                         contato@indesigns.com.br                              │  ← link / Montserrat / 14px / #8ab0ab
 │                                                                                │  ← 16px
 │                         @indesigns                                             │  ← link / Sweet Sans / 12px / #8ab0ab
 │                                                                                │
