@@ -6,9 +6,28 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/servicos", "destination": "/#servicos", "permanent": true },
-    { "source": "/servicos/", "destination": "/#servicos", "permanent": true },
     { "source": "/parcerias", "destination": "/collab", "permanent": true },
-    { "source": "/parcerias/", "destination": "/collab", "permanent": true }
+    { "source": "/parcerias/", "destination": "/collab", "permanent": true },
+
+    { "source": "/projeto-noroeste", "destination": "/residencia-noroeste", "permanent": true },
+    { "source": "/projeto-orbis", "destination": "/clinica-orbis", "permanent": true },
+    { "source": "/projeto-116-sul", "destination": "/cobertura-porto-seguro", "permanent": true },
+
+    { "source": "/assets/projects/noroeste", "destination": "/residencia-noroeste", "permanent": true },
+    { "source": "/assets/projects/orbis", "destination": "/clinica-orbis", "permanent": true },
+    { "source": "/assets/projects/porto-seguro", "destination": "/cobertura-porto-seguro", "permanent": true },
+    { "source": "/assets/projects/116sul", "destination": "/cobertura-porto-seguro", "permanent": true },
+    { "source": "/assets/projects/recanto-jaburu", "destination": "/chacara-recanto-do-jaburu", "permanent": true },
+    { "source": "/assets/projects/mari-rodrigues", "destination": "/consultorio-ml", "permanent": true },
+    { "source": "/assets/projects/monique-rafael", "destination": "/escritorio-mr", "permanent": true },
+    { "source": "/assets/projects/maju-vitor", "destination": "/mj-vx-maju-vitor", "permanent": true },
+    { "source": "/assets/projects/cecilia-santos", "destination": "/apto-ci", "permanent": true },
+
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.indesigns.com.br" }],
+      "destination": "https://indesigns.com.br/:path*",
+      "permanent": true
+    }
   ]
 }

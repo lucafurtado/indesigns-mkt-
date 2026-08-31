@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indesigns.arq.br/sitemap.xml
+Sitemap: https://indesigns.com.br/sitemap.xml
