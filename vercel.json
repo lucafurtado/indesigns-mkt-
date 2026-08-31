@@ -24,9 +24,15 @@
     { "source": "/assets/projects/cecilia-santos", "destination": "/apto-ci", "permanent": true },
 
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.indesigns.com.br" }],
-      "destination": "https://indesigns.com.br/:path*",
+      "destination": "https://indesigns.com.br/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "www.indesigns.com.br" }],
+      "destination": "https://indesigns.com.br/:path+",
       "permanent": true
     }
   ]
